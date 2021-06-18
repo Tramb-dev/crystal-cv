@@ -2,6 +2,7 @@ class Player {
     constructor() {
         this.playerDiv = '';
         this.playerImg = '';
+        this.masqueDiv = '';
         // permet d'éviter de cumuler l'action des touches sur les déplacements
         this.enCoursDeDeplacement = {
             versLeHaut: {
@@ -456,19 +457,22 @@ class Player {
     // génère le personnage à la création
     creation() {
         this.playerDiv = document.getElementById("player_container");
-        this.playerDiv.style.top = 0;
-        this.playerDiv.style.left = 0;
+
+        this.masqueDiv = document.getElementById("masque_container");
+        this.masqueDiv.style.top = 0;
+        this.masqueDiv.style.left = 0;
 
         this.playerImg = document.createElement("img");
         this.playerImg.src = "assets/sprites/spr_player/Terra_sprites.webp";
         this.playerImg.id = "player";
         this.playerImg.alt = "Personnage du joueur";
-        this.playerDiv.appendChild(this.playerImg);
+        this.masqueDiv.appendChild(this.playerImg);
         this.choixImageSprite(0);
         this.controls();
     }
 
     // gère le déplacement du personnage
+    // TODO : prendre en compte le cas de l'appuie de 2 touches simultanées
     deplacement(direction){
         let increment = 5, reverse = false;
         let proprieteDeStyle = 'left';
@@ -498,7 +502,7 @@ class Player {
             this.enCoursDeDeplacement[direction].animationEnCours = true;
             this.enCoursDeDeplacement[direction].identifiantAnimation = window.setInterval(() => {
                 // Bouge le masque
-                this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
+                this.masqueDiv.style[proprieteDeStyle] = parseFloat(this.masqueDiv.style[proprieteDeStyle]) + increment + 'px';
 
                 // Bouge le sprite (la position définit l'emplacement dans l'objet sprite, auquel on ajoute jusqu'à 3 images pour une animation)
                 this.choixImageSprite(spritePosition + (this.enCoursDeDeplacement[direction].derniereImage % 3), reverse);
@@ -554,13 +558,13 @@ class Player {
     // Choisi le sprite à afficher et les dimensions du masque
     choixImageSprite(spritePosition, reverse = false) {
         if (reverse) {
-            this.playerDiv.style.transform = 'scaleX(-1)';
+            this.masqueDiv.style.transform = 'scaleX(-1)';
         } else {
-            this.playerDiv.style.transform = 'none';
+            this.masqueDiv.style.transform = 'none';
         }
         this.playerImg.style.left = this.sprite[spritePosition][1].left + "px";
-        this.playerDiv.style.width = this.sprite[spritePosition][0].width + "px";
-        this.playerDiv.style.height = this.sprite[spritePosition][0].height + "px";
+        this.masqueDiv.style.width = this.sprite[spritePosition][0].width + "px";
+        this.masqueDiv.style.height = this.sprite[spritePosition][0].height + "px";
         this.playerImg.style.top = this.sprite[spritePosition][1].top + "px";
     }
 }

@@ -1,15 +1,8 @@
-class LevelCreator {
+class LevelOne extends LevelCreator {
     constructor() {
-        this.levelDiv = '';
-        this.levelTileSet = '';
+        super();
         this.tileSets = {
-            outsideA1: [
-                {
-                    left: 0,
-                    top: 0,
-                    
-                }
-            ],
+            
         };
     }
 
@@ -19,23 +12,17 @@ class LevelCreator {
         this.levelDiv.style.left = 0;
 
         this.levelTileSet = document.createElement("img");
-        this.levelTileSet.src = "assets/sprites/spr_background/kohlingen.png";
+        this.levelTileSet.src = "assets/map/map01.png";
         this.levelTileSet.id = "map";
         this.levelTileSet.alt = "Carte du niveau 1";
         this.levelDiv.appendChild(this.levelTileSet);
-        this.levelDiv.style.width = "495px";
-        this.levelDiv.style.height = "480px";
+        this.levelDiv.style.width = "816px";
+        this.levelDiv.style.height = "624px";
 
         this.addGrid();
     }
-
-    addGrid() {
-        this.grid = {
-            height: 32,
-            width: 32
-        };
-        
-        
+    // TODO : ajouter la gestion de la superposition des tiles 
+    addGrid() {  
         for (let i=0; i<parseFloat(this.levelDiv.style.height); i+=this.grid.height) {
             for (let j=0; j<parseFloat(this.levelDiv.style.width); j+=this.grid.width) {
                 const gridView = document.createElement("div");
