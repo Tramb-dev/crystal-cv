@@ -1,0 +1,26 @@
+#player_container {
+  top: 0;
+  left: 0;
+}
+
+#player {
+  position: absolute;
+  z-index: 100;
+}
+
+#game_container {
+  position: absolute;
+}
+
+.masque {
+  position: absolute;
+  overflow: hidden;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+}
+
+/*# sourceMappingURL=styles.css.map */

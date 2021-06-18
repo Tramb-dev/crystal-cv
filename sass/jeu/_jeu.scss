@@ -1,0 +1,13 @@
+@import "player/player";
+@import "pause/pause";
+@import "ennemies/ennemies";
+@import "levels/levels";
+
+#game_container {
+    position: absolute;
+}
+
+.masque {
+    position: absolute;
+    overflow: hidden;
+}
