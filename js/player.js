@@ -479,7 +479,6 @@ class Player {
         this.playerImg.alt = "Personnage du joueur";
         this.masqueDiv.appendChild(this.playerImg);
         this.choixImageSprite(0);
-        this.controls();
     }
 
     // Gère le déplacement du personnage
@@ -582,7 +581,7 @@ class Player {
                     this.deplacement('versLaGauche');
                     break;
             }
-        });
+        }, false);
         
         window.addEventListener('keyup', keyboardEvent => {
             switch ( keyboardEvent.code ) {

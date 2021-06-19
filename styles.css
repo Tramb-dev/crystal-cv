@@ -16,7 +16,7 @@
 
 #player {
   position: absolute;
-  z-index: 100;
+  z-index: 10;
 }
 
 #game_container {
@@ -28,6 +28,36 @@
   overflow: hidden;
 }
 
+.modal_container {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+.modal_container .modal_content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid lightgray;
+  width: 60%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* dialog {
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+} */
 footer {
   position: absolute;
   bottom: 0;
