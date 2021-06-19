@@ -17,8 +17,6 @@ class Main {
         level1.creation();
         const player = new Player();
         player.creation();
-        player.playerDiv.style.width = level1.grid.width + "px";
-        player.playerDiv.style.height = level1.grid.height + "px";
     }
 }
 

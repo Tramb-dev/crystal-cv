@@ -6,27 +6,32 @@ class Player {
         // permet d'éviter de cumuler l'action des touches sur les déplacements
         this.enCoursDeDeplacement = {
             versLeHaut: {
-                identifiantAnimation: 0,
+                identifiantAnimationDiv: 0,
+                identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
             },
             versLaDroite: {
-                identifiantAnimation: 0,
+                identifiantAnimationDiv: 0,
+                identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
             },
             versLeBas: {
-                identifiantAnimation: 0,
+                identifiantAnimationDiv: 0,
+                identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
             },
             versLaGauche: {
-                identifiantAnimation: 0,
+                identifiantAnimationDiv: 0,
+                identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
             },
             saut: {
-                identifiantAnimation: 0,
+                identifiantAnimationDiv: 0,
+                identifiantAnimationImg: 0,
                 animationEnCours: false,
             }
         };
@@ -457,10 +462,12 @@ class Player {
     // génère le personnage à la création
     creation() {
         this.playerDiv = document.getElementById("player_container");
+        this.playerDiv.style.width = grid.case + "px";
+        this.playerDiv.style.height = grid.case + "px";
+        this.playerDiv.style.top = 0;
+        this.playerDiv.style.left = 0;
 
         this.masqueDiv = document.getElementById("masque_container");
-        this.masqueDiv.style.top = 0;
-        this.masqueDiv.style.left = 0;
 
         this.playerImg = document.createElement("img");
         this.playerImg.src = "assets/sprites/spr_player/Terra_sprites.webp";
@@ -473,8 +480,8 @@ class Player {
 
     // gère le déplacement du personnage
     // TODO : prendre en compte le cas de l'appuie de 2 touches simultanées
-    deplacement(direction){
-        let increment = 5, reverse = false;
+    deplacement(direction, repeat){
+        let reverse = false, increment = grid.case;
         let proprieteDeStyle = 'left';
         let spritePosition = 6;
         switch (direction) {
@@ -497,23 +504,29 @@ class Player {
                 reverse = true;
                 break;
         }
+
+        // Bouge le sprite (la position définit l'emplacement dans l'objet sprite, auquel on ajoute jusqu'à 3 images pour une animation)
+        const bougeSprite = () => {
+            this.choixImageSprite(spritePosition + (this.enCoursDeDeplacement[direction].derniereImage % 3), reverse);
+            this.enCoursDeDeplacement[direction].derniereImage++;
+        };
+
+        const bougePlayerDiv = () => {
+            this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
+        };
         
         if (!this.enCoursDeDeplacement[direction].animationEnCours) {
             this.enCoursDeDeplacement[direction].animationEnCours = true;
-            this.enCoursDeDeplacement[direction].identifiantAnimation = window.setInterval(() => {
-                // Bouge le masque
-                this.masqueDiv.style[proprieteDeStyle] = parseFloat(this.masqueDiv.style[proprieteDeStyle]) + increment + 'px';
-
-                // Bouge le sprite (la position définit l'emplacement dans l'objet sprite, auquel on ajoute jusqu'à 3 images pour une animation)
-                this.choixImageSprite(spritePosition + (this.enCoursDeDeplacement[direction].derniereImage % 3), reverse);
-                this.enCoursDeDeplacement[direction].derniereImage++;
-            }, 50);
+            this.enCoursDeDeplacement[direction].identifiantAnimationImg = window.setInterval(bougeSprite, 66);
+            this.enCoursDeDeplacement[direction].identifiantAnimationDiv = window.setInterval(bougePlayerDiv, 200);
         }
+       
     }
 
     // annule le déplacement (lorsque le joueur arrête d'appuyer sur la touche)
     annulerDeplacement(direction) {
-        window.clearInterval(this.enCoursDeDeplacement[direction].identifiantAnimation);
+        window.clearInterval(this.enCoursDeDeplacement[direction].identifiantAnimationImg);
+        window.clearInterval(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
         this.enCoursDeDeplacement[direction].animationEnCours = false;
         this.enCoursDeDeplacement[direction].derniereImage = 0;
     }
@@ -523,16 +536,16 @@ class Player {
         window.addEventListener('keydown', keyboardEvent => {
             switch ( keyboardEvent.code ) {
                 case 'ArrowUp':
-                    this.deplacement('versLeHaut');
+                    this.deplacement('versLeHaut', keyboardEvent.repeat);
                     break;
                 case 'ArrowRight':
-                    this.deplacement('versLaDroite');
+                    this.deplacement('versLaDroite', keyboardEvent.repeat);
                     break;
                 case 'ArrowDown':
-                    this.deplacement('versLeBas');
+                    this.deplacement('versLeBas', keyboardEvent.repeat);
                     break;
                 case 'ArrowLeft':
-                    this.deplacement('versLaGauche');
+                    this.deplacement('versLaGauche', keyboardEvent.repeat);
                     break;
             }
         });

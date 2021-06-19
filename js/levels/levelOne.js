@@ -23,15 +23,15 @@ class LevelOne extends LevelCreator {
     }
     // TODO : ajouter la gestion de la superposition des tiles 
     addGrid() {  
-        for (let i=0; i<parseFloat(this.levelDiv.style.height); i+=this.grid.height) {
-            for (let j=0; j<parseFloat(this.levelDiv.style.width); j+=this.grid.width) {
+        for (let i=0; i<parseFloat(this.levelDiv.style.height); i+=grid.case) {
+            for (let j=0; j<parseFloat(this.levelDiv.style.width); j+=grid.case) {
                 const gridView = document.createElement("div");
                 gridView.style.border = "solid 1px black";
                 gridView.style.position = "absolute";
                 gridView.style.top = i + "px";
                 gridView.style.left = j + "px";
-                gridView.style.width = this.grid.width + "px";
-                gridView.style.height = this.grid.height + "px";
+                gridView.style.width = grid.case + "px";
+                gridView.style.height = grid.case + "px";
                 this.levelDiv.appendChild(gridView); 
             }
         } 
