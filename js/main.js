@@ -8,15 +8,11 @@ class Main {
             // TODO : réaliser le menu du jeu
             // this.menu()
             
-            this.levelOne();
+            const level = new LevelOne();
+            level.creation();
+            const player = new Player(level.grid, level.startMapPosition, level.tileSets);
+            player.creation();
         });
-    }
-
-    levelOne() {
-        const level1 = new LevelOne();
-        level1.creation();
-        const player = new Player();
-        player.creation();
     }
 }
 

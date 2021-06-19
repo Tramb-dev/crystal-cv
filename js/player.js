@@ -1,8 +1,11 @@
 class Player {
-    constructor() {
+    constructor(grid, startMapPosition, levelMapping) {
         this.playerDiv = '';
         this.playerImg = '';
         this.masqueDiv = '';
+        this.mapPosition = startMapPosition;
+        this.grid = grid;
+        this.levelMapping = levelMapping;
         // permet d'éviter de cumuler l'action des touches sur les déplacements
         this.enCoursDeDeplacement = {
             versLeHaut: {
@@ -459,13 +462,14 @@ class Player {
         ];
     }
 
-    // génère le personnage à la création
+    // Génère le personnage à la création
     creation() {
         this.playerDiv = document.getElementById("player_container");
-        this.playerDiv.style.width = grid.case + "px";
-        this.playerDiv.style.height = grid.case + "px";
-        this.playerDiv.style.top = 0;
-        this.playerDiv.style.left = 0;
+        this.playerDiv.style.width = this.grid.case + "px";
+        this.playerDiv.style.height = this.grid.case + "px";
+        // Placement du personnage au démarrage selon la carte
+        this.playerDiv.style.top = this.mapPosition.x * this.grid.case + "px";
+        this.playerDiv.style.left = this.mapPosition.y * this.grid.case + "px";
 
         this.masqueDiv = document.getElementById("masque_container");
 
@@ -478,10 +482,11 @@ class Player {
         this.controls();
     }
 
-    // gère le déplacement du personnage
+    // Gère le déplacement du personnage
     // TODO : prendre en compte le cas de l'appuie de 2 touches simultanées
-    deplacement(direction, repeat){
-        let reverse = false, increment = grid.case;
+    deplacement(direction){
+        let reverse = false;
+        let increment = this.grid.case;
         let proprieteDeStyle = 'left';
         let spritePosition = 6;
         switch (direction) {
@@ -512,7 +517,29 @@ class Player {
         };
 
         const bougePlayerDiv = () => {
-            this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
+            let x = this.mapPosition.x, y = this.mapPosition.y;
+            switch (direction) {
+                case 'versLeHaut':
+                    x--;
+                    break;
+
+                case 'versLeBas':
+                   x++;
+                    break;
+
+                case 'versLaGauche':
+                    y--;
+                    break;
+
+                case 'versLaDroite':
+                    y++;
+                    break;
+            }
+            if (this.canWalk(x, y)) {
+                this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
+                this.mapPosition.x = x;
+                this.mapPosition.y = y;
+            }
         };
         
         if (!this.enCoursDeDeplacement[direction].animationEnCours) {
@@ -520,10 +547,9 @@ class Player {
             this.enCoursDeDeplacement[direction].identifiantAnimationImg = window.setInterval(bougeSprite, 66);
             this.enCoursDeDeplacement[direction].identifiantAnimationDiv = window.setInterval(bougePlayerDiv, 200);
         }
-       
     }
 
-    // annule le déplacement (lorsque le joueur arrête d'appuyer sur la touche)
+    // Annule le déplacement en cours (lorsque le joueur arrête d'appuyer sur la touche)
     annulerDeplacement(direction) {
         window.clearInterval(this.enCoursDeDeplacement[direction].identifiantAnimationImg);
         window.clearInterval(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
@@ -531,21 +557,29 @@ class Player {
         this.enCoursDeDeplacement[direction].derniereImage = 0;
     }
 
-    // Gestion de l'interaction avec l'utilisateur (clavier/souris)
+    // Test si le joueur peut se déplacer sur la case suivante
+    canWalk(x, y) {
+        if (x >= 0 && y >= 0 && x < this.levelMapping.dimensions.row && y < this.levelMapping.dimensions.col){
+            if (this.levelMapping[x][y].canWalk) return true;
+        }
+        return false;
+    }
+
+    // Gestion de l'interaction avec le joueur (clavier/souris)
     controls() {
         window.addEventListener('keydown', keyboardEvent => {
             switch ( keyboardEvent.code ) {
                 case 'ArrowUp':
-                    this.deplacement('versLeHaut', keyboardEvent.repeat);
+                    this.deplacement('versLeHaut');
                     break;
                 case 'ArrowRight':
-                    this.deplacement('versLaDroite', keyboardEvent.repeat);
+                    this.deplacement('versLaDroite');
                     break;
                 case 'ArrowDown':
-                    this.deplacement('versLeBas', keyboardEvent.repeat);
+                    this.deplacement('versLeBas');
                     break;
                 case 'ArrowLeft':
-                    this.deplacement('versLaGauche', keyboardEvent.repeat);
+                    this.deplacement('versLaGauche');
                     break;
             }
         });
