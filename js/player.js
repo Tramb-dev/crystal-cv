@@ -468,8 +468,8 @@ class Player {
         this.playerDiv.style.width = this.grid.case + "px";
         this.playerDiv.style.height = this.grid.case + "px";
         // Placement du personnage au démarrage selon la carte
-        this.playerDiv.style.top = this.mapPosition.x * this.grid.case + "px";
-        this.playerDiv.style.left = this.mapPosition.y * this.grid.case + "px";
+        this.playerDiv.style.top = this.mapPosition.y * this.grid.case + "px";
+        this.playerDiv.style.left = this.mapPosition.x * this.grid.case + "px";
 
         this.masqueDiv = document.getElementById("masque_container");
 
@@ -519,19 +519,19 @@ class Player {
             let x = this.mapPosition.x, y = this.mapPosition.y;
             switch (direction) {
                 case 'versLeHaut':
-                    x--;
-                    break;
-
-                case 'versLeBas':
-                   x++;
-                    break;
-
-                case 'versLaGauche':
                     y--;
                     break;
 
+                case 'versLeBas':
+                   y++;
+                    break;
+
+                case 'versLaGauche':
+                    x--;
+                    break;
+
                 case 'versLaDroite':
-                    y++;
+                    x++;
                     break;
             }
             if (this.canWalk(x, y)) {
@@ -558,8 +558,12 @@ class Player {
 
     // Test si le joueur peut se déplacer sur la case suivante
     canWalk(x, y) {
-        if (x >= 0 && y >= 0 && x < this.levelMapping.dimensions.row && y < this.levelMapping.dimensions.col){
-            if (this.levelMapping[x][y].canWalk) return true;
+        if (x >= 0 && y >= 0 && y < this.levelMapping.height && x < this.levelMapping.width){
+            // Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur
+            for (const element of this.levelMapping.data[y][x]) {
+                if(!tileSets[this.levelMapping.globalTilesetId].tilesetNames[element.tilesetId].data[element.tileId].canWalk) return false;
+            }
+            return true;
         }
         return false;
     }

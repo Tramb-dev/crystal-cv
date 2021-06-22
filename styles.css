@@ -19,6 +19,12 @@
   z-index: 10;
 }
 
+#level_container {
+  top: 0;
+  left: 0;
+  cursor: none;
+}
+
 #game_container {
   position: absolute;
 }

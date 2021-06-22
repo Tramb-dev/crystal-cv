@@ -17,10 +17,15 @@ class Main {
             
             const level = new LevelOne();
             level.creation();
-            const player = new Player(level.grid, level.startMapPosition, level.tileSets);
+            const player = new Player(level.grid, level.startMapPosition, level.levelOne);
             player.creation();
 
             player.controls();
+            let compteur = 0;
+            /* while(!this.pauseGame) {
+                level.animateLevel(compteur);
+                compteur++;
+            } */
         }, false);
     }
 

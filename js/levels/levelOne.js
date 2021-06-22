@@ -1,737 +1,1653 @@
 class LevelOne extends LevelCreator {
     constructor() {
         super();
-        // Position du joueur sur la grille, où x sont les lignes et y les colonnes
+        // Position du joueur sur la grille, où y sont les lignes et x les colonnes
         this.startMapPosition = {
-            x: 6,
-            y: 0
+            x: 0,
+            y: 6
         }
-        this.tileSets = [
-            [ // x = 0
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 1
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: false,
-                },
-                {
-                    canWalk: false,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 2
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: false,
-                },
-                {
-                    canWalk: false,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 3
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 4
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 5
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 6
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 7
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 8
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 9
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 10
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 11
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-            [ // x = 12
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-                {
-                    canWalk: true,
-                },
-            ],
-        ];
-        this.tileSets.dimensions = {
-            row: 13,
-            col: 17
-        }
+        this.levelOne = {
+            width: 17,
+            height: 13,
+            bgm: {},
+            scrollable: true,
+            globalTilesetId: 0, // Correspond au pack de tilesets à utiliser
+            /* 
+            // data est constitué des lignes (ou ordonnées, ou y) et des colonnes (ou abscisses ou x) de la grille de jeu. Chaque case contient un ou plusieurs calques qui contiennent la référence à la tuile correspondante, et savoir si le joueur peut marcher dessus.
+            */
+            data: [ 
+                [ // y =0
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =1
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =2
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =3
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =4
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =5
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: false
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =6
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =7
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =8
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =9
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =10
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =11
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+                [ // y =12
+                    [ // x = 0
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 1
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 2
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 3
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 4
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 5
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 6
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 7
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 8
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 9
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 10
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 11
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 12
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 13
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 14
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 15
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                    [ // x = 16
+                        {
+                            tilesetId: 0,
+                            tileId: 0,
+                            canWalk: true
+                        },
+                    ],
+                ],
+            ]
+        };
     }
 
     creation() {
         this.levelDiv = document.getElementById("level_container");
-        this.levelDiv.style.top = 0;
-        this.levelDiv.style.left = 0;
-        this.levelDiv.style.cursor = 'none';
 
-        this.levelTileSet = document.createElement("img");
-        this.levelTileSet.src = "assets/map/map01.png";
+        /* this.levelTileSet = document.createElement("img");
+        //this.levelTileSet.src = "assets/map/map01.png";
+        this.levelTileSet.src = "assets/sprites/spr_tileset/Outside_A1.png";
         this.levelTileSet.id = "map";
         this.levelTileSet.alt = "Carte du niveau 1";
-        this.levelDiv.appendChild(this.levelTileSet);
-        this.levelDiv.style.width = "816px";
-        this.levelDiv.style.height = "624px";
+        this.levelDiv.appendChild(this.levelTileSet); */
+        this.levelDiv.style.width = this.levelOne.width * this.grid.case + "px";
+        this.levelDiv.style.height = this.levelOne.height * this.grid.case + "px";
 
         this.addGrid();
+        //this.animateLevel();
     }
     // TODO : ajouter la gestion de la superposition des tiles 
     addGrid() {  
-        for (let i=0; i<parseFloat(this.levelDiv.style.height); i+=this.grid.case) {
-            for (let j=0; j<parseFloat(this.levelDiv.style.width); j+=this.grid.case) {
+        for (let i=0; i<this.levelOne.height; i++) {
+            for (let j=0; j<this.levelOne.width; j++) {
                 const gridView = document.createElement("div");
-                //gridView.style.border = "solid 1px black";
+                const gridImg = document.createElement("img");
+                const currentTileSet = tileSets[this.levelOne.globalTilesetId];
+                const currentTile = currentTileSet.tilesetNames[this.levelOne.data[i][j][0].tilesetId].data[this.levelOne.data[i][j][0].tileId];
+               // gridView.style.border = "solid 1px black";
                 gridView.style.position = "absolute";
-                gridView.style.top = i + "px";
-                gridView.style.left = j + "px";
+                gridView.style.top = i * this.grid.case + "px";
+                gridView.style.left = j * this.grid.case + "px";
                 gridView.style.width = this.grid.case + "px";
                 gridView.style.height = this.grid.case + "px";
+                gridImg.src = currentTileSet.path + currentTileSet.tilesetNames[this.levelOne.data[i][j][0].tilesetId].tilesetName + ".png";
+                // 
+                gridImg.style.left = currentTile.position.x;
+                gridImg.style.top = currentTile.position.y;
+                gridImg.setAttribute("data-row", i) ;
+                gridImg.setAttribute("data-col", j) ;
+                gridView.appendChild(gridImg);
                 this.levelDiv.appendChild(gridView); 
             }
         } 
+    }
+
+    // Lance les animations du niveau
+    animateLevel(compteur) {
+        for (let i=0; i<this.levelOne.height; i++) {
+            for (let j=0; j<this.levelOne.width; j++) {
+                const currentTileSet = tileSets[this.levelOne.globalTilesetId];
+                const currentTile = currentTileSet.tilesetNames[this.levelOne.data[i][j][0].tilesetId].data[this.levelOne.data[i][j][0].tileId];
+                if (currentTile.isAnimation) { 
+                    const step = () => {
+                        gridImg.style.left = currentTile.animation[compteur % currentTile.animation.length].x * this.grid.case + "px";
+                        gridImg.style.top = currentTile.animation[compteur % currentTile.animation.length].y * this.grid.case + "px";
+                    };
+                    requestAnimationFrame(step);
+                }
+            }
+        }
     }
 }
