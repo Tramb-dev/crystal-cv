@@ -5,7 +5,9 @@ class LevelOne extends LevelCreator {
         this.startMapPosition = {
             x: 0,
             y: 6
-        }
+        };
+        this.timePassed = 0;
+        this.animationCounter = 0;
         this.levelOne = {
             width: 17,
             height: 13,
@@ -27,7 +29,7 @@ class LevelOne extends LevelCreator {
                     [ // x = 1
                         {
                             tilesetId: 0,
-                            tileId: 0,
+                            tileId: 1,
                             canWalk: true
                         },
                     ],
@@ -148,14 +150,14 @@ class LevelOne extends LevelCreator {
                     [ // x = 1
                         {
                             tilesetId: 0,
-                            tileId: 0,
+                            tileId: 2,
                             canWalk: true
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
-                            tileId: 0,
+                            tileId: 3,
                             canWalk: true
                         },
                     ],
@@ -269,14 +271,14 @@ class LevelOne extends LevelCreator {
                     [ // x = 1
                         {
                             tilesetId: 0,
-                            tileId: 0,
+                            tileId: 4,
                             canWalk: true
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
-                            tileId: 0,
+                            tileId: 5,
                             canWalk: true
                         },
                     ],
@@ -1593,15 +1595,9 @@ class LevelOne extends LevelCreator {
         };
     }
 
-    creation() {
+    init() {
         this.levelDiv = document.getElementById("level_container");
-
-        /* this.levelTileSet = document.createElement("img");
-        //this.levelTileSet.src = "assets/map/map01.png";
-        this.levelTileSet.src = "assets/sprites/spr_tileset/Outside_A1.png";
-        this.levelTileSet.id = "map";
-        this.levelTileSet.alt = "Carte du niveau 1";
-        this.levelDiv.appendChild(this.levelTileSet); */
+        this.levelDiv.style.display = "block";
         this.levelDiv.style.width = this.levelOne.width * this.grid.case + "px";
         this.levelDiv.style.height = this.levelOne.height * this.grid.case + "px";
 
@@ -1617,7 +1613,7 @@ class LevelOne extends LevelCreator {
                 const currentTileSet = tileSets[this.levelOne.globalTilesetId];
                 const currentTile = currentTileSet.tilesetNames[this.levelOne.data[i][j][0].tilesetId].data[this.levelOne.data[i][j][0].tileId];
                // gridView.style.border = "solid 1px black";
-                gridView.style.position = "absolute";
+                gridView.classList.add("tile_container");
                 gridView.style.top = i * this.grid.case + "px";
                 gridView.style.left = j * this.grid.case + "px";
                 gridView.style.width = this.grid.case + "px";
@@ -1635,19 +1631,28 @@ class LevelOne extends LevelCreator {
     }
 
     // Lance les animations du niveau
-    animateLevel(compteur) {
+    animateLevel() {
         for (let i=0; i<this.levelOne.height; i++) {
+            const rowImg = document.querySelectorAll('[data-row="' + i + '"]');
             for (let j=0; j<this.levelOne.width; j++) {
                 const currentTileSet = tileSets[this.levelOne.globalTilesetId];
                 const currentTile = currentTileSet.tilesetNames[this.levelOne.data[i][j][0].tilesetId].data[this.levelOne.data[i][j][0].tileId];
                 if (currentTile.isAnimation) { 
-                    const step = () => {
-                        gridImg.style.left = currentTile.animation[compteur % currentTile.animation.length].x * this.grid.case + "px";
-                        gridImg.style.top = currentTile.animation[compteur % currentTile.animation.length].y * this.grid.case + "px";
-                    };
-                    requestAnimationFrame(step);
+                    const compteur = Math.floor(this.timePassed % currentTile.animation.length);
+                    const gridImg = rowImg[j];
+                    gridImg.style.left = - currentTile.animation[compteur].x * this.grid.case + "px";
+                    gridImg.style.top = - currentTile.animation[compteur].y * this.grid.case + "px";
                 }
             }
         }
+    }
+
+    update(secondsPassed) {
+        this.timePassed += secondsPassed;
+        this.animateLevel();
+    }
+
+    draw() {
+        
     }
 }

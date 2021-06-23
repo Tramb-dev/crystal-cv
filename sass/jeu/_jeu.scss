@@ -1,10 +1,16 @@
 @import "player/player";
-@import "pause/pause";
+@import "menu/menu";
 @import "ennemies/ennemies";
 @import "levels/levels";
 
 #game_container {
     position: absolute;
+}
+
+canvas {
+    position: absolute;
+    width: 600px;
+    height: 400px;
 }
 
 .masque {
@@ -34,12 +40,3 @@
         box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
     }
 }
-
-/* dialog {
-    border-radius: 10px;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-
-    &::backdrop {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-} */

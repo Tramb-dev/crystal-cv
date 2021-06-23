@@ -463,8 +463,9 @@ class Player {
     }
 
     // Génère le personnage à la création
-    creation() {
+    init() {
         this.playerDiv = document.getElementById("player_container");
+        this.playerDiv.style.display = "block";
         this.playerDiv.style.width = this.grid.case + "px";
         this.playerDiv.style.height = this.grid.case + "px";
         // Placement du personnage au démarrage selon la carte
@@ -479,6 +480,45 @@ class Player {
         this.playerImg.alt = "Personnage du joueur";
         this.masqueDiv.appendChild(this.playerImg);
         this.choixImageSprite(0);
+
+        this.controls();
+    }
+
+    // Gestion de l'interaction avec le joueur (clavier/souris)
+    controls() {
+        window.addEventListener('keydown', keyboardEvent => {
+            switch ( keyboardEvent.code ) {
+                case 'ArrowUp':
+                    this.deplacement('versLeHaut');
+                    break;
+                case 'ArrowRight':
+                    this.deplacement('versLaDroite');
+                    break;
+                case 'ArrowDown':
+                    this.deplacement('versLeBas');
+                    break;
+                case 'ArrowLeft':
+                    this.deplacement('versLaGauche');
+                    break;
+            }
+        }, false);
+        
+        window.addEventListener('keyup', keyboardEvent => {
+            switch ( keyboardEvent.code ) {
+                case 'ArrowUp':
+                    this.annulerDeplacement('versLeHaut');
+                    break;
+                case 'ArrowRight':
+                    this.annulerDeplacement('versLaDroite');
+                    break;
+                case 'ArrowDown':
+                    this.annulerDeplacement('versLeBas');
+                    break;
+                case 'ArrowLeft':
+                    this.annulerDeplacement('versLaGauche');
+                    break;
+            }
+        });
     }
 
     // Gère le déplacement du personnage
@@ -568,43 +608,7 @@ class Player {
         return false;
     }
 
-    // Gestion de l'interaction avec le joueur (clavier/souris)
-    controls() {
-        window.addEventListener('keydown', keyboardEvent => {
-            switch ( keyboardEvent.code ) {
-                case 'ArrowUp':
-                    this.deplacement('versLeHaut');
-                    break;
-                case 'ArrowRight':
-                    this.deplacement('versLaDroite');
-                    break;
-                case 'ArrowDown':
-                    this.deplacement('versLeBas');
-                    break;
-                case 'ArrowLeft':
-                    this.deplacement('versLaGauche');
-                    break;
-            }
-        }, false);
-        
-        window.addEventListener('keyup', keyboardEvent => {
-            switch ( keyboardEvent.code ) {
-                case 'ArrowUp':
-                    this.annulerDeplacement('versLeHaut');
-                    break;
-                case 'ArrowRight':
-                    this.annulerDeplacement('versLaDroite');
-                    break;
-                case 'ArrowDown':
-                    this.annulerDeplacement('versLeBas');
-                    break;
-                case 'ArrowLeft':
-                    this.annulerDeplacement('versLaGauche');
-                    break;
-            }
-        });
-    }
-
+    
     // Choisi le sprite à afficher et les dimensions du masque
     choixImageSprite(spritePosition, reverse = false) {
         if (reverse) {
@@ -616,5 +620,13 @@ class Player {
         this.masqueDiv.style.width = this.sprite[spritePosition][0].width + "px";
         this.masqueDiv.style.height = this.sprite[spritePosition][0].height + "px";
         this.playerImg.style.top = this.sprite[spritePosition][1].top + "px";
+    }
+
+    update(secondsPassed) {
+       // this.controls();
+    }
+
+    draw() {
+
     }
 }
