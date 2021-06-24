@@ -1,0 +1,14 @@
+#level_container {
+    cursor: none;
+    display: none;
+    align-self: center;
+}
+
+.tile_container {
+    position: absolute;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+    }
+}

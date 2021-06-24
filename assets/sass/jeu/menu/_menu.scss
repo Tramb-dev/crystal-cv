@@ -1,0 +1,12 @@
+#menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    .btn {
+        flex-basis: 50px;
+    }
+}

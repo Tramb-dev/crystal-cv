@@ -4,24 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <link href="vendors/fontawesome-5.15.3/css/all.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/sprites.js"></script>
-    <script src="js/levels/levels.js"></script>
-    <script src="js/levels/levelOne.js"></script>
-    <script src="js/main.js"></script>
+    <script src="assets/js/player.js"></script>
+    <script src="assets/js/sprites.js"></script>
+    <script src="assets/js/levels/levels.js"></script>
+    <script src="assets/js/levels/levelOne.js"></script>
+    <script src="assets/js/main.js"></script>
     <title>Crystal CV</title>
 </head>
 <body>
-    <header>
-        <h1>Résolvez ces énigmes et sauvez le web !</h1>
-    </header>
+    <nav class="navbar navbar-expand-md" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="https://ravier.online" title="Visiter mon portfolio">Ravier</a>
+            <button class="navbar-toggler" 
+                    type="button" 
+                    id="navbarSideOpen"
+                    aria-label="Ouvrir le menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarNav" aria-label="Menu">
+                <div class="offcanvas-header">
+                    <button type="button" class="navbar-toggler" id="navbarSideClose" data-bs-dismiss="offcanvas" aria-label="Fermer">
+                        <span class="toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://ravier.online">Visiter mon portfolio</a>
+                        </li>
+                        <li >
+                            <a class="nav-link" id="nav-email" href="mailto:bertrand.ravier@gmail.com">Contactez-moi !</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div id="game_container">
         <div id="menu">
-            <button class="btn" type="button">Démarrer le jeu</button>
+            <button class="button" type="button">Démarrer le jeu</button>
         </div>
-        <canvas id="myCanvas" width="480" height="320"></canvas>
+       <!--  <canvas id="myCanvas" width="480" height="320"></canvas> -->
         <div id="level_container" class="masque"></div>
         <div id="player_container">
             <div id="masque_container" class="masque"></div>
@@ -32,9 +59,28 @@
             </div>
         </div>
     </div>
-    <footer>
+    <div class="help">
         Vous n'arrivez pas à finir le jeu ? Le résultat est par ici : <a href="assets/Bertrand Ravier - CV.pdf" title="Bertrand Ravier CV">Mon CV en PDF</a>
+    </div>
+    <footer>
+        <div class="container footer-section text-light">
+            <div class="footer-heading">
+                <h2>Pour me contacter</h2>
+            </div>
+            <a class="link-light" href="mailto:bertrand.ravier@gmail.com">
+                <h3>Bertrand.Ravier@gmail.com</h3>
+            </a>
+            <div class="social">
+                <a class="link-light" href="https://www.linkedin.com/in/bertrand-ravier" target="_blank" title="Mon LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a class="link-light" href="https://github.com/Tramb-dev" target="_blank" title="Mon Github">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
     </footer>
     <noscript>Veuillez activer Javascript sur votre navigateur pour profiter du jeu</noscript>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
