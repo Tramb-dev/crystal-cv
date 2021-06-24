@@ -1,4 +1,33 @@
+//@import "../../vendors/bootstrap/scss/bootstrap";
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../vendors/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
 @import "globals/variables";
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../../vendors/bootstrap/scss/variables";
+@import "../../vendors/bootstrap/scss/mixins";
+
+// 4. Include any optional Bootstrap components as you like
+@import "../../vendors/bootstrap/scss/root";
+@import "../../vendors/bootstrap/scss/reboot";
+@import "../../vendors/bootstrap/scss/type";
+@import "../../vendors/bootstrap/scss/images";
+@import "../../vendors/bootstrap/scss/containers";
+@import "../../vendors/bootstrap/scss/grid";
+
+@import "../../vendors/bootstrap/scss/offcanvas";
+@import "../../vendors/bootstrap/scss/nav";
+@import "../../vendors/bootstrap/scss/navbar";
+@import "../../vendors/bootstrap/scss/helpers";
+@import "../../vendors/bootstrap/scss/utilities";
+
+// FontAwesome
+@import "../../vendors/fontawesome/scss/fontawesome";
+@import "../../vendors/fontawesome/scss/brands";
+
 @import "globals/globals";
 @import "cv/cv";
 @import "menu/menu";

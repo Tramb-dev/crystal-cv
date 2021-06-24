@@ -17,24 +17,21 @@ class Main {
                 if (!this.launchGame) this.menu();
             }
         }, false);
-        document.querySelector('.btn').addEventListener('click', () => {
+        document.querySelector('.button').addEventListener('click', () => {
             this.menu();
         }, false);
 
-        // Gestion du offcanvas
+        // Gestion du offcanvas du site
         const navBarOn = document.querySelector('#navbarSideOpen');
         const navBarOff = document.querySelector('#navbarSideClose');
         const offcanvas = document.querySelector('.offcanvas-collapse');
         const link = document.querySelectorAll('.offcanvas-body a');
-
         navBarOn.addEventListener('click', function () {
             offcanvas.classList.add('open');
         });
-
         navBarOff.addEventListener('click', function () {
             offcanvas.classList.remove('open')
         });
-
         link.forEach(element => {
             element.addEventListener('click', () => {
                 offcanvas.classList.remove('open');
@@ -47,12 +44,12 @@ class Main {
         ]; */
     }
 
-    // TODO : réaliser le menu du jeu
     menu() {
+        $("#menu").fadeOut(400);
         this.launchGame = true;
         this.level = new LevelOne();
         this.level.init();
-        this.player = new Player(this.level.grid, this.level.startMapPosition, this.level.levelOne);
+        this.player = new Player(this.level.grid, this.level.startMapPosition, this.level.levelOne, this.level.offsetX);
         this.player.init();
 
         window.requestAnimationFrame((timeStamp) => this.gameLoop(timeStamp));

@@ -1,7 +1,9 @@
 #level_container {
     cursor: none;
-    display: none;
+    display: grid;
+    opacity: 0;
     align-self: center;
+    transition: opacity .4s ease-in-out;
 }
 
 .tile_container {

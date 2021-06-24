@@ -24,119 +24,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 1,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -145,7 +145,7 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
@@ -159,105 +159,105 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 3,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -266,119 +266,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 4,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 5,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -387,119 +387,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -508,119 +508,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -636,112 +636,112 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -750,119 +750,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -871,119 +871,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -992,119 +992,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -1113,119 +1113,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -1234,119 +1234,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -1355,119 +1355,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -1476,119 +1476,119 @@ class LevelOne extends LevelCreator {
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 1
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 2
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 3
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 4
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 5
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 6
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 7
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 8
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 9
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 10
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 11
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 12
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 13
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 14
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 15
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                     [ // x = 16
                         {
                             tilesetId: 0,
                             tileId: 0,
-                            canWalk: true
+                            
                         },
                     ],
                 ],
@@ -1598,7 +1598,7 @@ class LevelOne extends LevelCreator {
 
     init() {
         this.levelDiv = document.getElementById("level_container");
-        this.levelDiv.style.display = "grid";
+        this.levelDiv.style.opacity = 1;
         this.levelDiv.style.gridTemplateRows = "repeat(" + this.levelOne.height + ", " + this.grid.case + "px)";
         this.levelDiv.style.gridTemplateColumns = "repeat(" + this.levelOne.width + ", " + this.grid.case + "px)";
         this.levelDiv.style.width = this.levelOne.width * this.grid.case + "px";

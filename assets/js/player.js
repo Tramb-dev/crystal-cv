@@ -466,7 +466,7 @@ class Player {
     // Génère le personnage à la création
     init() {
         this.playerDiv = document.getElementById("player_container");
-        this.playerDiv.style.display = "block";
+        this.playerDiv.style.opacity = 1;
         this.playerDiv.style.width = this.grid.case + "px";
         this.playerDiv.style.height = this.grid.case + "px";
         // Placement du personnage au démarrage selon la carte
@@ -491,15 +491,20 @@ class Player {
             switch ( keyboardEvent.code ) {
                 case 'ArrowUp':
                     this.deplacement('versLeHaut');
+                    // On empêche le scroll par les touches
+                    keyboardEvent.preventDefault();
                     break;
                 case 'ArrowRight':
                     this.deplacement('versLaDroite');
+                    keyboardEvent.preventDefault();
                     break;
                 case 'ArrowDown':
                     this.deplacement('versLeBas');
+                    keyboardEvent.preventDefault();
                     break;
                 case 'ArrowLeft':
                     this.deplacement('versLaGauche');
+                    keyboardEvent.preventDefault();
                     break;
             }
         }, false);
@@ -600,15 +605,15 @@ class Player {
     // Test si le joueur peut se déplacer sur la case suivante
     canWalk(x, y) {
         if (x >= 0 && y >= 0 && y < this.levelMapping.height && x < this.levelMapping.width){
-            // Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur
+            /* Si on a spécifié qu'une case peut être traversée malgré tout, comme un passage secret par exemple
+            Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur */
             for (const element of this.levelMapping.data[y][x]) {
-                if(!tileSets[this.levelMapping.globalTilesetId].tilesetNames[element.tilesetId].data[element.tileId].canWalk) return false;
+                if(!tileSets[this.levelMapping.globalTilesetId].tilesetNames[element.tilesetId].data[element.tileId].canWalk && element.canWalk !== true) return false;
             }
             return true;
         }
         return false;
     }
-
     
     // Choisi le sprite à afficher et les dimensions du masque
     choixImageSprite(spritePosition, reverse = false) {
