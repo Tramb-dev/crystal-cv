@@ -6,11 +6,13 @@
    // background-image: url('assets/img/menu/Monument.png');
     height: 100%;
     color: $white;
+    transition: opacity .4s ease-in-out;
 
     img {
         position: absolute;
         z-index: -1;
         opacity: 0.8;
+        animation-duration: .4s;
     }
 
     h1 {

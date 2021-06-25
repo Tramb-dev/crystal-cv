@@ -142,7 +142,72 @@ const tileSets = [
                         ]
                     },
                 ]
-            }
+            },
+            {
+                tilesetName: "Outside_A2",
+                data: [
+                    { // 0 herbe
+                        position: {
+                            x: 0,
+                            y: 0
+                        },
+                        canWalk: true,
+                        isAnimation: false,
+                    },
+                ]
+            },
+            {
+                tilesetName: "Outside_A3",
+                data: [
+                    { // 0 Toit coloré
+                        position: {
+                            x: 0,
+                            y: 0
+                        },
+                        canWalk: false,
+                        isAnimation: false,
+                    },
+                ]
+            },
+            {
+                tilesetName: "Outside_A4",
+                data: [
+                    { // 0 Mur de pierre
+                        position: {
+                            x: 0,
+                            y: 0
+                        },
+                        canWalk: false,
+                        isAnimation: false,
+                    },
+                ]
+            },
+            {
+                tilesetName: "Outside_A5",
+                data: [
+                    { // 0 Noir
+                        position: {
+                            x: 0,
+                            y: 0
+                        },
+                        canWalk: false,
+                        isAnimation: false,
+                    },
+                ]
+            },
+            {
+                tilesetName: "Outside_B",
+                data: [
+                    { // 0 Escalier
+                        position: {
+                            x: 1,
+                            y: 0
+                        },
+                        canWalk: true,
+                        isAnimation: false,
+                    },
+                ]
+            },
         ]
     }
 ];

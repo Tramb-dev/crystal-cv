@@ -4,6 +4,9 @@
     opacity: 0;
     align-self: center;
     transition: opacity .4s ease-in-out;
+    gap: 0;
+    user-select: none;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
 .tile_container {

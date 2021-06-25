@@ -45,11 +45,15 @@ class Main {
     }
 
     menu() {
-        $("#menu").fadeOut(400);
+        const menu = document.getElementById('menu');
+        menu.style.opacity = 0;
+        window.setTimeout(function() {
+            menu.style.display = 'none';
+        }, 400);
         this.launchGame = true;
         this.level = new LevelOne();
         this.level.init();
-        this.player = new Player(this.level.grid, this.level.startMapPosition, this.level.levelOne, this.level.offsetX);
+        this.player = new Player(this.level.case, this.level.startMapPosition, this.level.levelMap, this.level.offsetX);
         this.player.init();
 
         window.requestAnimationFrame((timeStamp) => this.gameLoop(timeStamp));
@@ -77,6 +81,7 @@ class Main {
         }
     }
 
+    // Mise en place d'une boucle pour afficher les animations du terrain, notamment
     gameLoop(timestamp) {
         //if (this.pauseGame) return;
         // Calcul des secondes passées depuis la dernière frame

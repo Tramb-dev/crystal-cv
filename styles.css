@@ -8931,11 +8931,13 @@ footer {
   justify-content: center;
   height: 100%;
   color: #f8fbfd;
+  transition: opacity 0.4s ease-in-out;
 }
 #menu img {
   position: absolute;
   z-index: -1;
   opacity: 0.8;
+  animation-duration: 0.4s;
 }
 #menu h1, #menu .h1 {
   margin-bottom: 60px;
@@ -8996,6 +8998,9 @@ footer {
   opacity: 0;
   align-self: center;
   transition: opacity 0.4s ease-in-out;
+  gap: 0;
+  user-select: none;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
 .tile_container {
@@ -9009,11 +9014,12 @@ footer {
 #game_container {
   position: relative;
   height: 624px;
+  width: 816px;
   z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 0.6em;
+  margin: 0.6em auto;
 }
 
 canvas {
@@ -9029,10 +9035,7 @@ canvas {
 
 .modal_container {
   display: none;
-  position: fixed;
   z-index: 20;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
