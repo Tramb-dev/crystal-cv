@@ -8,7 +8,7 @@ class Personnage {
 
         // Gère le déplacement du personnage
     // TODO : prendre en compte le cas de l'appuie de 2 touches simultanées
-    deplacement(direction){
+    deplacement(direction, timestamp){
         let reverse = false;
         let increment = this.grid;
         let proprieteDeStyle = 'left';
@@ -35,51 +35,69 @@ class Personnage {
         }
 
         // Bouge le sprite (la position définit l'emplacement dans l'objet sprite, auquel on ajoute jusqu'à 3 images pour une animation)
+        const nbFPSSprite = 5;
+        let nbAnimationSprite = 0;
         const bougeSprite = () => {
-            this.choixImageSprite(spritePosition + (this.enCoursDeDeplacement[direction].derniereImage % 3), reverse);
-            this.enCoursDeDeplacement[direction].derniereImage++;
+            if (0 == nbAnimationSprite % nbFPSSprite){
+                this.choixImageSprite(spritePosition + (this.enCoursDeDeplacement[direction].derniereImage % 3), reverse);
+                this.enCoursDeDeplacement[direction].derniereImage++;
+            }
+            
+            nbAnimationSprite++;
+            this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(bougeSprite);
         };
 
+        const nbFPSPlayerDiv = 10;
+        let nbAnimationPlayerDiv = 0;
         const bougePlayerDiv = () => {
-            //let x = this.mapPosition.x, y = this.mapPosition.y;
-            let x = 0, y = 0;
-            switch (direction) {
-                case 'versLeHaut':
-                    y--;
-                    break;
+            if (0 == nbAnimationPlayerDiv % nbFPSPlayerDiv){
+                let x = 0, y = 0;
+                switch (direction) {
+                    case 'versLeHaut':
+                        y--;
+                        break;
 
-                case 'versLeBas':
-                   y++;
-                    break;
+                    case 'versLeBas':
+                        y++;
+                        break;
 
-                case 'versLaGauche':
-                    x--;
-                    break;
+                    case 'versLaGauche':
+                        x--;
+                        break;
 
-                case 'versLaDroite':
-                    x++;
-                    break;
+                    case 'versLaDroite':
+                        x++;
+                        break;
+                }
+                if (this.canWalk(x, y)) {
+                    this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
+                    this.mapPosition.x += x;
+                    this.mapPosition.y += y;
+                    this.gridPosition.x += x;
+                    this.gridPosition.y += y;
+                }
             }
-            if (this.canWalk(x, y)) {
-                this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
-                this.mapPosition.x += x;
-                this.mapPosition.y += y;
-                this.gridPosition.x += x;
-                this.gridPosition.y += y;
-            }
+            nbAnimationPlayerDiv++;
+            this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
         };
         
-        if (!this.enCoursDeDeplacement[direction].animationEnCours) {
+        /* if (!this.enCoursDeDeplacement[direction].animationEnCours) {
             this.enCoursDeDeplacement[direction].animationEnCours = true;
             this.enCoursDeDeplacement[direction].identifiantAnimationImg = window.setInterval(bougeSprite, 66);
             this.enCoursDeDeplacement[direction].identifiantAnimationDiv = window.setInterval(bougePlayerDiv, 200);
+        } */
+        
+        if (!this.enCoursDeDeplacement[direction].animationEnCours) {
+            this.enCoursDeDeplacement[direction].animationEnCours = true;
+            this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(bougeSprite);
+            this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
         }
     }
 
     // Annule le déplacement en cours (lorsque le joueur arrête d'appuyer sur la touche)
     annulerDeplacement(direction) {
-        window.clearInterval(this.enCoursDeDeplacement[direction].identifiantAnimationImg);
-        window.clearInterval(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
+        cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationImg);
+        cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
         this.enCoursDeDeplacement[direction].animationEnCours = false;
         this.enCoursDeDeplacement[direction].derniereImage = 0;
     }

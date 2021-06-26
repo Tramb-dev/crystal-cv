@@ -482,54 +482,30 @@ class Player extends Personnage {
         this.playerImg.alt = "Personnage du joueur";
         this.masqueDiv.appendChild(this.playerImg);
         this.choixImageSprite(0);
-
-        this.controls();
     }
 
-    // Gestion de l'interaction avec le joueur (clavier/souris)
-    controls() {
-        window.addEventListener('keydown', keyboardEvent => {
-            switch ( keyboardEvent.code ) {
-                case 'ArrowUp':
-                    this.deplacement('versLeHaut');
-                    // On empêche le scroll par les touches
-                    keyboardEvent.preventDefault();
-                    break;
-                case 'ArrowRight':
-                    this.deplacement('versLaDroite');
-                    keyboardEvent.preventDefault();
-                    break;
-                case 'ArrowDown':
-                    this.deplacement('versLeBas');
-                    keyboardEvent.preventDefault();
-                    break;
-                case 'ArrowLeft':
-                    this.deplacement('versLaGauche');
-                    keyboardEvent.preventDefault();
-                    break;
-            }
-        }, false);
-        
-        window.addEventListener('keyup', keyboardEvent => {
-            switch ( keyboardEvent.code ) {
-                case 'ArrowUp':
-                    this.annulerDeplacement('versLeHaut');
-                    break;
-                case 'ArrowRight':
-                    this.annulerDeplacement('versLaDroite');
-                    break;
-                case 'ArrowDown':
-                    this.annulerDeplacement('versLeBas');
-                    break;
-                case 'ArrowLeft':
-                    this.annulerDeplacement('versLaGauche');
-                    break;
-            }
-        });
-    }
-
-    update(secondsPassed) {
+    update(secondsPassed, keybordPressed) {
         this.timePassed += secondsPassed;
+        if ( keybordPressed[37] ) {
+            this.deplacement('versLaGauche', keybordPressed[37]);
+        } else if (this.enCoursDeDeplacement.versLaGauche.animationEnCours) {
+            this.annulerDeplacement('versLaGauche');
+        }
+        if ( keybordPressed[38] ) {
+            this.deplacement('versLeHaut', keybordPressed[38]);
+        } else if (this.enCoursDeDeplacement.versLeHaut.animationEnCours) {
+            this.annulerDeplacement('versLeHaut');
+        }
+        if ( keybordPressed[39] ) {
+            this.deplacement('versLaDroite', keybordPressed[39]);
+        } else if (this.enCoursDeDeplacement.versLaDroite.animationEnCours) {
+            this.annulerDeplacement('versLaDroite');
+        }
+        if ( keybordPressed[40] ) {
+            this.deplacement('versLeBas', keybordPressed[40]);
+        } else if (this.enCoursDeDeplacement.versLeBas.animationEnCours) {
+            this.annulerDeplacement('versLeBas');
+        }
     }
 
     draw() {

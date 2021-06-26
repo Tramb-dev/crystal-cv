@@ -3,23 +3,33 @@ class Main {
         this.pauseGame = false;
         this.oldTimestamp = 0;
         this.score = 0;
+        this.keybordControls = new Controls();
         //this.gameObjects = [];
 
         this.init();
     }
 
     init() {
-        window.addEventListener('keydown', KeyboardEvent => {
-            if (('Escape' == KeyboardEvent.code || 'Pause' == KeyboardEvent.code || 'KeyP' == KeyboardEvent.code) && !KeyboardEvent.repeat && this.launchGame) {
+        window.addEventListener('keydown', keyboardEvent => {
+            if (('Escape' == keyboardEvent.code || 'Pause' == keyboardEvent.code || 'KeyP' == keyboardEvent.code) && !keyboardEvent.repeat && this.launchGame) {
                 this.pause();
-                KeyboardEvent.preventDefault();
-            } else if ('Enter' == KeyboardEvent.code && !KeyboardEvent.repeat) {
+                keyboardEvent.preventDefault();
+            } else if ('Enter' == keyboardEvent.code && !keyboardEvent.repeat) {
                 if (!this.launchGame) this.menu();
             }
         }, false);
         document.querySelector('.button').addEventListener('click', () => {
             this.menu();
         }, false);
+
+        window.addEventListener('keydown', keyboardEvent => { 
+            this.keybordControls.onKeyDown(keyboardEvent); 
+            keyboardEvent.preventDefault();
+        }, false);
+        window.addEventListener('keyup', keyboardEvent => { 
+            this.keybordControls.onKeyUp(keyboardEvent); 
+        }, false);
+
 
         // Gestion du offcanvas du site
         const navBarOn = document.querySelector('#navbarSideOpen');
@@ -64,10 +74,10 @@ class Main {
         this.pauseGame = !this.pauseGame;
 
         // Blocage des touches de navigation pendant la pause, et réactivation une fois la pause enlevée
-        const blocageTouches = KeyboardEvent => {
-            if ('ArrowUp' == KeyboardEvent.code || 'ArrowRight' == KeyboardEvent.code || 'ArrowDown' == KeyboardEvent.code || 'ArrowLeft' == KeyboardEvent.code) {
+        const blocageTouches = keyboardEvent => {
+            if ('ArrowUp' == keyboardEvent.code || 'ArrowRight' == keyboardEvent.code || 'ArrowDown' == keyboardEvent.code || 'ArrowLeft' == keyboardEvent.code) {
                 if (this.pauseGame) {
-                    KeyboardEvent.stopPropagation();
+                    keyboardEvent.stopPropagation();
                 }
             }
         };
@@ -96,6 +106,7 @@ class Main {
         for (let i = 0; i < this.gameObjects.length; i++) {
             this.gameObjects[i].draw();
         } */
+        
         if(!this.pauseGame) {
             /* 
             Après appuie d'une direction
@@ -107,7 +118,7 @@ class Main {
                             bouge le perso
             */
             this.level.update(secondsPassed, this.player.mapPosition);
-            this.player.update(secondsPassed);
+            this.player.update(secondsPassed, this.keybordControls.pressed);
         }
 
         this.level.draw();
