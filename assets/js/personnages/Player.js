@@ -1,11 +1,16 @@
 class Player extends Personnage {
-    constructor(grid) {
+    constructor(grid, camera) {
         super();
         this.playerDiv = document.getElementById("player_container");
         this.playerImg = document.createElement("img");
         this.masqueDiv = document.getElementById("masque_container");
         this.mapPosition = levelMap.startMapPosition;
+        this.gridPosition = {
+            x: levelMap.startMapPosition.x - camera.position.startX,
+            y: levelMap.startMapPosition.y - camera.position.startY,
+        };
         this.grid = grid;
+        this.cameraSize = camera.size;
         // permet d'éviter de cumuler l'action des touches sur les déplacements
         this.enCoursDeDeplacement = {
             versLeHaut: {
@@ -460,6 +465,7 @@ class Player extends Personnage {
                 }
             ],
         ];
+        this.init();
     }
 
     // Génère le personnage à la création
@@ -468,8 +474,8 @@ class Player extends Personnage {
         this.playerDiv.style.width = this.grid + "px";
         this.playerDiv.style.height = this.grid + "px";
         // Placement du personnage au démarrage selon la carte
-        this.playerDiv.style.top = this.mapPosition.y * this.grid + "px";
-        this.playerDiv.style.left = this.mapPosition.x * this.grid + "px";
+        this.playerDiv.style.top = this.gridPosition.y * this.grid + "px";
+        this.playerDiv.style.left = this.gridPosition.x * this.grid + "px";
 
         this.playerImg.src = "assets/sprites/spr_player/Terra_sprites.webp";
         this.playerImg.id = "player";

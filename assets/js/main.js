@@ -1,7 +1,6 @@
 class Main {
     constructor() {
         this.pauseGame = false;
-        this.launchGame = false;
         this.oldTimestamp = 0;
         this.score = 0;
         //this.gameObjects = [];
@@ -51,11 +50,9 @@ class Main {
         window.setTimeout(function() {
             menu.style.display = 'none';
         }, 400);
-        this.launchGame = true;
         this.level = new LevelOne();
-        this.level.init();
-        this.player = new Player(this.level.case);
-        this.player.init();
+        this.player = new Player(this.level.case, this.level.camera);
+        this.camera = new Camera(this.level.case, this.level.camera.size.width, this.level.camera.size.height);
 
         window.requestAnimationFrame(timeStamp => {
             this.gameLoop(timeStamp);
@@ -100,6 +97,15 @@ class Main {
             this.gameObjects[i].draw();
         } */
         if(!this.pauseGame) {
+            /* 
+            Après appuie d'une direction
+                Si this.player.canWalk
+                    switch (direction)
+                        Si this.camera. start/endRow/Col != 0/width/heigth (différente du bord) et this.player.mapPosition.x/y / 2 == moitié de la carte
+                            bouge la caméra
+                        Sinon
+                            bouge le perso
+            */
             this.level.update(secondsPassed, this.player.mapPosition);
             this.player.update(secondsPassed);
         }

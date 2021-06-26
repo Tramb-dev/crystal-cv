@@ -41,7 +41,8 @@ class Personnage {
         };
 
         const bougePlayerDiv = () => {
-            let x = this.mapPosition.x, y = this.mapPosition.y;
+            //let x = this.mapPosition.x, y = this.mapPosition.y;
+            let x = 0, y = 0;
             switch (direction) {
                 case 'versLeHaut':
                     y--;
@@ -61,8 +62,10 @@ class Personnage {
             }
             if (this.canWalk(x, y)) {
                 this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
-                this.mapPosition.x = x;
-                this.mapPosition.y = y;
+                this.mapPosition.x += x;
+                this.mapPosition.y += y;
+                this.gridPosition.x += x;
+                this.gridPosition.y += y;
             }
         };
         
@@ -82,11 +85,14 @@ class Personnage {
     }
 
     // Test si le joueur peut se déplacer sur la case suivante
-    canWalk(x, y) {
-        if (x >= 0 && y >= 0 && y < levelMap.height && x < levelMap.width){
+    canWalk(xDir, yDir) {
+        const x = this.gridPosition.x + xDir;
+        const y = this.gridPosition.y + yDir;
+        // Test si le joueur reste dans la camera
+        if ( x >= 0 && y >= 0 && y < this.cameraSize.height && y < this.cameraSize.width ){
             /* Si on a spécifié qu'une case peut être traversée malgré tout, comme un passage secret par exemple
             Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur */
-            for (const element of levelMap.data[y][x]) {
+            for (const element of levelMap.data[this.mapPosition.y + yDir][this.mapPosition.x + xDir]) {
                 if( 'object' == typeof element.tileId || !tileSets[element.tilesetId].data[element.tileId].canWalk && !element.canWalk ) return false;
             }
             return true;
