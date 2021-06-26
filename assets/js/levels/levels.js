@@ -3,7 +3,7 @@ class LevelCreator {
         this.levelDiv = document.getElementById("level_container");
         //this.levelTileSet = '';
         this.case = 48;
-        this.camera= {
+        this.camera = {
             size: {
                 width: 17,
                 height: 13

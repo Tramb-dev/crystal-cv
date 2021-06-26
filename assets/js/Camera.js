@@ -7,4 +7,12 @@ class Camera {
         this.maxX = levelMap.width * gridCase - width;
         this.maxY = levelMap.height * gridCase - height;
     }
+
+    follow(player) {
+
+    }
+
+    update() {
+        
+    }
 }

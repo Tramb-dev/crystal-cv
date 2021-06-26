@@ -6,9 +6,8 @@ class Personnage {
         };
     }
 
-        // Gère le déplacement du personnage
-    // TODO : prendre en compte le cas de l'appuie de 2 touches simultanées
-    deplacement(direction, timestamp){
+    // Gère le déplacement du personnage
+    deplacement(direction){
         let reverse = false;
         let increment = this.grid;
         let proprieteDeStyle = 'left';
@@ -81,12 +80,6 @@ class Personnage {
             this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
         };
         
-        /* if (!this.enCoursDeDeplacement[direction].animationEnCours) {
-            this.enCoursDeDeplacement[direction].animationEnCours = true;
-            this.enCoursDeDeplacement[direction].identifiantAnimationImg = window.setInterval(bougeSprite, 66);
-            this.enCoursDeDeplacement[direction].identifiantAnimationDiv = window.setInterval(bougePlayerDiv, 200);
-        } */
-        
         if (!this.enCoursDeDeplacement[direction].animationEnCours) {
             this.enCoursDeDeplacement[direction].animationEnCours = true;
             this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(bougeSprite);
@@ -107,7 +100,7 @@ class Personnage {
         const x = this.gridPosition.x + xDir;
         const y = this.gridPosition.y + yDir;
         // Test si le joueur reste dans la camera
-        if ( x >= 0 && y >= 0 && y < this.cameraSize.height && y < this.cameraSize.width ){
+        if ( x >= 0 && y >= 0 && y < this.cameraSize.height && x < this.cameraSize.width ){
             /* Si on a spécifié qu'une case peut être traversée malgré tout, comme un passage secret par exemple
             Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur */
             for (const element of levelMap.data[this.mapPosition.y + yDir][this.mapPosition.x + xDir]) {

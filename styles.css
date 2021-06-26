@@ -8908,6 +8908,7 @@ footer {
   position: absolute;
   transition: opacity 0.4s ease-in-out 0.4s, top 0.2s linear, left 0.2s linear;
   align-self: center;
+  user-select: none;
 }
 
 #masque_container {
@@ -9004,9 +9005,6 @@ footer {
 .tile_container {
   position: absolute;
   overflow: hidden;
-}
-.tile_container img {
-  position: absolute;
 }
 
 #game_container {

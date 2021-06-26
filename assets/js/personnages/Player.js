@@ -18,30 +18,34 @@ class Player extends Personnage {
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                timestampDeplacement: 0
             },
             versLaDroite: {
                 identifiantAnimationDiv: 0,
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                timestampDeplacement: 0
             },
             versLeBas: {
                 identifiantAnimationDiv: 0,
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                timestampDeplacement: 0
             },
             versLaGauche: {
                 identifiantAnimationDiv: 0,
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                timestampDeplacement: 0
             },
-            saut: {
+            /* saut: {
                 identifiantAnimationDiv: 0,
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
-            }
+            } */
         };
         this.sprite = [
             [
@@ -484,25 +488,24 @@ class Player extends Personnage {
         this.choixImageSprite(0);
     }
 
-    update(secondsPassed, keybordPressed) {
-        this.timePassed += secondsPassed;
-        if ( keybordPressed[37] ) {
-            this.deplacement('versLaGauche', keybordPressed[37]);
+    update(keybordPressed) {
+        if ( keybordPressed.isPressed(37) ) {
+            this.deplacement('versLaGauche');
         } else if (this.enCoursDeDeplacement.versLaGauche.animationEnCours) {
             this.annulerDeplacement('versLaGauche');
         }
-        if ( keybordPressed[38] ) {
-            this.deplacement('versLeHaut', keybordPressed[38]);
+        if ( keybordPressed.isPressed(38) ) {
+            this.deplacement('versLeHaut');
         } else if (this.enCoursDeDeplacement.versLeHaut.animationEnCours) {
             this.annulerDeplacement('versLeHaut');
         }
-        if ( keybordPressed[39] ) {
-            this.deplacement('versLaDroite', keybordPressed[39]);
+        if ( keybordPressed.isPressed(39) ) {
+            this.deplacement('versLaDroite');
         } else if (this.enCoursDeDeplacement.versLaDroite.animationEnCours) {
             this.annulerDeplacement('versLaDroite');
         }
-        if ( keybordPressed[40] ) {
-            this.deplacement('versLeBas', keybordPressed[40]);
+        if ( keybordPressed.isPressed(40) ) {
+            this.deplacement('versLeBas');
         } else if (this.enCoursDeDeplacement.versLeBas.animationEnCours) {
             this.annulerDeplacement('versLeBas');
         }

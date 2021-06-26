@@ -1,19 +1,17 @@
 class Controls {
     constructor() {
-        this.pressed = {
-            37: false,
-            38: false,
-            39: false,
-            40: false
-        };
+        this.pressed = {};
     }
 
     onKeyDown(keyboardEvent) {
-        if (!keyboardEvent.repeat)
-            this.pressed[keyboardEvent.keyCode] = performance.now();
+        this.pressed[keyboardEvent.keyCode] = true;
     }
 
     onKeyUp(keyboardEvent) {
-        this.pressed[keyboardEvent.keyCode] = false;
+        delete this.pressed[keyboardEvent.keyCode];
+    }
+
+    isPressed(keyCode) {
+        return this.pressed[keyCode];
     }
 }

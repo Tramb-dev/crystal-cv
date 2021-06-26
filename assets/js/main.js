@@ -63,6 +63,7 @@ class Main {
         this.level = new LevelOne();
         this.player = new Player(this.level.case, this.level.camera);
         this.camera = new Camera(this.level.case, this.level.camera.size.width, this.level.camera.size.height);
+        this.camera.follow(this.player);
 
         window.requestAnimationFrame(timeStamp => {
             this.gameLoop(timeStamp);
@@ -117,10 +118,15 @@ class Main {
                         Sinon
                             bouge le perso
             */
-            this.level.update(secondsPassed, this.player.mapPosition);
-            this.player.update(secondsPassed, this.keybordControls.pressed);
+           /*  if (this.keybordControls.isPressed(37) || this.keybordControls.isPressed(38) || this.keybordControls.isPressed(39) || this.keybordControls.isPressed(40)) {
+                const canWalk = this.player.canWalk()
+            } */
+            
+            this.level.update(secondsPassed, this.player, this.keybordControls);
+            this.player.update(this.keybordControls);
+           // this.camera.update();
         }
-
+        
         this.level.draw();
         this.player.draw();
 
