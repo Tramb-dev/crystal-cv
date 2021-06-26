@@ -1,13 +1,11 @@
 class Player extends Personnage {
-    constructor(grid, startMapPosition, levelMapping, offsetX) {
+    constructor(grid) {
         super();
-        this.playerDiv = '';
-        this.playerImg = '';
-        this.masqueDiv = '';
-        this.mapPosition = startMapPosition;
-        this.levelOffsetX = offsetX;
+        this.playerDiv = document.getElementById("player_container");
+        this.playerImg = document.createElement("img");
+        this.masqueDiv = document.getElementById("masque_container");
+        this.mapPosition = levelMap.startMapPosition;
         this.grid = grid;
-        this.levelMapping = levelMapping;
         // permet d'éviter de cumuler l'action des touches sur les déplacements
         this.enCoursDeDeplacement = {
             versLeHaut: {
@@ -466,17 +464,13 @@ class Player extends Personnage {
 
     // Génère le personnage à la création
     init() {
-        this.playerDiv = document.getElementById("player_container");
-        this.playerDiv.style.opacity = 1;
+        this.playerDiv.classList.toggle("fade");
         this.playerDiv.style.width = this.grid + "px";
         this.playerDiv.style.height = this.grid + "px";
         // Placement du personnage au démarrage selon la carte
         this.playerDiv.style.top = this.mapPosition.y * this.grid + "px";
-        this.playerDiv.style.left = this.levelOffsetX + (this.mapPosition.x * this.grid) + "px";
+        this.playerDiv.style.left = this.mapPosition.x * this.grid + "px";
 
-        this.masqueDiv = document.getElementById("masque_container");
-
-        this.playerImg = document.createElement("img");
         this.playerImg.src = "assets/sprites/spr_player/Terra_sprites.webp";
         this.playerImg.id = "player";
         this.playerImg.alt = "Personnage du joueur";
@@ -528,9 +522,8 @@ class Player extends Personnage {
         });
     }
 
-
     update(secondsPassed) {
-       
+        this.timePassed += secondsPassed;
     }
 
     draw() {

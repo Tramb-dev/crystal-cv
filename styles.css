@@ -8908,7 +8908,6 @@ footer {
   position: absolute;
   transition: opacity 0.4s ease-in-out 0.4s, top 0.2s linear, left 0.2s linear;
   align-self: center;
-  opacity: 0;
 }
 
 #masque_container {
@@ -8995,9 +8994,8 @@ footer {
 #level_container {
   cursor: none;
   display: grid;
-  opacity: 0;
   align-self: center;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out 0.2s;
   gap: 0;
   user-select: none;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
@@ -9050,6 +9048,10 @@ canvas {
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.fade {
+  opacity: 0;
 }
 
 @font-face {

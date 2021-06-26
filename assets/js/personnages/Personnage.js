@@ -1,6 +1,9 @@
 class Personnage {
-    constructor() {
-
+    constructor(x, y) {
+        this.mapPosition = {
+            x: x,
+            y: y
+        };
     }
 
         // Gère le déplacement du personnage
@@ -80,11 +83,11 @@ class Personnage {
 
     // Test si le joueur peut se déplacer sur la case suivante
     canWalk(x, y) {
-        if (x >= 0 && y >= 0 && y < this.levelMapping.height && x < this.levelMapping.width){
+        if (x >= 0 && y >= 0 && y < levelMap.height && x < levelMap.width){
             /* Si on a spécifié qu'une case peut être traversée malgré tout, comme un passage secret par exemple
             Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur */
-            for (const element of this.levelMapping.data[y][x]) {
-                if( 'object' == typeof element.tileId || !tileSets[this.levelMapping.globalTilesetId].tilesetNames[element.tilesetId].data[element.tileId].canWalk && !element.canWalk ) return false;
+            for (const element of levelMap.data[y][x]) {
+                if( 'object' == typeof element.tileId || !tileSets[element.tilesetId].data[element.tileId].canWalk && !element.canWalk ) return false;
             }
             return true;
         }

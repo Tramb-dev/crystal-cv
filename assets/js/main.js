@@ -3,6 +3,7 @@ class Main {
         this.pauseGame = false;
         this.launchGame = false;
         this.oldTimestamp = 0;
+        this.score = 0;
         //this.gameObjects = [];
 
         this.init();
@@ -46,17 +47,19 @@ class Main {
 
     menu() {
         const menu = document.getElementById('menu');
-        menu.style.opacity = 0;
+        menu.classList.toggle("fade");
         window.setTimeout(function() {
             menu.style.display = 'none';
         }, 400);
         this.launchGame = true;
         this.level = new LevelOne();
         this.level.init();
-        this.player = new Player(this.level.case, this.level.startMapPosition, this.level.levelMap, this.level.offsetX);
+        this.player = new Player(this.level.case);
         this.player.init();
 
-        window.requestAnimationFrame((timeStamp) => this.gameLoop(timeStamp));
+        window.requestAnimationFrame(timeStamp => {
+            this.gameLoop(timeStamp);
+        });
     }
 
     pause() {
@@ -83,13 +86,9 @@ class Main {
 
     // Mise en place d'une boucle pour afficher les animations du terrain, notamment
     gameLoop(timestamp) {
-        //if (this.pauseGame) return;
-        // Calcul des secondes passées depuis la dernière frame
+        // Calcul des secondes passées depuis la dernière image
         let secondsPassed = (timestamp - this.oldTimestamp) / 1000;
         this.oldTimestamp = timestamp;
-
-        // Permet de limiter les dégâts liés au mauvais matériel ou à un changement d'onglet. On limite donc l'impact du temps.
-        //secondsPassed = Math.min(secondsPassed, 0.1);
 
         /* // On met à jour les différents objets du jeu
         for (let i = 0; i < this.gameObjects.length; i++) {
@@ -101,17 +100,19 @@ class Main {
             this.gameObjects[i].draw();
         } */
         if(!this.pauseGame) {
-            this.level.update(secondsPassed);
+            this.level.update(secondsPassed, this.player.mapPosition);
             this.player.update(secondsPassed);
         }
 
         this.level.draw();
         this.player.draw();
 
-        window.requestAnimationFrame((timeStamp) => this.gameLoop(timeStamp));
+        window.requestAnimationFrame(timeStamp => {
+            this.gameLoop(timeStamp);
+        });
     }
 }
 
 window.addEventListener('load', function() {
-    const main = new Main();
+    new Main();
 });
