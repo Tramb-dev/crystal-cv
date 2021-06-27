@@ -14,4 +14,8 @@ class Controls {
     isPressed(keyCode) {
         return this.pressed[keyCode];
     }
+
+    isMovementPressed() {
+        if (this.isPressed(37) || this.isPressed(38) || this.isPressed(39) || this.isPressed(40)) return true;
+    }
 }

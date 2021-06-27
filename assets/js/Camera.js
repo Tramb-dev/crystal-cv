@@ -9,7 +9,7 @@ class Camera {
     }
 
     follow(player) {
-
+        this.follow = player;
     }
 
     update() {

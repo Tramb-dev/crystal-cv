@@ -46,6 +46,7 @@ class Personnage {
             this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(bougeSprite);
         };
 
+        // Bouge la div contenant le sprite du joueur
         const nbFPSPlayerDiv = 10;
         let nbAnimationPlayerDiv = 0;
         const bougePlayerDiv = () => {
@@ -83,8 +84,12 @@ class Personnage {
         if (!this.enCoursDeDeplacement[direction].animationEnCours) {
             this.enCoursDeDeplacement[direction].animationEnCours = true;
             this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(bougeSprite);
+            if (this.enCoursDeDeplacement[direction].canMove) this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
+        } else if (!this.enCoursDeDeplacement[direction].canMove) {
+            cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
+        } /* else {
             this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
-        }
+        } */
     }
 
     // Annule le déplacement en cours (lorsque le joueur arrête d'appuyer sur la touche)

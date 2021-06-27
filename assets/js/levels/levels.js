@@ -7,7 +7,11 @@ class LevelCreator {
             size: {
                 width: 17,
                 height: 13
-            }
+            },
+            position: { // X = col, Y = row
+                startX: 0,
+                startY: 1,
+            },
         };
         this.mapDraw = {
             needUpdate: true,
@@ -78,6 +82,51 @@ class LevelCreator {
             
             return [ - x * this.case + "px", - y * this.case + "px" ];
         
+    }
+
+    // Suit le joueur lorsque la caméra peut bouger et qu'il est au centre de l'écran
+    canFollowPlayer(player, direction) {
+        let move = false;
+
+        switch ( direction ) {
+            case 'versLeHaut': 
+                if (player.gridPosition.y == this.camera.position.centerY && this.camera.position.startY > 0) {
+                    player.enCoursDeDeplacement[direction].canMove = false;
+                    move = true;
+                } else {
+                    player.enCoursDeDeplacement[direction].canMove = true;
+                }
+                break;
+
+            case 'versLeBas': 
+                if (player.gridPosition.y == this.camera.position.centerY && this.camera.position.endY < levelMap.height) {
+                    player.enCoursDeDeplacement[direction].canMove = false;
+                    move = true;
+                } else {
+                    player.enCoursDeDeplacement[direction].canMove = true;
+                }
+                break;
+
+            case 'versLaGauche':
+                if (player.gridPosition.x == this.camera.position.centerX && this.camera.position.startX > 0) {
+                    player.enCoursDeDeplacement[direction].canMove = false;
+                    move = true;
+                } else {
+                    player.enCoursDeDeplacement[direction].canMove = true;
+                }
+                break;
+
+            case 'versLaDroite':
+                if (player.gridPosition.x == this.camera.position.centerX && this.camera.position.endX < levelMap.width) {
+                    player.enCoursDeDeplacement[direction].canMove = false;
+                    move = true;
+                } else {
+                    player.enCoursDeDeplacement[direction].canMove = true;
+                }
+                break;
+
+        }
+        return move;
     }
 
     draw() {

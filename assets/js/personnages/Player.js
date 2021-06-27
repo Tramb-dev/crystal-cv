@@ -18,6 +18,7 @@ class Player extends Personnage {
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                canMove: true,
                 timestampDeplacement: 0
             },
             versLaDroite: {
@@ -25,6 +26,7 @@ class Player extends Personnage {
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                canMove: true,
                 timestampDeplacement: 0
             },
             versLeBas: {
@@ -32,6 +34,7 @@ class Player extends Personnage {
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                canMove: true,
                 timestampDeplacement: 0
             },
             versLaGauche: {
@@ -39,6 +42,7 @@ class Player extends Personnage {
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                canMove: true,
                 timestampDeplacement: 0
             },
             /* saut: {

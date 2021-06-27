@@ -3,7 +3,7 @@
 */
 const levelMap = {
     width: 17,
-    height: 18,
+    height: 19,
     bgm: {},
     // Position du joueur sur la grille, où y sont les lignes et x les colonnes
     startMapPosition: {
@@ -1786,6 +1786,110 @@ const levelMap = {
             ],
         ],
         [ // y =17
+            [ // x = 0
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 1
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 2
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 3
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 4
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 5
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 6
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 7
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 8
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 9
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 10
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 11
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 12
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 13
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 14
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 15
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 16
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+        ],
+        [ // y =18
             [ // x = 0
                 {
                     tilesetId: 1,
