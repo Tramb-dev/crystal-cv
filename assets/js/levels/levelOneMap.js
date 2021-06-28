@@ -2,17 +2,16 @@
 // Objet contenant les tuiles correspondantes pour créer la map
 */
 const levelMap = {
-    width: 17,
-    height: 15,
+    width: 81,
+    height: 79,
     bgm: {},
     // Position du joueur sur la grille, où y sont les lignes et x les colonnes
     startMapPosition: {
         x: 0,
-        y: 6
+        y: 2
     },
-    scrollable: true,
     /* 
-    // data est constitué des lignes (ou ordonnées, ou y) et des colonnes (ou abscisses ou x) de la grille de jeu. Chaque case contient un ou plusieurs calques qui contiennent la référence à la tuile correspondante, et savoir si le joueur peut marcher dessus.
+    // data est constitué des lignes (ou ordonnées, ou y) et des colonnes (ou abscisses ou x) de la grille de jeu. Chaque case contient un ou plusieurs calques qui contiennent la référence à la tuile correspondante, et savoir si le joueur peut marcher dessus (pour un passage secret par exemple).
     */
     data: [ 
         [ // y =0
@@ -1475,6 +1474,422 @@ const levelMap = {
             ],
         ],
         [ // y =14
+            [ // x = 0
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 1
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 2
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 3
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 4
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 5
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 6
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 7
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 8
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 9
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 10
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 11
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 12
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 13
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 14
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 15
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 16
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+        ],
+        [ // y =15
+            [ // x = 0
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 1
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 2
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 3
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 4
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 5
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 6
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 7
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 8
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 9
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 10
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 11
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 12
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 13
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 14
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 15
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 16
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+        ],
+        [ // y =16
+            [ // x = 0
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 1
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 2
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 3
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 4
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 5
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 6
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 7
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 8
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 9
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 10
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 11
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 12
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 13
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 14
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 15
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 16
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+        ],
+        [ // y =17
+            [ // x = 0
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 1
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 2
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 3
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 4
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 5
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 6
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 7
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 8
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 9
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 10
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 11
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 12
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 13
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 14
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 15
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+            [ // x = 16
+                {
+                    tilesetId: 1,
+                    tileId: 0,    
+                },
+            ],
+        ],
+        [ // y =18
             [ // x = 0
                 {
                     tilesetId: 1,

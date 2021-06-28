@@ -1,10 +1,18 @@
 class Camera {
-    constructor(map, width, height) {
+    constructor(gridCase, width, height) {
         this.x = 0;
         this.y = 0;
         this.width = width;
         this.height = height;
-        this.maxX = map.levelMap.width * map.case - width;
-        this.maxY = map.levelMap.height * map.case - height;
+        this.maxX = levelMap.width * gridCase - width;
+        this.maxY = levelMap.height * gridCase - height;
+    }
+
+    follow(player) {
+        this.follow = player;
+    }
+
+    update() {
+        
     }
 }

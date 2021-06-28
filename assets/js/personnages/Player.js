@@ -1,11 +1,16 @@
 class Player extends Personnage {
-    constructor(grid) {
+    constructor(grid, camera) {
         super();
         this.playerDiv = document.getElementById("player_container");
         this.playerImg = document.createElement("img");
         this.masqueDiv = document.getElementById("masque_container");
         this.mapPosition = levelMap.startMapPosition;
+        this.gridPosition = {
+            x: levelMap.startMapPosition.x - camera.position.startX,
+            y: levelMap.startMapPosition.y - camera.position.startY,
+        };
         this.grid = grid;
+        this.cameraSize = camera.size;
         // permet d'éviter de cumuler l'action des touches sur les déplacements
         this.enCoursDeDeplacement = {
             versLeHaut: {
@@ -13,30 +18,38 @@ class Player extends Personnage {
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                canMove: true,
+                timestampDeplacement: 0
             },
             versLaDroite: {
                 identifiantAnimationDiv: 0,
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                canMove: true,
+                timestampDeplacement: 0
             },
             versLeBas: {
                 identifiantAnimationDiv: 0,
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                canMove: true,
+                timestampDeplacement: 0
             },
             versLaGauche: {
                 identifiantAnimationDiv: 0,
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
                 derniereImage: 0,
+                canMove: true,
+                timestampDeplacement: 0
             },
-            saut: {
+            /* saut: {
                 identifiantAnimationDiv: 0,
                 identifiantAnimationImg: 0,
                 animationEnCours: false,
-            }
+            } */
         };
         this.sprite = [
             [
@@ -460,6 +473,7 @@ class Player extends Personnage {
                 }
             ],
         ];
+        this.init();
     }
 
     // Génère le personnage à la création
@@ -468,65 +482,43 @@ class Player extends Personnage {
         this.playerDiv.style.width = this.grid + "px";
         this.playerDiv.style.height = this.grid + "px";
         // Placement du personnage au démarrage selon la carte
-        this.playerDiv.style.top = this.mapPosition.y * this.grid + "px";
-        this.playerDiv.style.left = this.mapPosition.x * this.grid + "px";
+        this.playerDiv.style.top = this.gridPosition.y * this.grid + "px";
+        this.playerDiv.style.left = this.gridPosition.x * this.grid + "px";
 
         this.playerImg.src = "assets/sprites/spr_player/Terra_sprites.webp";
         this.playerImg.id = "player";
         this.playerImg.alt = "Personnage du joueur";
         this.masqueDiv.appendChild(this.playerImg);
         this.choixImageSprite(0);
-
-        this.controls();
     }
 
-    // Gestion de l'interaction avec le joueur (clavier/souris)
-    controls() {
-        window.addEventListener('keydown', keyboardEvent => {
-            switch ( keyboardEvent.code ) {
-                case 'ArrowUp':
-                    this.deplacement('versLeHaut');
-                    // On empêche le scroll par les touches
-                    keyboardEvent.preventDefault();
-                    break;
-                case 'ArrowRight':
-                    this.deplacement('versLaDroite');
-                    keyboardEvent.preventDefault();
-                    break;
-                case 'ArrowDown':
-                    this.deplacement('versLeBas');
-                    keyboardEvent.preventDefault();
-                    break;
-                case 'ArrowLeft':
-                    this.deplacement('versLaGauche');
-                    keyboardEvent.preventDefault();
-                    break;
-            }
-        }, false);
-        
-        window.addEventListener('keyup', keyboardEvent => {
-            switch ( keyboardEvent.code ) {
-                case 'ArrowUp':
-                    this.annulerDeplacement('versLeHaut');
-                    break;
-                case 'ArrowRight':
-                    this.annulerDeplacement('versLaDroite');
-                    break;
-                case 'ArrowDown':
-                    this.annulerDeplacement('versLeBas');
-                    break;
-                case 'ArrowLeft':
-                    this.annulerDeplacement('versLaGauche');
-                    break;
-            }
-        });
-    }
-
-    update(secondsPassed) {
-        this.timePassed += secondsPassed;
+    update(keybordPressed) {
+        if ( keybordPressed.isPressed(37) ) {
+            this.deplacement('versLaGauche');
+        } else if (this.enCoursDeDeplacement.versLaGauche.animationEnCours) {
+            this.annulerDeplacement('versLaGauche');
+        }
+        if ( keybordPressed.isPressed(38) ) {
+            this.deplacement('versLeHaut');
+        } else if (this.enCoursDeDeplacement.versLeHaut.animationEnCours) {
+            this.annulerDeplacement('versLeHaut');
+        }
+        if ( keybordPressed.isPressed(39) ) {
+            this.deplacement('versLaDroite');
+        } else if (this.enCoursDeDeplacement.versLaDroite.animationEnCours) {
+            this.annulerDeplacement('versLaDroite');
+        }
+        if ( keybordPressed.isPressed(40) ) {
+            this.deplacement('versLeBas');
+        } else if (this.enCoursDeDeplacement.versLeBas.animationEnCours) {
+            this.annulerDeplacement('versLeBas');
+        }
     }
 
     draw() {
-
+        for (let direction of Object.keys(this.enCoursDeDeplacement)) {
+         
+        }
+        
     }
 }
