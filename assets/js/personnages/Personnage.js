@@ -4,6 +4,14 @@ class Personnage {
             x: x,
             y: y
         };
+        this.animationSprite = {
+            nbFPSSprite: 5,
+            nbAnimationSprite: 0,
+        };
+        this.movePlayerDiv = {
+            nbFPSPlayerDiv: 10,
+            nbAnimationPlayerDiv: 0
+        };
     }
 
     // Gère le déplacement du personnage
@@ -32,64 +40,64 @@ class Personnage {
                 reverse = true;
                 break;
         }
-
-        // Bouge le sprite (la position définit l'emplacement dans l'objet sprite, auquel on ajoute jusqu'à 3 images pour une animation)
-        const nbFPSSprite = 5;
-        let nbAnimationSprite = 0;
-        const bougeSprite = () => {
-            if (0 == nbAnimationSprite % nbFPSSprite){
-                this.choixImageSprite(spritePosition + (this.enCoursDeDeplacement[direction].derniereImage % 3), reverse);
-                this.enCoursDeDeplacement[direction].derniereImage++;
-            }
-            
-            nbAnimationSprite++;
-            this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(bougeSprite);
-        };
-
-        // Bouge la div contenant le sprite du joueur
-        const nbFPSPlayerDiv = 10;
-        let nbAnimationPlayerDiv = 0;
-        const bougePlayerDiv = () => {
-            if (0 == nbAnimationPlayerDiv % nbFPSPlayerDiv){
-                let x = 0, y = 0;
-                switch (direction) {
-                    case 'versLeHaut':
-                        y--;
-                        break;
-
-                    case 'versLeBas':
-                        y++;
-                        break;
-
-                    case 'versLaGauche':
-                        x--;
-                        break;
-
-                    case 'versLaDroite':
-                        x++;
-                        break;
-                }
-                if (this.canWalk(x, y)) {
-                    this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
-                    this.mapPosition.x += x;
-                    this.mapPosition.y += y;
-                    this.gridPosition.x += x;
-                    this.gridPosition.y += y;
-                }
-            }
-            nbAnimationPlayerDiv++;
-            this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
-        };
         
+        // Si le joueur vient d'appuyer sur une touche, alors on lance les animations
         if (!this.enCoursDeDeplacement[direction].animationEnCours) {
             this.enCoursDeDeplacement[direction].animationEnCours = true;
-            this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(bougeSprite);
-            if (this.enCoursDeDeplacement[direction].canMove) this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
+            this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(() => this.bougeSprite(direction, reverse, spritePosition));
+
+            // On ne lance le déplacement de la div du joueur seulement si la caméra l'y autorise
+            if (this.enCoursDeDeplacement[direction].canMove) this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(() => this.bougePlayerDiv(direction, proprieteDeStyle, increment));
         } else if (!this.enCoursDeDeplacement[direction].canMove) {
+            // Si la caméra détecte qu'elle peut bouger et que le joueur est arrivé au centre de l'écran, on coupe le déplacement de la div
             cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
         } /* else {
             this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
         } */
+    }
+
+    // Bouge le sprite (la position définit l'emplacement dans l'objet sprite, auquel on ajoute jusqu'à 3 images pour une animation)
+    bougeSprite(direction, reverse, spritePosition) {
+        if (0 == this.animationSprite.nbAnimationSprite % this.animationSprite.nbFPSSprite){
+            this.choixImageSprite(spritePosition + (this.enCoursDeDeplacement[direction].derniereImage % 3), reverse);
+            this.enCoursDeDeplacement[direction].derniereImage++;
+        }
+        
+        this.animationSprite.nbAnimationSprite++;
+        this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(() => this.bougeSprite(direction, reverse, spritePosition));
+    }
+
+    // Bouge la div contenant le sprite du joueur
+    bougePlayerDiv(direction, proprieteDeStyle, increment) {
+        if (0 == this.movePlayerDiv.nbAnimationPlayerDiv % this.movePlayerDiv.nbFPSPlayerDiv){
+            let x = 0, y = 0;
+            switch (direction) {
+                case 'versLeHaut':
+                    y--;
+                    break;
+
+                case 'versLeBas':
+                    y++;
+                    break;
+
+                case 'versLaGauche':
+                    x--;
+                    break;
+
+                case 'versLaDroite':
+                    x++;
+                    break;
+            }
+            if (this.canWalk(x, y)) {
+                this.playerDiv.style[proprieteDeStyle] = parseFloat(this.playerDiv.style[proprieteDeStyle]) + increment + 'px';
+                this.mapPosition.x += x;
+                this.mapPosition.y += y;
+                this.gridPosition.x += x;
+                this.gridPosition.y += y;
+            }
+        }
+        this.movePlayerDiv.nbAnimationPlayerDiv++;
+        this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(() => this.bougePlayerDiv(direction, proprieteDeStyle, increment));
     }
 
     // Annule le déplacement en cours (lorsque le joueur arrête d'appuyer sur la touche)

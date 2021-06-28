@@ -93,6 +93,9 @@ class LevelCreator {
                 if (player.gridPosition.y == this.camera.position.centerY && this.camera.position.startY > 0) {
                     player.enCoursDeDeplacement[direction].canMove = false;
                     move = true;
+                } else if (player.enCoursDeDeplacement[direction].animationEnCours && player.gridPosition.y == this.camera.position.centerY && this.camera.position.startY == 0) {
+                    //player.enCoursDeDeplacement[direction].animationEnCours = false;
+                    //console.log('test');
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }

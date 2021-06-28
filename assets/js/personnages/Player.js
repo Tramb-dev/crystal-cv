@@ -516,6 +516,9 @@ class Player extends Personnage {
     }
 
     draw() {
-
+        for (let direction of Object.keys(this.enCoursDeDeplacement)) {
+         
+        }
+        
     }
 }

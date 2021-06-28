@@ -2,8 +2,8 @@
 // Objet contenant les tuiles correspondantes pour créer la map
 */
 const levelMap = {
-    width: 17,
-    height: 19,
+    width: 81,
+    height: 79,
     bgm: {},
     // Position du joueur sur la grille, où y sont les lignes et x les colonnes
     startMapPosition: {

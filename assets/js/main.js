@@ -48,6 +48,10 @@ class Main {
             });
         });
 
+        // Gestion de la musique
+        const audioBalise = document.getElementById('music');
+        audioBalise.play();
+
         /* this.gameObjects = [
             new LevelOne(),
             new Player()
