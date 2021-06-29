@@ -8,10 +8,6 @@ class LevelCreator {
                 width: 17,
                 height: 13
             },
-            position: { // X = col, Y = row
-                startX: 10,
-                startY: 7,
-            },
         };
         this.mapDraw = {
             needUpdate: true,
@@ -32,7 +28,6 @@ class LevelCreator {
                 this.mapDraw.map[i][j][0].case = "r" + i + "c" + j;
 
                 const gridView = document.createElement("div");
-               // gridView.style.border = "solid 1px black";
                 gridView.classList.add("tile_container");
                 gridView.style.gridColumn = (j+1) + "/" + (j+2);
                 gridView.style.gridRow = (i+1) + "/" + (i+2);
@@ -43,6 +38,7 @@ class LevelCreator {
                 gridView.setAttribute("data-col", j) ;
 
                 gridView.innerHTML = this.mapDraw.map[i][j][0].case;
+                // TODO : à supprimer une fois les corrections de carte effectuées
 
                 this.levelDiv.appendChild(gridView); 
             }
@@ -56,6 +52,20 @@ class LevelCreator {
                 let x = j + this.camera.position.startX;
                 this.mapDraw.map[i][j].splice(0, 5);
                 this.mapDraw.map[i][j] = [];
+                this.mapDraw.map[i][j].canWalk = true;
+
+                // Gestion des autorisations de déplacement du personnage
+                /* Si on a spécifié qu'une case peut être traversée malgré tout, comme un passage secret par exemple
+                Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur */
+                for (const element of levelMap.data[y][x]) {
+                    if ( 'object' == typeof element.tileId ) {
+                        if ( !tileSets[element.tilesetId].data[element.tileId[0]].canWalk && !element.canWalk ) this.mapDraw.map[i][j].canWalk = false;
+
+                    } else if( 'object' != typeof element.tileId && !tileSets[element.tilesetId].data[element.tileId].canWalk && !element.canWalk ){ 
+                        this.mapDraw.map[i][j].canWalk = false;
+                    }
+                }
+
                 levelMap.data[y][x].forEach((element, index) => {
                     this.mapDraw.map[i][j][index] = element;
                     this.mapDraw.map[i][j][index].case = "r" + y + "c" + x;
@@ -99,11 +109,10 @@ class LevelCreator {
         switch ( direction ) {
             case 'versLeHaut': 
                 if (player.gridPosition.y == this.camera.position.centerY && this.camera.position.startY > 0) {
-                    player.enCoursDeDeplacement[direction].canMove = false;
-                    move = true;
-                } else if (player.enCoursDeDeplacement[direction].animationEnCours && player.gridPosition.y == this.camera.position.centerY && this.camera.position.startY == 0) {
-                    //player.enCoursDeDeplacement[direction].animationEnCours = false;
-                    //console.log('test');
+                    if (this.mapDraw.map[player.gridPosition.y-1][player.gridPosition.x].canWalk) {
+                        player.enCoursDeDeplacement[direction].canMove = false;
+                        move = true;
+                    }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -111,10 +120,10 @@ class LevelCreator {
 
             case 'versLeBas': 
                 if (player.gridPosition.y == this.camera.position.centerY && this.camera.position.endY < this.camera.position.maxY) {
-                    player.enCoursDeDeplacement[direction].canMove = false;
-                    move = true;
-                } else if (player.enCoursDeDeplacement[direction].animationEnCours && player.gridPosition.y == this.camera.position.centerY && this.camera.position.endY == this.camera.position.maxY) {
-
+                    if (this.mapDraw.map[player.gridPosition.y+1][player.gridPosition.x].canWalk) {
+                        player.enCoursDeDeplacement[direction].canMove = false;
+                        move = true;
+                    }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -122,10 +131,10 @@ class LevelCreator {
 
             case 'versLaGauche':
                 if (player.gridPosition.x == this.camera.position.centerX && this.camera.position.startX > 0) {
-                    player.enCoursDeDeplacement[direction].canMove = false;
-                    move = true;
-                } else if (player.enCoursDeDeplacement[direction].animationEnCours && player.gridPosition.x == this.camera.position.centerX && this.camera.position.startX == 0) {
-
+                    if (this.mapDraw.map[player.gridPosition.y][player.gridPosition.x-1].canWalk) {
+                        player.enCoursDeDeplacement[direction].canMove = false;
+                        move = true;
+                    }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -133,10 +142,10 @@ class LevelCreator {
 
             case 'versLaDroite':
                 if (player.gridPosition.x == this.camera.position.centerX && this.camera.position.endX < this.camera.position.maxX) {
-                    player.enCoursDeDeplacement[direction].canMove = false;
-                    move = true;
-                } else if (player.enCoursDeDeplacement[direction].animationEnCours && player.gridPosition.x == this.camera.position.centerX && this.camera.position.endX == this.camera.position.maxX) {
-
+                    if (this.mapDraw.map[player.gridPosition.y][player.gridPosition.x+1].canWalk) {
+                        player.enCoursDeDeplacement[direction].canMove = false;
+                        move = true;
+                    }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -187,6 +196,7 @@ class LevelCreator {
                 rowImg[j].style.backgroundPositionX = bgPosX;
                 rowImg[j].style.backgroundPositionY = bgPosY;
                 rowImg[j].innerHTML = this.mapDraw.map[i][j][0].case;
+                // TODO : à supprimer une fois la carte établie
             }
         }
     }

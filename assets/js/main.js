@@ -18,14 +18,15 @@ class Main {
         }, false);
 
         window.addEventListener('keydown', keyboardEvent => { 
-            if (!keyboardEvent.repeat) this.keybordControls.onKeyDown(keyboardEvent); 
-            keyboardEvent.preventDefault();
+            this.keybordControls.onKeyDown(keyboardEvent); 
         }, false);
         window.addEventListener('keyup', keyboardEvent => { 
             this.keybordControls.onKeyUp(keyboardEvent); 
         }, false);
 
+        /* 
         // Gestion du offcanvas du site
+         */
         const navBarOn = document.querySelector('#navbarSideOpen');
         const navBarOff = document.querySelector('#navbarSideClose');
         const offcanvas = document.querySelector('.offcanvas-collapse');
@@ -41,6 +42,7 @@ class Main {
                 offcanvas.classList.remove('open');
             });
         });
+        //////////////////////////////////////////////
 
         // Gestion de la musique
         /* const audioBalise = document.getElementById('music');
@@ -59,7 +61,7 @@ class Main {
             menu.style.display = 'none';
         }, 400);
         this.level = new LevelOne();
-        this.player = new Player(this.level.case, this.level.camera);
+        this.player = new Player(this.level);
 
         window.requestAnimationFrame(timeStamp => {
             this.gameLoop(timeStamp);

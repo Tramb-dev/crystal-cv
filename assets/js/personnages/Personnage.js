@@ -114,12 +114,7 @@ class Personnage {
         const y = this.gridPosition.y + yDir;
         // Test si le joueur reste dans la camera
         if ( x >= 0 && y >= 0 && y < this.cameraSize.height && x < this.cameraSize.width ){
-            /* Si on a spécifié qu'une case peut être traversée malgré tout, comme un passage secret par exemple
-            Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur */
-            for (const element of levelMap.data[this.mapPosition.y + yDir][this.mapPosition.x + xDir]) {
-                if( 'object' == typeof element.tileId || !tileSets[element.tilesetId].data[element.tileId].canWalk && !element.canWalk ) return false;
-            }
-            return true;
+            if (this.levelDraw.map[y][x].canWalk) return true;
         }
         return false;
     }

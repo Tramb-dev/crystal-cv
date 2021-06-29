@@ -1,16 +1,16 @@
 class Player extends Personnage {
-    constructor(grid, camera) {
+    constructor(level) {
         super();
         this.playerDiv = document.getElementById("player_container");
         this.playerImg = document.createElement("img");
         this.masqueDiv = document.getElementById("masque_container");
         this.mapPosition = levelMap.startMapPosition;
         this.gridPosition = {
-            x: levelMap.startMapPosition.x - camera.position.startX,
-            y: levelMap.startMapPosition.y - camera.position.startY,
+            x: levelMap.startMapPosition.x - level.camera.position.startX,
+            y: levelMap.startMapPosition.y - level.camera.position.startY,
         };
-        this.grid = grid;
-        this.cameraSize = camera.size;
+        this.grid = level.case;
+        this.cameraSize = level.camera.size;
         // permet d'éviter de cumuler l'action des touches sur les déplacements
         this.enCoursDeDeplacement = {
             versLeHaut: {
@@ -472,7 +472,8 @@ class Player extends Personnage {
                     top: -193
                 }
             ],
-        ];
+        ];   
+        this.levelDraw = level.mapDraw;
         this.init();
     }
 
@@ -493,25 +494,26 @@ class Player extends Personnage {
     }
 
     update(keybordPressed) {
+
         // FIXME : 2 appuis envoient le personnage vrier et aller trop vite, gérer un seul appui à la fois
-        if ( keybordPressed.isPressed(37) ) {
+        if ( keybordPressed.isPressed(37) && keybordPressed.lastMovementPressed == 37 ) {
             this.deplacement('versLaGauche');
-        } else if (this.enCoursDeDeplacement.versLaGauche.animationEnCours) {
+        } else if ( this.enCoursDeDeplacement.versLaGauche.animationEnCours || keybordPressed.lastMovementPressed != 37 ) {
             this.annulerDeplacement('versLaGauche');
         }
-        if ( keybordPressed.isPressed(38) ) {
+        if ( keybordPressed.isPressed(38) && keybordPressed.lastMovementPressed == 38 ) {
             this.deplacement('versLeHaut');
-        } else if (this.enCoursDeDeplacement.versLeHaut.animationEnCours) {
+        } else if ( this.enCoursDeDeplacement.versLeHaut.animationEnCours || keybordPressed.lastMovementPressed != 38 ) {
             this.annulerDeplacement('versLeHaut');
         }
-        if ( keybordPressed.isPressed(39) ) {
+        if ( keybordPressed.isPressed(39) && keybordPressed.lastMovementPressed == 39 ) {
             this.deplacement('versLaDroite');
-        } else if (this.enCoursDeDeplacement.versLaDroite.animationEnCours) {
+        } else if ( this.enCoursDeDeplacement.versLaDroite.animationEnCours || keybordPressed.lastMovementPressed != 39 ) {
             this.annulerDeplacement('versLaDroite');
         }
-        if ( keybordPressed.isPressed(40) ) {
+        if ( keybordPressed.isPressed(40) && keybordPressed.lastMovementPressed == 40 ) {
             this.deplacement('versLeBas');
-        } else if (this.enCoursDeDeplacement.versLeBas.animationEnCours) {
+        } else if ( this.enCoursDeDeplacement.versLeBas.animationEnCours || keybordPressed.lastMovementPressed != 40 ) {
             this.annulerDeplacement('versLeBas');
         }
     }

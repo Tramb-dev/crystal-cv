@@ -7,8 +7,8 @@ const levelMap = {
     bgm: {},
     // Position du joueur sur la grille, où y sont les lignes et x les colonnes
     startMapPosition: {
-        x: 18,
-        y: 19
+        x: 9,
+        y: 22
     },
     /* 
     // data est constitué des lignes (ou ordonnées, ou y) et des colonnes (ou abscisses ou x) de la grille de jeu. Chaque case contient un ou plusieurs calques qui contiennent la référence à la tuile correspondante, et savoir si le joueur peut marcher dessus (pour un passage secret par exemple).
@@ -4344,7 +4344,7 @@ const levelMap = {
             [ // x = 27
                 {
                     tilesetId: 1,
-                    tileId: [3,5],     
+                    tileId: [4,6],     
                 },
             ],
             [ // x = 28

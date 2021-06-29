@@ -8993,7 +8993,6 @@ footer {
 }
 
 #level_container {
-  cursor: none;
   display: grid;
   align-self: center;
   transition: opacity 0.4s ease-in-out 0.2s;
@@ -9005,7 +9004,6 @@ footer {
 .tile_container {
   position: absolute;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.6);
   color: black;
   text-shadow: white 1px 0 0;
   font-size: small;

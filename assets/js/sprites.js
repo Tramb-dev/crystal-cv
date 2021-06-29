@@ -1037,7 +1037,7 @@ const tileSets = [
                         y: 0
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 53 plate-bande croisement
@@ -1047,7 +1047,7 @@ const tileSets = [
                         y: 0
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 54 plate-bande haut gauche
@@ -1057,7 +1057,7 @@ const tileSets = [
                         y: 1
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 55 plate-bande haut droit
@@ -1067,7 +1067,7 @@ const tileSets = [
                         y: 1
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 56 plate-bande bas gauche
@@ -1077,7 +1077,7 @@ const tileSets = [
                         y: 2
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 57 plate-bande bas droit
@@ -1087,7 +1087,7 @@ const tileSets = [
                         y: 2
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
         ]
