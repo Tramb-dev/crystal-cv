@@ -493,6 +493,7 @@ class Player extends Personnage {
     }
 
     update(keybordPressed) {
+        // FIXME : 2 appuis envoient le personnage vrier et aller trop vite, gérer un seul appui à la fois
         if ( keybordPressed.isPressed(37) ) {
             this.deplacement('versLaGauche');
         } else if (this.enCoursDeDeplacement.versLaGauche.animationEnCours) {
@@ -516,9 +517,9 @@ class Player extends Personnage {
     }
 
     draw() {
-        for (let direction of Object.keys(this.enCoursDeDeplacement)) {
+       /*  for (let direction of Object.keys(this.enCoursDeDeplacement)) {
          
-        }
+        } */
         
     }
 }

@@ -1,6 +1,9 @@
 class Main {
     constructor() {
-        this.pauseGame = false;
+        this.pauseGame = {
+            value: false,
+            timestamp: 0
+        };
         this.oldTimestamp = 0;
         this.score = 0;
         this.keybordControls = new Controls();
@@ -10,26 +13,17 @@ class Main {
     }
 
     init() {
-        window.addEventListener('keydown', keyboardEvent => {
-            if (('Escape' == keyboardEvent.code || 'Pause' == keyboardEvent.code || 'KeyP' == keyboardEvent.code) && !keyboardEvent.repeat && this.launchGame) {
-                this.pause();
-                keyboardEvent.preventDefault();
-            } else if ('Enter' == keyboardEvent.code && !keyboardEvent.repeat) {
-                if (!this.launchGame) this.menu();
-            }
-        }, false);
         document.querySelector('.button').addEventListener('click', () => {
             this.menu();
         }, false);
 
         window.addEventListener('keydown', keyboardEvent => { 
-            this.keybordControls.onKeyDown(keyboardEvent); 
+            if (!keyboardEvent.repeat) this.keybordControls.onKeyDown(keyboardEvent); 
             keyboardEvent.preventDefault();
         }, false);
         window.addEventListener('keyup', keyboardEvent => { 
             this.keybordControls.onKeyUp(keyboardEvent); 
         }, false);
-
 
         // Gestion du offcanvas du site
         const navBarOn = document.querySelector('#navbarSideOpen');
@@ -49,8 +43,8 @@ class Main {
         });
 
         // Gestion de la musique
-        const audioBalise = document.getElementById('music');
-        audioBalise.play();
+        /* const audioBalise = document.getElementById('music');
+        audioBalise.play(); */
 
         /* this.gameObjects = [
             new LevelOne(),
@@ -66,33 +60,23 @@ class Main {
         }, 400);
         this.level = new LevelOne();
         this.player = new Player(this.level.case, this.level.camera);
-        this.camera = new Camera(this.level.case, this.level.camera.size.width, this.level.camera.size.height);
-        this.camera.follow(this.player);
 
         window.requestAnimationFrame(timeStamp => {
             this.gameLoop(timeStamp);
         });
     }
 
-    pause() {
-        const divPause = document.querySelector(".modal_container");
-        this.pauseGame = !this.pauseGame;
-
-        // Blocage des touches de navigation pendant la pause, et réactivation une fois la pause enlevée
-        const blocageTouches = keyboardEvent => {
-            if ('ArrowUp' == keyboardEvent.code || 'ArrowRight' == keyboardEvent.code || 'ArrowDown' == keyboardEvent.code || 'ArrowLeft' == keyboardEvent.code) {
-                if (this.pauseGame) {
-                    keyboardEvent.stopPropagation();
-                }
+    pause(timestamp) {
+        if (timestamp - this.pauseGame.timestamp > 300) {
+            const divPause = document.querySelector(".modal_container");
+            this.pauseGame.timestamp = timestamp;
+            if (this.pauseGame.value) {
+                this.pauseGame.value = false;
+                divPause.style.display = "none";
+            } else {
+                this.pauseGame.value = true;
+                divPause.style.display = "flex";
             }
-        };
-
-        if (!this.pauseGame) {
-            divPause.style.display = "none";
-            window.addEventListener('keydown', blocageTouches, true);
-        } else {
-            divPause.style.display = "flex";
-            window.addEventListener('keydown', blocageTouches, true);
         }
     }
 
@@ -112,23 +96,19 @@ class Main {
             this.gameObjects[i].draw();
         } */
         
-        if(!this.pauseGame) {
-            /* 
-            Après appuie d'une direction
-                Si this.player.canWalk
-                    switch (direction)
-                        Si this.camera. start/endRow/Col != 0/width/heigth (différente du bord) et this.player.mapPosition.x/y / 2 == moitié de la carte
-                            bouge la caméra
-                        Sinon
-                            bouge le perso
-            */
+        if (this.keybordControls.isPressed(27) || this.keybordControls.isPressed(19) || this.keybordControls.isPressed(80)) {
+            this.pause(timestamp);
+        } else if (this.keybordControls.isPressed(13)) {
+            if (!this.launchGame) this.menu();
+        }
+        
+        if(!this.pauseGame.value) {
            /*  if (this.keybordControls.isPressed(37) || this.keybordControls.isPressed(38) || this.keybordControls.isPressed(39) || this.keybordControls.isPressed(40)) {
                 const canWalk = this.player.canWalk()
             } */
             
             this.level.update(secondsPassed, this.player, this.keybordControls);
             this.player.update(this.keybordControls);
-           // this.camera.update();
         }
         
         this.level.draw();

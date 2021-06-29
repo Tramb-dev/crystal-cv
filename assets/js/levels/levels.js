@@ -9,8 +9,8 @@ class LevelCreator {
                 height: 13
             },
             position: { // X = col, Y = row
-                startX: 0,
-                startY: 1,
+                startX: 10,
+                startY: 7,
             },
         };
         this.mapDraw = {
@@ -29,6 +29,7 @@ class LevelCreator {
                 levelMap.data[i][j].forEach((element, index) => {
                     this.mapDraw.map[i][j][index] = element;
                 });
+                this.mapDraw.map[i][j][0].case = "r" + i + "c" + j;
 
                 const gridView = document.createElement("div");
                // gridView.style.border = "solid 1px black";
@@ -40,6 +41,9 @@ class LevelCreator {
                 
                 gridView.setAttribute("data-row", i) ;
                 gridView.setAttribute("data-col", j) ;
+
+                gridView.innerHTML = this.mapDraw.map[i][j][0].case;
+
                 this.levelDiv.appendChild(gridView); 
             }
         } 
@@ -50,8 +54,12 @@ class LevelCreator {
             let y = i + this.camera.position.startY;
             for (let j=0; j<this.camera.size.width; j++) {
                 let x = j + this.camera.position.startX;
+                this.mapDraw.map[i][j].splice(0, 5);
+                this.mapDraw.map[i][j] = [];
                 levelMap.data[y][x].forEach((element, index) => {
                     this.mapDraw.map[i][j][index] = element;
+                    this.mapDraw.map[i][j][index].case = "r" + y + "c" + x;
+                    // TODO : à supprimer une fois la carte créée
                 });
             }
         }
@@ -102,9 +110,11 @@ class LevelCreator {
                 break;
 
             case 'versLeBas': 
-                if (player.gridPosition.y == this.camera.position.centerY && this.camera.position.endY < levelMap.height) {
+                if (player.gridPosition.y == this.camera.position.centerY && this.camera.position.endY < this.camera.position.maxY) {
                     player.enCoursDeDeplacement[direction].canMove = false;
                     move = true;
+                } else if (player.enCoursDeDeplacement[direction].animationEnCours && player.gridPosition.y == this.camera.position.centerY && this.camera.position.endY == this.camera.position.maxY) {
+
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -114,15 +124,19 @@ class LevelCreator {
                 if (player.gridPosition.x == this.camera.position.centerX && this.camera.position.startX > 0) {
                     player.enCoursDeDeplacement[direction].canMove = false;
                     move = true;
+                } else if (player.enCoursDeDeplacement[direction].animationEnCours && player.gridPosition.x == this.camera.position.centerX && this.camera.position.startX == 0) {
+
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
                 break;
 
             case 'versLaDroite':
-                if (player.gridPosition.x == this.camera.position.centerX && this.camera.position.endX < levelMap.width) {
+                if (player.gridPosition.x == this.camera.position.centerX && this.camera.position.endX < this.camera.position.maxX) {
                     player.enCoursDeDeplacement[direction].canMove = false;
                     move = true;
+                } else if (player.enCoursDeDeplacement[direction].animationEnCours && player.gridPosition.x == this.camera.position.centerX && this.camera.position.endX == this.camera.position.maxX) {
+
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -172,6 +186,7 @@ class LevelCreator {
                 rowImg[j].style.backgroundImage = bgImage;
                 rowImg[j].style.backgroundPositionX = bgPosX;
                 rowImg[j].style.backgroundPositionY = bgPosY;
+                rowImg[j].innerHTML = this.mapDraw.map[i][j][0].case;
             }
         }
     }

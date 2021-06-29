@@ -13,8 +13,8 @@ class LevelOne extends LevelCreator {
 
         this.camera.position.endX = this.camera.position.startX + this.camera.size.width;
         this.camera.position.endY = this.camera.position.startY + this.camera.size.height;
-        this.camera.position.centerX = this.camera.position.endX / 2 - 1;
-        this.camera.position.centerY = this.camera.position.endY / 2 - 1;
+        this.camera.position.centerX = Math.floor(this.camera.position.endX / 2);
+        this.camera.position.centerY = Math.floor(this.camera.position.endY / 2);
         this.camera.position.maxX = levelMap.width;
         this.camera.position.maxY = levelMap.height;
 
@@ -31,7 +31,7 @@ class LevelOne extends LevelCreator {
 			// FIXME : actuellement, il faut relacher le bouton et le renfoncer pour aller plus bas dans la carte
 			// FIXME : gérer le canWalk
            
-			const speedMap = 0.3;
+			const speedMap = 0.2;
 
 			if ( this.canFollowPlayer(player, 'versLaGauche') && keybordPressed.isPressed(37) && this.timePassed - player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement > speedMap ) {
 				player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement = this.timePassed;

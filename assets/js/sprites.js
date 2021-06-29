@@ -397,7 +397,7 @@ const tileSets = [
                     }
                 ]
             },
-            { // 22 bulle d'eau
+            { // 24 bulle d'eau
                 canWalk: false, 
                 isAnimation: true,
                 position: [
@@ -415,7 +415,7 @@ const tileSets = [
                     }
                 ]
             },
-            { // 23 cascade gauche
+            { // 25 cascade gauche
                 canWalk: false, 
                 isAnimation: true,
                 position: [
@@ -433,7 +433,7 @@ const tileSets = [
                     }
                 ]
             },
-            { // 24 cascade droite
+            { // 26 cascade droite
                 canWalk: false, 
                 isAnimation: true,
                 position: [
@@ -451,7 +451,7 @@ const tileSets = [
                     }
                 ]
             },
-            { // 25 bassin avec muret
+            { // 27 bassin avec muret
                 canWalk: false, 
                 isAnimation: true,
                 position: [
@@ -460,16 +460,16 @@ const tileSets = [
                         y: 6
                     },
                     {
-                        x: 9,
+                        x: 10,
                         y: 6
                     },
                     {
-                        x: 11,
+                        x: 12,
                         y: 6
                     }
                 ]
             },
-            { // 26 bassin
+            { // 28 bassin
                 canWalk: false, 
                 isAnimation: true,
                 position: [
@@ -478,12 +478,30 @@ const tileSets = [
                         y: 6
                     },
                     {
-                        x: 10,
+                        x: 11,
                         y: 6
                     },
                     {
                         x: 13,
                         y: 6
+                    }
+                ]
+            },
+            { // 29 eau
+                canWalk: false, 
+                isAnimation: true,
+                position: [
+                    {
+                        x: 0.5,
+                        y: 1.5
+                    },
+                    {
+                        x: 2.5,
+                        y: 1.5
+                    },
+                    {
+                        x: 4.5,
+                        y: 1.5
                     }
                 ]
             },
@@ -1090,7 +1108,7 @@ const tileSets = [
             { // 1 Toit bois
                 position: [
                     {
-                        x: 4,
+                        x: 8,
                         y: 0
                     },
                 ],
@@ -1110,8 +1128,8 @@ const tileSets = [
             { // 3 Mur bois horizontal
                 position: [
                     {
-                        x: 4,
-                        y: 1
+                        x: 8,
+                        y: 2
                     },
                 ],
                 canWalk: false,
@@ -1130,8 +1148,8 @@ const tileSets = [
             { // 5 Mur pierre verdure
                 position: [
                     {
-                        x: 3,
-                        y: 3
+                        x: 6,
+                        y: 6
                     },
                 ],
                 canWalk: false,
@@ -1352,6 +1370,46 @@ const tileSets = [
                 canWalk: false,
                 isAnimation: false,
             },
+            { // 20 Haie claire
+                position: [
+                    {
+                        x: 2,
+                        y: 12
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 21 Haie sombre
+                position: [
+                    {
+                        x: 2,
+                        y: 13
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 22 Mur petites pierres clair
+                position: [
+                    {
+                        x: 2,
+                        y: 0
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 23 Mur petites pierres foncé
+                position: [
+                    {
+                        x: 2,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
         ]
     },
     { // 4
@@ -1374,7 +1432,7 @@ const tileSets = [
                         y: 2
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 2 Pavés central
@@ -1384,7 +1442,7 @@ const tileSets = [
                         y: 3
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 3 Falaise herbe haut gauche
@@ -1394,7 +1452,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 4 Falaise herbe haut milieu
@@ -1404,7 +1462,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 5 Falaise herbe haut droit
@@ -1414,7 +1472,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 6 Falaise herbe milieu gauche
@@ -1424,7 +1482,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 7 Falaise herbe milieu droit
@@ -1434,7 +1492,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 8 Falaise herbe bas gauche
@@ -1444,7 +1502,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 9 Falaise herbe bas milieu
@@ -1454,7 +1512,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 10 Falaise herbe bas droit
@@ -1464,7 +1522,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 11 Falaise haut gauche
@@ -1534,7 +1592,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 18 Joint falaise herbe bas gauche
@@ -1544,7 +1602,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 19 Joint falaise herbe haut droit
@@ -1554,7 +1612,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 20 Joint falaise herbe haut gauche
@@ -1564,7 +1622,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 21 Joint falaise désert bas droit
@@ -1574,7 +1632,7 @@ const tileSets = [
                         y: 14
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 22 Joint falaise désert bas gauche
@@ -1584,7 +1642,7 @@ const tileSets = [
                         y: 14
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 23 Joint falaise désert haut droit
@@ -1594,7 +1652,7 @@ const tileSets = [
                         y: 15
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 24 Joint falaise désert haut gauche
@@ -1604,7 +1662,7 @@ const tileSets = [
                         y: 15
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 25 Falaise désert haut gauche
@@ -1614,7 +1672,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 26 Falaise désert haut milieu
@@ -1624,7 +1682,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 27 Falaise désert haut droit
@@ -1634,7 +1692,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 28 Falaise désert milieu gauche
@@ -1644,7 +1702,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 29 Falaise désert milieu droit
@@ -1654,7 +1712,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 30 Falaise désert bas gauche
@@ -1664,7 +1722,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 31 Falaise désert bas milieu
@@ -1674,7 +1732,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 32 Falaise désert bas droit
@@ -1684,7 +1742,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
                 isAnimation: false,
             },
             { // 33 Falaise bas gauche désert
@@ -1721,10 +1779,30 @@ const tileSets = [
                 position: [
                     {
                         x: 4,
-                        y: 3
+                        y: 2
                     },
                 ],
-                canWalk: false,
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 37 Champs haut
+                position: [
+                    {
+                        x: 5,
+                        y: 10
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 38 Champs bas
+                position: [
+                    {
+                        x: 5,
+                        y: 9
+                    },
+                ],
+                canWalk: true,
                 isAnimation: false,
             },
         ]
@@ -1742,19 +1820,449 @@ const tileSets = [
                 canWalk: true,
                 isAnimation: false,
             },
+            { // 1 pont en bois vertical
+                position: [
+                    {
+                        x: 0,
+                        y: 10
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 2 pont en bois horizontal
+                position: [
+                    {
+                        x: 1,
+                        y: 10
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 3 support de pont en bois
+                position: [
+                    {
+                        x: 0,
+                        y: 11
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 4 entrée arrondie
+                position: [
+                    {
+                        x: 14,
+                        y: 0
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 5 pavés
+                position: [
+                    {
+                        x: 12,
+                        y: 1
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
         ]
     },
     { // 6
         path: "assets/sprites/spr_tileset/Outside_C.png",
         data: [
-            { // 0
+            { // 0 Toit bois haut gauche
                 position: [
                     {
-                        x: 1,
+                        x: 13,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 1 Toit bois haut
+                position: [
+                    {
+                        x: 14,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 2 Toit bois haut droit
+                position: [
+                    {
+                        x: 15,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 3 Toit bois milieu gauche
+                position: [
+                    {
+                        x: 13,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 4 Toit bois milieu
+                position: [
+                    {
+                        x: 14,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 5 Toit bois milieu droit
+                position: [
+                    {
+                        x: 15,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 6 Toit bois bas gauche
+                position: [
+                    {
+                        x: 13,
+                        y: 5
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 7 Toit bois bas
+                position: [
+                    {
+                        x: 14,
+                        y: 5
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 8 Toit bois bas droit
+                position: [
+                    {
+                        x: 15,
+                        y: 5
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 9 Toit jaune haut gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 10 Toit jaune haut
+                position: [
+                    {
+                        x: 9,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 11 Toit jaune haut droit
+                position: [
+                    {
+                        x: 10,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 12 Toit jaune milieu gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 13 Toit jaune milieu
+                position: [
+                    {
+                        x: 9,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 14 Toit jaune milieu droit
+                position: [
+                    {
+                        x: 10,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 15 Toit jaune bas gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 5
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 16 Toit jaune bas
+                position: [
+                    {
+                        x: 9,
+                        y: 5
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 17 Toit jaune bas droit
+                position: [
+                    {
+                        x: 10,
+                        y: 5
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 18 Toit bois angle droit
+                position: [
+                    {
+                        x: 14,
+                        y: 7
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 19 Toit bois angle gauche
+                position: [
+                    {
+                        x: 15,
+                        y: 7
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 20 Toit vert haut gauche
+                position: [
+                    {
+                        x: 8,
                         y: 0
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 21 Toit vert haut
+                position: [
+                    {
+                        x: 9,
+                        y: 0
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 22 Toit vert haut droit
+                position: [
+                    {
+                        x: 10,
+                        y: 0
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 23 Toit vert milieu gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 1
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 24 Toit vert milieu
+                position: [
+                    {
+                        x: 9,
+                        y: 1
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 25 Toit vert milieu droit
+                position: [
+                    {
+                        x: 10,
+                        y: 1
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 26 Toit vert bas gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 2
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 27 Toit vert bas
+                position: [
+                    {
+                        x: 9,
+                        y: 2
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 28 Toit vert bas droit
+                position: [
+                    {
+                        x: 10,
+                        y: 2
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 29 Tour sommet haut gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 6
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 30 Tour sommet haut droit
+                position: [
+                    {
+                        x: 9,
+                        y: 6
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 31 Tour sommet bas gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 7
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 32 Tour sommet bas droit
+                position: [
+                    {
+                        x: 9,
+                        y: 7
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 33 Tour pleine gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 8
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 34 Tour pleine droite
+                position: [
+                    {
+                        x: 9,
+                        y: 8
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 35 Tour avec fenêtre gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 9
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 36 Tour avec fenêtre droite
+                position: [
+                    {
+                        x: 9,
+                        y: 9
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 37 Tour base gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 10
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 38 Tour base droit
+                position: [
+                    {
+                        x: 9,
+                        y: 10
+                    },
+                ],
+                canWalk: false,
                 isAnimation: false,
             },
         ]
