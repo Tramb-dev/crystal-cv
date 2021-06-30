@@ -6,7 +6,7 @@ class LevelOne extends LevelCreator {
 			startX: 1,
 			startY: 18,
 		};
-		this.speedMap = 0.2;
+		this.speedMap = 0.1;
 		this.scripts = {
 			wakeUpNeo: false,
 		};

@@ -82,7 +82,6 @@ class LevelCreator {
                 });
             }
         }
-        //this.mapDraw.needUpdate = false;
     }
 
     // Permet de sélectionner un entre 2 tuiles pour réaliser des continuités dans les bords de mer par exemple.
@@ -121,6 +120,7 @@ class LevelCreator {
                     if (this.mapDraw.map[player.gridPosition.y-1][player.gridPosition.x].canWalk) {
                         player.enCoursDeDeplacement[direction].canMove = false;
                         move = true;
+                        player.deplacement(direction);
                     }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
@@ -132,6 +132,7 @@ class LevelCreator {
                     if (this.mapDraw.map[player.gridPosition.y+1][player.gridPosition.x].canWalk) {
                         player.enCoursDeDeplacement[direction].canMove = false;
                         move = true;
+                        player.deplacement(direction);
                     }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
@@ -143,6 +144,7 @@ class LevelCreator {
                     if (this.mapDraw.map[player.gridPosition.y][player.gridPosition.x-1].canWalk) {
                         player.enCoursDeDeplacement[direction].canMove = false;
                         move = true;
+                        player.deplacement(direction);
                     }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
@@ -154,6 +156,7 @@ class LevelCreator {
                     if (this.mapDraw.map[player.gridPosition.y][player.gridPosition.x+1].canWalk) {
                         player.enCoursDeDeplacement[direction].canMove = false;
                         move = true;
+                        player.deplacement(direction);
                     }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;

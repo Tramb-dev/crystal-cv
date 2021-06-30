@@ -47,11 +47,11 @@ class Personnage {
             this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(() => this.bougeSprite(direction, reverse, spritePosition));
 
             // On ne lance le déplacement de la div du joueur seulement si la caméra l'y autorise
-            if (this.enCoursDeDeplacement[direction].canMove) this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(() => this.bougePlayerDiv(direction, proprieteDeStyle, increment));
-        } else if (!this.enCoursDeDeplacement[direction].canMove) {
+           /*  if (this.enCoursDeDeplacement[direction].canMove) this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(() => this.bougePlayerDiv(direction, proprieteDeStyle, increment)); */
+        } /* else if (!this.enCoursDeDeplacement[direction].canMove) {
             // Si la caméra détecte qu'elle peut bouger et que le joueur est arrivé au centre de l'écran, on coupe le déplacement de la div
             cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
-        } /* else {
+        }  *//* else {
             this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
         } */
     }
@@ -103,7 +103,7 @@ class Personnage {
     // Annule le déplacement en cours (lorsque le joueur arrête d'appuyer sur la touche)
     annulerDeplacement(direction) {
         cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationImg);
-        cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
+        //cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
         this.enCoursDeDeplacement[direction].animationEnCours = false;
         this.enCoursDeDeplacement[direction].derniereImage = 0;
     }

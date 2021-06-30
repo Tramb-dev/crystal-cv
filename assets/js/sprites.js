@@ -1452,7 +1452,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 4 Falaise herbe haut milieu
@@ -1462,7 +1462,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 5 Falaise herbe haut droit
@@ -1472,7 +1472,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 6 Falaise herbe milieu gauche
@@ -1482,7 +1482,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 7 Falaise herbe milieu droit
@@ -1492,7 +1492,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 8 Falaise herbe bas gauche
@@ -1502,7 +1502,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 9 Falaise herbe bas milieu
@@ -1512,7 +1512,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 10 Falaise herbe bas droit
@@ -1522,7 +1522,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 11 Falaise haut gauche
@@ -1672,7 +1672,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 26 Falaise désert haut milieu
@@ -1682,7 +1682,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 27 Falaise désert haut droit
@@ -1692,7 +1692,7 @@ const tileSets = [
                         y: 11
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 28 Falaise désert milieu gauche
@@ -1702,7 +1702,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 29 Falaise désert milieu droit
@@ -1712,7 +1712,7 @@ const tileSets = [
                         y: 12
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 30 Falaise désert bas gauche
@@ -1722,7 +1722,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 31 Falaise désert bas milieu
@@ -1732,7 +1732,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 32 Falaise désert bas droit
@@ -1742,7 +1742,7 @@ const tileSets = [
                         y: 13
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 33 Falaise bas gauche désert
