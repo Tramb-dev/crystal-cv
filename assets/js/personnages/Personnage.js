@@ -12,6 +12,7 @@ class Personnage {
             nbFPSPlayerDiv: 10,
             nbAnimationPlayerDiv: 0
         };
+        this.modalDialog = document.getElementById('dialog_box');
     }
 
     // Gère le déplacement du personnage
@@ -41,19 +42,13 @@ class Personnage {
                 break;
         }
         
-        // Si le joueur vient d'appuyer sur une touche, alors on lance les animations
         if (!this.enCoursDeDeplacement[direction].animationEnCours) {
             this.enCoursDeDeplacement[direction].animationEnCours = true;
             this.enCoursDeDeplacement[direction].identifiantAnimationImg = requestAnimationFrame(() => this.bougeSprite(direction, reverse, spritePosition));
-
-            // On ne lance le déplacement de la div du joueur seulement si la caméra l'y autorise
-           /*  if (this.enCoursDeDeplacement[direction].canMove) this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(() => this.bougePlayerDiv(direction, proprieteDeStyle, increment)); */
-        } /* else if (!this.enCoursDeDeplacement[direction].canMove) {
-            // Si la caméra détecte qu'elle peut bouger et que le joueur est arrivé au centre de l'écran, on coupe le déplacement de la div
-            cancelAnimationFrame(this.enCoursDeDeplacement[direction].identifiantAnimationDiv);
-        }  *//* else {
-            this.enCoursDeDeplacement[direction].identifiantAnimationDiv = requestAnimationFrame(bougePlayerDiv);
-        } */
+        }
+        
+        this.playerDiv.style.top = this.gridPosition.y * this.grid + 'px';
+        this.playerDiv.style.left = this.gridPosition.x * this.grid + 'px';
     }
 
     // Bouge le sprite (la position définit l'emplacement dans l'objet sprite, auquel on ajoute jusqu'à 3 images pour une animation)
@@ -132,4 +127,22 @@ class Personnage {
         this.playerImg.style.top = this.sprite[spritePosition][1].top + "px";
     }
 
+    dialog(selectedMessage) {
+        const portraitPerso = this.modalDialog.querySelector('.portrait');
+        const name = this.modalDialog.querySelector('.nom');
+        const saying = this.modalDialog.querySelector('.message');
+        scripts.gameState = 'dialog';
+        
+        portraitPerso.src = portraits[dialogues[selectedMessage].playerId].path;
+        name.innerHTML = portraits[dialogues[selectedMessage].playerId].name;
+        saying.innerHTML = dialogues[selectedMessage].message;
+        this.modalDialog.style.display = "block";
+    }
+
+    closeDialog(keybordPressed) {
+        if ( keybordPressed.isPressed(13) ) {
+            scripts.gameState = 'game';
+            this.modalDialog.style.display = "none";
+        }
+    }
 }

@@ -3,6 +3,7 @@
     transition: opacity .4s ease-in-out .4s, top .2s linear, left .2s linear;
     align-self: center;
     user-select: none;
+    cursor: none;
 }
 
 #masque_container {
@@ -16,4 +17,37 @@
 #player {
     position: absolute;
     z-index: 10;
+}
+
+#dialog_box {
+    display: none;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    .dialog {
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background-color: #fefefe;
+        padding: 20px;
+        border: 1px solid lightgray;
+
+        .portrait img {
+
+        }
+
+        .nom {
+            font-weight: bold;
+        }
+    
+        .message, .nom {
+            padding: 10px;
+        }
+    }
 }

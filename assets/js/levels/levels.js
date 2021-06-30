@@ -15,6 +15,7 @@ class LevelCreator {
         };
     }
 
+    // Crée la grille au démarrage en fonction des données de niveau
     addGrid() {  
         for (let i=0; i<this.camera.size.height; i++) {
             this.mapDraw.map[i] = [];
@@ -37,7 +38,7 @@ class LevelCreator {
                 gridView.setAttribute("data-row", i) ;
                 gridView.setAttribute("data-col", j) ;
 
-                gridView.innerHTML = this.mapDraw.map[i][j][0].case;
+                gridView.innerHTML = this.mapDraw.map[i][j].case;
                 // TODO : à supprimer une fois les corrections de carte effectuées
 
                 this.levelDiv.appendChild(gridView); 
@@ -45,6 +46,7 @@ class LevelCreator {
         } 
     }
 
+    // Crée un tableau servant au print de la carte sur la caméra
     fillMapDraw() {
         for (let i=0; i<this.camera.size.height; i++) {
             let y = i + this.camera.position.startY;
@@ -55,6 +57,17 @@ class LevelCreator {
                 this.mapDraw.map[i][j] = [];
                 this.mapDraw.map[i][j].canWalk = true;
                 this.mapDraw.map[i][j].isAnimation = false;
+                this.mapDraw.map[i][j].col = x;
+                this.mapDraw.map[i][j].row = y;
+                this.mapDraw.map[i][j].case = "r" + y + "c" + x;
+                // TODO : à supprimer une fois la carte créée
+
+                // Ajout des scripts dans le mapDraw
+                events.forEach((element, index) => {
+                    if ( element.position.x == x && element.position.y == y ) {
+                        this.mapDraw.map[i][j].script = index;
+                    }
+                });
 
                 // Gestion des autorisations de déplacement du personnage
                 /* Si on a spécifié qu'une case peut être traversée malgré tout, comme un passage secret par exemple
@@ -77,8 +90,6 @@ class LevelCreator {
 
                 levelMap.data[y][x].forEach((element, index) => {
                     this.mapDraw.map[i][j][index] = element;
-                    this.mapDraw.map[i][j][index].case = "r" + y + "c" + x;
-                    // TODO : à supprimer une fois la carte créée
                 });
             }
         }
@@ -176,13 +187,20 @@ class LevelCreator {
                 let x = j + this.camera.position.startX;
 
                 if ( this.mapDraw.needUpdate || this.mapDraw.map[i][j].isAnimation ) {
-
                     // Ajoute les couches de tiles les unes sur les autres
-                    let bgImage = '', bgPosX = '', bgPosY = '';
+                    let bgImage = '', bgPosX = '', bgPosY = '', bgSize = '';
+                    if ( this.mapDraw.map[i][j].hasOwnProperty('script') && events[this.mapDraw.map[i][j].script].hasOwnProperty('image') ) {
+                        bgImage += "url(" + events[this.mapDraw.map[i][j].script].image + "), ";
+                        bgPosX += "0px, ";
+                        bgPosY += "0px, ";
+                        bgSize += this.case + "px, ";
+                    }
+
                     for (let layer = this.mapDraw.map[i][j].length - 1; layer >= 0; layer--) {
                         const currentTileSet = tileSets[this.mapDraw.map[i][j][layer].tilesetId];
                         const currentTile = currentTileSet.data[this.mapDraw.map[i][j][layer].tileId];
                         bgImage += "url(" + currentTileSet.path + ")";
+                        bgSize += "auto";
 
                         // Si la case doit afficher un entre deux tiles
                         let midTile = [];
@@ -204,12 +222,15 @@ class LevelCreator {
                             bgImage += ", ";
                             bgPosX += ", ";
                             bgPosY += ", ";
+                            bgSize += ", ";
                         }
                     }
+
                     rowImg[j].style.backgroundImage = bgImage;
                     rowImg[j].style.backgroundPositionX = bgPosX;
                     rowImg[j].style.backgroundPositionY = bgPosY;
-                    rowImg[j].innerHTML = this.mapDraw.map[i][j][0].case;
+                    rowImg[j].style.backgroundSize = bgSize;
+                    rowImg[j].innerHTML = this.mapDraw.map[i][j].case;
                     // TODO : à supprimer une fois la carte établie
                 }
             }

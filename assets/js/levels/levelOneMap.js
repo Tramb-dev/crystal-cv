@@ -3632,6 +3632,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 7,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 9,   
+                },
             ],
             [ // x = 17
                 {
@@ -3852,6 +3856,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 10,   
+                },
             ],
             [ // x = 17
                 {
@@ -4070,6 +4078,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 52,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 11,   
+                },
             ],
             [ // x = 17
                 {
@@ -4270,6 +4282,10 @@ const levelMap = {
                     tilesetId: 0,
                     tileId: 28,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 13,   
+                },
             ],
             [ // x = 16
                 {
@@ -4279,6 +4295,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 52,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 14,   
                 },
             ],
             [ // x = 17
@@ -4339,6 +4359,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 7,     
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 19,     
                 },
             ],
             [ // x = 27
@@ -4489,6 +4513,14 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 52,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 14,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 9,   
                 },
             ],
             [ // x = 17
@@ -4712,6 +4744,14 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 52,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 14,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 10,   
+                },
             ],
             [ // x = 17
                 {
@@ -4920,6 +4960,10 @@ const levelMap = {
                     tilesetId: 0,
                     tileId: 28,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 12,   
+                },
             ],
             [ // x = 16
                 {
@@ -4929,6 +4973,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 52,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 11,   
                 },
             ],
             [ // x = 17
@@ -4957,6 +5005,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 52,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 14,   
                 },
             ],
             [ // x = 21
@@ -4989,6 +5041,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 52,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 14,   
                 },
             ],
             [ // x = 25
@@ -5360,6 +5416,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 42,       
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 8,       
+                },
             ],
             [ // x = 18
                 {
@@ -5498,11 +5558,19 @@ const levelMap = {
                     tilesetId: 4,
                     tileId: 37, 
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 6, 
+                },
             ],
             [ // x = 6
                 {
                     tilesetId: 4,
                     tileId: 37,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 6,   
                 },
             ],
             [ // x = 7
@@ -5574,7 +5642,11 @@ const levelMap = {
             [ // x = 18
                 {
                     tilesetId: 1,
-                    tileId: [42,45],       
+                    tileId: [42,45],
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 7,
                 },
             ],
             [ // x = 19
@@ -5622,6 +5694,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 52,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 14,   
+                },
             ],
             [ // x = 26
                 {
@@ -5653,6 +5729,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 52,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 14,   
                 },
             ],
             [ // x = 30
@@ -5716,11 +5796,19 @@ const levelMap = {
                     tilesetId: 4,
                     tileId: 38, 
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 6, 
+                },
             ],
             [ // x = 6
                 {
                     tilesetId: 4,
                     tileId: 38,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 6,   
                 },
             ],
             [ // x = 7
@@ -8386,5 +8474,36 @@ const levelMap = {
                 },
             ],
         ],
-    ]
+    ],
+    
 };
+
+const dialogues = [
+    {
+        playerId: 0,
+        message: "Il est l'heure de se réveiller."
+    },
+];
+
+const scripts = {
+    gameState: 'intro',
+    wakeUpNeo: false,
+    mapPosition: [
+
+    ],
+};
+
+const events = [
+    {
+        image: "assets/sprites/spr_competencies/angular.png",
+        triggerButton: 13,
+        position: {
+            x: 18,
+            y: 26
+        },
+        action: function() {
+            this.score += 100;
+            console.log(this.score);
+        }
+    }
+]

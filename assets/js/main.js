@@ -55,6 +55,7 @@ class Main {
     }
 
     menu() {
+        scripts.gameState = 'game';
         const menu = document.getElementById('menu');
         menu.classList.toggle("fade");
         window.setTimeout(function() {
@@ -100,8 +101,6 @@ class Main {
         
         if (this.keybordControls.isPressed(27) || this.keybordControls.isPressed(19) || this.keybordControls.isPressed(80)) {
             this.pause(timestamp);
-        } else if (this.keybordControls.isPressed(13)) {
-            if (!this.launchGame) this.menu();
         }
         
         if(!this.pauseGame.value) {

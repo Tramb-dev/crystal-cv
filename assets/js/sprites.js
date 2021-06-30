@@ -1870,6 +1870,177 @@ const tileSets = [
                 canWalk: true,
                 isAnimation: false,
             },
+            { // 6 carottes
+                position: [
+                    {
+                        x: 13,
+                        y: 5
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 7 puit
+                position: [
+                    {
+                        x: 11,
+                        y: 1
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 8 sceau plein
+                position: [
+                    {
+                        x: 10,
+                        y: 2
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 9 Lampadaire haut
+                position: [
+                    {
+                        x: 0,
+                        y: 1
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 10 Lampadaire milieu
+                position: [
+                    {
+                        x: 0,
+                        y: 2
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 11 Lampadaire bas 
+                position: [
+                    {
+                        x: 0,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 12 Nénuphare A 
+                position: [
+                    {
+                        x: 13,
+                        y: 15
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 13 Nénuphare B 
+                position: [
+                    {
+                        x: 14,
+                        y: 15
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 14 Buisson
+                position: [
+                    {
+                        x: 14,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 15 Arbre haut gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 6
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 16 Arbre haut droit
+                position: [
+                    {
+                        x: 9,
+                        y: 6
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 17 Arbre bas gauche
+                position: [
+                    {
+                        x: 8,
+                        y: 7
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 18 Arbre bas droit
+                position: [
+                    {
+                        x: 9,
+                        y: 7
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 19 Souche
+                position: [
+                    {
+                        x: 12,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 20 Tronc couché
+                position: [
+                    {
+                        x: 12,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 21 Rocher gris
+                position: [
+                    {
+                        x: 15,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 22 Rocher beige
+                position: [
+                    {
+                        x: 15,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            
         ]
     },
     { // 6
@@ -2267,4 +2438,11 @@ const tileSets = [
             },
         ]
     },
+];
+
+const portraits = [
+    {
+        name: 'Terra',
+        path: "assets/sprites/spr_pictures/Terra_portrait.webp",
+    }
 ];

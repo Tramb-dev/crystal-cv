@@ -496,11 +496,15 @@ class Player extends Personnage {
         this.choixImageSprite(0);
     }
 
+	moveTo(coordinateX, coordinateY) {
+		
+	}
+
     update(secondsPassed, keybordPressed) {
         this.timePassed += secondsPassed;
         let direction = false;
 
-        if ( keybordPressed.isMovementPressed() ) {
+        if ( keybordPressed.isMovementPressed() && scripts.gameState === 'game' ) {
             let dirX = 0, dirY = 0;
             switch ( keybordPressed.lastPressed() ) {
                 case 37:
@@ -547,10 +551,7 @@ class Player extends Personnage {
         // Pour éviter de mettre à jour en permanence
         
         if ( this.gridPosition.needUpdate ) {
-            // console.log(this.enCoursDeDeplacement);
             this.deplacement(this.gridPosition.needUpdate);
-            this.playerDiv.style.top = this.gridPosition.y * this.grid + 'px';
-            this.playerDiv.style.left = this.gridPosition.x * this.grid + 'px';
             this.gridPosition.needUpdate = false;
         }
     }

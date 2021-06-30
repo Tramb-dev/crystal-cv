@@ -6,10 +6,7 @@ class LevelOne extends LevelCreator {
 			startX: 1,
 			startY: 18,
 		};
-		this.speedMap = 0.1;
-		this.scripts = {
-			wakeUpNeo: false,
-		};
+		this.speedMap = 0.2;
         this.init();
     }
 
@@ -32,12 +29,27 @@ class LevelOne extends LevelCreator {
     update(secondsPassed, player, keybordPressed) {
         this.timePassed += secondsPassed;
 
+		if (!scripts.wakeUpNeo) {
+			scripts.wakeUpNeo = true;
+			scripts.gameState = 'waitingInput';
+			setTimeout(function() {
+				player.gridPosition.needUpdate = 'versLeBas';
+				player.gridPosition.y += 2;
+				setTimeout(function() {
+					player.dialog(0);
+				}, 500);
+			}, 1000);
+		}
+
+		if (scripts.gameState === 'dialog') {
+			
+			player.closeDialog(keybordPressed);
+		}
+
         // On vérifie si le joueur doit se déplacer. Si c'est le cas, on vérifie sa position par rapport à la caméra. 
-        if ( keybordPressed.isMovementPressed() ) {
+        if ( keybordPressed.isMovementPressed() && scripts.gameState === 'game' ) {
             // Gestion des déplacements de la caméra sur la carte
 			// Si la caméra peut suivre le joueur, on actualise les tuiles et on stop le déplacement du joueur
-			// FIXME : actuellement, il faut relacher le bouton et le renfoncer pour aller plus bas dans la carte
-           
 			if ( keybordPressed.isPressed(37) && this.timePassed - player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLaGauche') ) {
 					player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement = this.timePassed;
