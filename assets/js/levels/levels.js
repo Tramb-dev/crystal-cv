@@ -50,19 +50,28 @@ class LevelCreator {
             let y = i + this.camera.position.startY;
             for (let j=0; j<this.camera.size.width; j++) {
                 let x = j + this.camera.position.startX;
-                this.mapDraw.map[i][j].splice(0, 5);
+                // On supprime les couches existantes
+                this.mapDraw.map[i][j].splice(1, 5);
                 this.mapDraw.map[i][j] = [];
                 this.mapDraw.map[i][j].canWalk = true;
+                this.mapDraw.map[i][j].isAnimation = false;
 
                 // Gestion des autorisations de déplacement du personnage
                 /* Si on a spécifié qu'une case peut être traversée malgré tout, comme un passage secret par exemple
                 Regarde sur chaque layer s'il y a une restriction de mouvement. Une seule suffit pour stopper le joueur */
                 for (const element of levelMap.data[y][x]) {
                     if ( 'object' == typeof element.tileId ) {
-                        if ( !tileSets[element.tilesetId].data[element.tileId[0]].canWalk && !element.canWalk ) this.mapDraw.map[i][j].canWalk = false;
-
+                        if ( !tileSets[element.tilesetId].data[element.tileId[0]].canWalk && !element.canWalk ) {
+                            this.mapDraw.map[i][j].canWalk = false;
+                        }
+                        if ( tileSets[element.tilesetId].data[element.tileId[0]].isAnimation ) {
+                            this.mapDraw.map[i][j].isAnimation = true;
+                        }
                     } else if( 'object' != typeof element.tileId && !tileSets[element.tilesetId].data[element.tileId].canWalk && !element.canWalk ){ 
                         this.mapDraw.map[i][j].canWalk = false;
+                        if ( tileSets[element.tilesetId].data[element.tileId].isAnimation ) {
+                            this.mapDraw.map[i][j].isAnimation = true;
+                        }
                     }
                 }
 
@@ -73,7 +82,7 @@ class LevelCreator {
                 });
             }
         }
-        this.mapDraw.needUpdate = false;
+        //this.mapDraw.needUpdate = false;
     }
 
     // Permet de sélectionner un entre 2 tuiles pour réaliser des continuités dans les bords de mer par exemple.
@@ -163,41 +172,45 @@ class LevelCreator {
             for (let j=0; j<this.camera.size.width; j++) {
                 let x = j + this.camera.position.startX;
 
-                // Ajoute les couches de tiles les unes sur les autres
-                let bgImage = '', bgPosX = '', bgPosY = '';
-                for (let layer = this.mapDraw.map[i][j].length - 1; layer >= 0; layer--) {
-                    const currentTileSet = tileSets[this.mapDraw.map[i][j][layer].tilesetId];
-                    const currentTile = currentTileSet.data[this.mapDraw.map[i][j][layer].tileId];
-                    bgImage += "url(" + currentTileSet.path + ")";
+                if ( this.mapDraw.needUpdate || this.mapDraw.map[i][j].isAnimation ) {
 
-                    // Si la case doit afficher un entre deux tiles
-                    let midTile = [];
-                    if ('object' === typeof this.mapDraw.map[i][j][layer].tileId) {
-                        midTile = this.midTile(this.mapDraw.map[i][j][layer].tileId, currentTileSet);
-                        bgPosX += midTile[0];
-                        bgPosY += midTile[1];
-                    } else {
-                        // Gestion des animations
-                        let compteur = 0;
-                        if (currentTile.isAnimation) { 
-                            compteur = Math.floor(this.timePassed % currentTile.position.length);
+                    // Ajoute les couches de tiles les unes sur les autres
+                    let bgImage = '', bgPosX = '', bgPosY = '';
+                    for (let layer = this.mapDraw.map[i][j].length - 1; layer >= 0; layer--) {
+                        const currentTileSet = tileSets[this.mapDraw.map[i][j][layer].tilesetId];
+                        const currentTile = currentTileSet.data[this.mapDraw.map[i][j][layer].tileId];
+                        bgImage += "url(" + currentTileSet.path + ")";
+
+                        // Si la case doit afficher un entre deux tiles
+                        let midTile = [];
+                        if ('object' === typeof this.mapDraw.map[i][j][layer].tileId) {
+                            midTile = this.midTile(this.mapDraw.map[i][j][layer].tileId, currentTileSet);
+                            bgPosX += midTile[0];
+                            bgPosY += midTile[1];
+                        } else {
+                            // Gestion des animations
+                            let compteur = 0;
+                            if (currentTile.isAnimation) { 
+                                compteur = Math.floor(this.timePassed % currentTile.position.length);
+                            }
+                            bgPosX += - currentTile.position[compteur].x * this.case + "px";
+                            bgPosY += - currentTile.position[compteur].y * this.case + "px";
                         }
-                        bgPosX += - currentTile.position[compteur].x * this.case + "px";
-                        bgPosY += - currentTile.position[compteur].y * this.case + "px";
-                    }
 
-                    if (0 != layer) {
-                        bgImage += ", ";
-                        bgPosX += ", ";
-                        bgPosY += ", ";
+                        if (0 != layer) {
+                            bgImage += ", ";
+                            bgPosX += ", ";
+                            bgPosY += ", ";
+                        }
                     }
+                    rowImg[j].style.backgroundImage = bgImage;
+                    rowImg[j].style.backgroundPositionX = bgPosX;
+                    rowImg[j].style.backgroundPositionY = bgPosY;
+                    rowImg[j].innerHTML = this.mapDraw.map[i][j][0].case;
+                    // TODO : à supprimer une fois la carte établie
                 }
-                rowImg[j].style.backgroundImage = bgImage;
-                rowImg[j].style.backgroundPositionX = bgPosX;
-                rowImg[j].style.backgroundPositionY = bgPosY;
-                rowImg[j].innerHTML = this.mapDraw.map[i][j][0].case;
-                // TODO : à supprimer une fois la carte établie
             }
         }
+        this.mapDraw.needUpdate = false;
     }
 }

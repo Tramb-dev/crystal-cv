@@ -6,6 +6,7 @@ class LevelOne extends LevelCreator {
 			startX: 1,
 			startY: 18,
 		};
+		this.speedMap = 0.2;
 		this.scripts = {
 			wakeUpNeo: false,
 		};
@@ -37,9 +38,7 @@ class LevelOne extends LevelCreator {
 			// Si la caméra peut suivre le joueur, on actualise les tuiles et on stop le déplacement du joueur
 			// FIXME : actuellement, il faut relacher le bouton et le renfoncer pour aller plus bas dans la carte
            
-			const speedMap = 0.2;
-
-			if ( keybordPressed.isPressed(37) && this.timePassed - player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement > speedMap ) {
+			if ( keybordPressed.isPressed(37) && this.timePassed - player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLaGauche') ) {
 					player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement = this.timePassed;
 					player.mapPosition.x--;
@@ -49,7 +48,7 @@ class LevelOne extends LevelCreator {
 				}
 			}
 
-			if ( keybordPressed.isPressed(38) && this.timePassed - player.enCoursDeDeplacement['versLeHaut'].timestampDeplacement > speedMap ) {
+			if ( keybordPressed.isPressed(38) && this.timePassed - player.enCoursDeDeplacement['versLeHaut'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLeHaut') ) {
 					player.enCoursDeDeplacement['versLeHaut'].timestampDeplacement = this.timePassed;
 					player.mapPosition.y--;
@@ -59,7 +58,7 @@ class LevelOne extends LevelCreator {
 				}
 			}
 			
-			if ( keybordPressed.isPressed(39) && this.timePassed - player.enCoursDeDeplacement['versLaDroite'].timestampDeplacement > speedMap ) {
+			if ( keybordPressed.isPressed(39) && this.timePassed - player.enCoursDeDeplacement['versLaDroite'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLaDroite') ) {
 					player.enCoursDeDeplacement['versLaDroite'].timestampDeplacement = this.timePassed;
 					player.mapPosition.x++;
@@ -69,7 +68,7 @@ class LevelOne extends LevelCreator {
 				}
 			}
 
-			if ( keybordPressed.isPressed(40) && this.timePassed - player.enCoursDeDeplacement['versLeBas'].timestampDeplacement > speedMap ) {
+			if ( keybordPressed.isPressed(40) && this.timePassed - player.enCoursDeDeplacement['versLeBas'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLeBas') ) {
 					player.enCoursDeDeplacement['versLeBas'].timestampDeplacement = this.timePassed;
 					player.mapPosition.y++;

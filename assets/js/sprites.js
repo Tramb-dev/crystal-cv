@@ -1373,8 +1373,8 @@ const tileSets = [
             { // 20 Haie claire
                 position: [
                     {
-                        x: 2,
-                        y: 12
+                        x: 2.5,
+                        y: 11.5
                     },
                 ],
                 canWalk: false,
@@ -1383,7 +1383,7 @@ const tileSets = [
             { // 21 Haie sombre
                 position: [
                     {
-                        x: 2,
+                        x: 2.5,
                         y: 13
                     },
                 ],

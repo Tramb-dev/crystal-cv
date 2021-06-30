@@ -8,6 +8,7 @@ class Player extends Personnage {
         this.gridPosition = {
             x: levelMap.startMapPosition.x - level.camera.position.startX,
             y: levelMap.startMapPosition.y - level.camera.position.startY,
+            needUpdate: false,
         };
         this.grid = level.case;
         this.cameraSize = level.camera.size;
@@ -472,8 +473,10 @@ class Player extends Personnage {
                     top: -193
                 }
             ],
-        ];   
+        ];  
+        this.speedMap = level.speedMap; 
         this.levelDraw = level.mapDraw;
+        this.timePassed = 0;
         this.init();
     }
 
@@ -493,35 +496,65 @@ class Player extends Personnage {
         this.choixImageSprite(0);
     }
 
-    update(keybordPressed) {
-
-        // FIXME : 2 appuis envoient le personnage vrier et aller trop vite, gérer un seul appui à la fois
-        if ( keybordPressed.isPressed(37) && keybordPressed.lastMovementPressed == 37 ) {
-            this.deplacement('versLaGauche');
-        } else if ( this.enCoursDeDeplacement.versLaGauche.animationEnCours || keybordPressed.lastMovementPressed != 37 ) {
+    update(secondsPassed, keybordPressed) {
+        this.timePassed += secondsPassed;
+        let dirX = 0, dirY = 0;
+        if ( keybordPressed.lastPressed() == 37 && this.timePassed - this.enCoursDeDeplacement['versLaGauche'].timestampDeplacement > this.speedMap ) {
+            dirX--;
+            if(this.canWalk(dirX, dirY)) {
+                this.enCoursDeDeplacement['versLaGauche'].timestampDeplacement = this.timePassed;
+                this.gridPosition.x += dirX;
+                this.gridPosition.y += dirY;
+                this.gridPosition.needUpdate = true;
+            }
+            //this.deplacement('versLaGauche');
+        } else if ( this.enCoursDeDeplacement.versLaGauche.animationEnCours || keybordPressed.lastPressed() != 37 ) {
             this.annulerDeplacement('versLaGauche');
         }
-        if ( keybordPressed.isPressed(38) && keybordPressed.lastMovementPressed == 38 ) {
-            this.deplacement('versLeHaut');
-        } else if ( this.enCoursDeDeplacement.versLeHaut.animationEnCours || keybordPressed.lastMovementPressed != 38 ) {
+        if ( keybordPressed.lastPressed() == 38 && this.timePassed - this.enCoursDeDeplacement['versLeHaut'].timestampDeplacement > this.speedMap ) {
+            dirY--;
+            if(this.canWalk(dirX, dirY)) {
+                this.enCoursDeDeplacement['versLeHaut'].timestampDeplacement = this.timePassed;
+                this.gridPosition.x += dirX;
+                this.gridPosition.y += dirY;
+                this.gridPosition.needUpdate = true;
+            }
+            //this.deplacement('versLeHaut');
+        } else if ( this.enCoursDeDeplacement.versLeHaut.animationEnCours || keybordPressed.lastPressed() != 38 ) {
             this.annulerDeplacement('versLeHaut');
         }
-        if ( keybordPressed.isPressed(39) && keybordPressed.lastMovementPressed == 39 ) {
-            this.deplacement('versLaDroite');
-        } else if ( this.enCoursDeDeplacement.versLaDroite.animationEnCours || keybordPressed.lastMovementPressed != 39 ) {
+        if ( keybordPressed.lastPressed() == 39 && this.timePassed - this.enCoursDeDeplacement['versLaDroite'].timestampDeplacement > this.speedMap ) {
+            dirX++;
+            if(this.canWalk(dirX, dirY)) {
+                this.enCoursDeDeplacement['versLaDroite'].timestampDeplacement = this.timePassed;
+                this.gridPosition.x += dirX;
+                this.gridPosition.y += dirY;
+                this.gridPosition.needUpdate = true;
+            }
+            //this.deplacement('versLaDroite');
+        } else if ( this.enCoursDeDeplacement.versLaDroite.animationEnCours || keybordPressed.lastPressed() != 39 ) {
             this.annulerDeplacement('versLaDroite');
         }
-        if ( keybordPressed.isPressed(40) && keybordPressed.lastMovementPressed == 40 ) {
-            this.deplacement('versLeBas');
-        } else if ( this.enCoursDeDeplacement.versLeBas.animationEnCours || keybordPressed.lastMovementPressed != 40 ) {
+        if ( keybordPressed.lastPressed() == 40 && this.timePassed - this.enCoursDeDeplacement['versLeBas'].timestampDeplacement > this.speedMap ) {
+            dirY++;
+            if(this.canWalk(dirX, dirY)) {
+                this.enCoursDeDeplacement['versLeBas'].timestampDeplacement = this.timePassed;
+                this.gridPosition.x += dirX;
+                this.gridPosition.y += dirY;
+                this.gridPosition.needUpdate = true;
+            }
+            //this.deplacement('versLeBas');
+        } else if ( this.enCoursDeDeplacement.versLeBas.animationEnCours || keybordPressed.lastPressed() != 40 ) {
             this.annulerDeplacement('versLeBas');
         }
     }
 
     draw() {
-       /*  for (let direction of Object.keys(this.enCoursDeDeplacement)) {
-         
-        } */
-        
+        // Pour éviter de mettre à jour en permanence
+        if ( this.gridPosition.needUpdate ) {
+            this.playerDiv.style.top = this.gridPosition.y * this.grid + 'px';
+            this.playerDiv.style.left = this.gridPosition.x * this.grid + 'px';
+            this.gridPosition.needUpdate = false;
+        }
     }
 }

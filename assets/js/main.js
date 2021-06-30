@@ -110,7 +110,7 @@ class Main {
             } */
             
             this.level.update(secondsPassed, this.player, this.keybordControls);
-            this.player.update(this.keybordControls);
+            this.player.update(secondsPassed, this.keybordControls);
         }
         
         this.level.draw();

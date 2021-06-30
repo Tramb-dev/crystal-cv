@@ -21,8 +21,8 @@ class Controls {
     }
 
     onKeyUp(keyboardEvent) {
+        this.lastMovementPressed.splice(this.lastMovementPressed.indexOf(keyboardEvent.keyCode), 1);
         delete this.pressed[keyboardEvent.keyCode];
-        this.lastMovementPressed.pop();
     }
 
     lastPressed() {
