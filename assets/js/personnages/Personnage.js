@@ -129,6 +129,7 @@ class Personnage {
         this.playerImg.style.top = this.sprite[spritePosition][1].top + "px";
     }
 
+    // Ouvre une boîte de dialogue avec un personnage
     dialog(selectedMessage) {
         const portraitPerso = this.modalDialog.querySelector('.portrait');
         const name = this.modalDialog.querySelector('.nom');
@@ -143,6 +144,7 @@ class Personnage {
         this.dialogNumber++;
     }
 
+    // Ferme la boîte de dialogue, ou continue la discussion selon
     closeDialog(keybordPressed, lastDialog = true) {
         if ( keybordPressed.isPressed(13) ) {
             this.modalDialog.style.display = "none";

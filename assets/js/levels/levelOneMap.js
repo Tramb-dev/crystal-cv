@@ -8479,7 +8479,7 @@ const levelMap = {
 };
 
 const dialogues = [
-    [    
+    [ // 0
         {
             playerId: 0,
             message: "Bonjour tout le monde. Quelle agréable journée pour s'entrainer à la magie."
@@ -8488,7 +8488,71 @@ const dialogues = [
             playerId: 0,
             message: "Nom de Zeus, que se passe-t-il au lac de l'eau Réane ?<br>Direction le <em>Sud</em> éclaircir ce mystère."
         },
-    ]
+    ],
+    [ // 1
+        {
+            playerId: 0,
+            message: "Qu'est-il arrivé au lac, on dirait qu'il est empoisonné. Il va falloir que j'EXP au plus vite pour sauver le village !"
+        },
+        {
+            playerId: 0,
+            message: "Bon voyons voir où je peux trouver ces compétences. Il faut que je me souvienne ce que disait la vieille prophétie."
+        },
+        {
+            playerId: 1,
+            message: "<em>Le savoir aux quatres coins est réparti, les assembler est ton défi. Les éléments sont avec toi, voyage vers la mer, la terre, la vie.</em>"
+        },
+        {
+            playerId: 0,
+            message: "Mais qu'est-ce que ça veut bien vouloir dire tout ce charabia ?"
+        },
+        {
+            playerId: 0,
+            message: "Si je regarde la carte, j'ai la mer à ma gauche, facile. La terre, ça peut être au <em>Nord</em>. La vie, c'est le puit du village ? Ou la source dans la forêt ?"
+        },
+    ],
+    [ // 2
+        {
+            playerId: 1,
+            message: "<em>HTML, statique tu seras. Mais sans lui, point d'avenir.</em>"
+        },
+    ],
+    [ // 3
+        {
+            playerId: 1,
+            message: "<em>La cascade sera, et de la poussière sortira ton œuvre.</em>"
+        },
+    ],
+    [ // 4
+        {
+            playerId: 1,
+            message: "<em>L'infini te rejoint. Rien ne t'arrêtera.</em>"
+        },
+    ],
+    [ // 5
+        {
+            playerId: 1,
+            message: "<em>Caché dans les tréfonds du monde, il en est l'un des piliers.</em>"
+        },
+    ],
+    [ // 6
+        {
+            playerId: 1,
+            message: "<em>Scindé en mille morceaux, ce pouvoir dans l'obscurité les lie.</em>"
+        },
+    ],
+    [ // 7
+        {
+            playerId: 2,
+            message: "<em>Vous avez débloqué un nouveau succès.</em>"
+        },
+    ],
+    [ // 8
+        {
+            playerId: 0,
+            message: "Bien, je pense que j'ai tout ce qu'il me faut, je devrais peut-être retourner au lac."
+        },
+    ],
 ];
 
 const scripts = {
@@ -8507,11 +8571,18 @@ const scripts = {
 			}, 1000);
         }
     },
+    displayCompetencies: {
+        exp: false,
+        formation: false,
+        hobbies: false,
+        contact: false
+    }
 };
 
+// FIXME : pourquoi l'affichage ne s'actualise pas malgré le needUpdate ?
 const events = [
     { // 0
-        description: "activé après avoir constaté les dégâts du lac",
+        description: "affiche un dialogue lors du constat des dégâts du lac, puis active les compétences",
         executed: false,
         toDisplay: true,
         positions: [
@@ -8540,28 +8611,165 @@ const events = [
                 y: 34
             },
         ],
-        childElements: [1],
-        action: function() {
+        childElements: [1, 2, 3, 4, 5],
+        action: function(player) {
+            player.dialog(1);
             this.childElements.forEach(element => {
                 events[element].toDisplay = true;
             });
             this.executed = true;
             this.toDisplay = false;
+            player.levelDraw.needUpdate = true;
         }
     },
     { // 1
+        image: "assets/sprites/spr_competencies/html5.png",
+        description: "compétence html5",
+        executed: false,
+        toDisplay: false,
+        positions: [{
+            x: 2,
+            y: 34
+        }],
+        parentElement: 0,
+        action: function(player) {
+            this.executed = true;
+            player.levelDraw.needUpdate = true;
+            const logo = document.getElementById('logos-content');
+            const exp = document.createElement("img");
+            exp.src = this.image;
+            exp.classList.add("logo");
+            logo.appendChild(exp);
+            player.dialog(2);
+            player.scoreUpdate(100);
+        }
+    },
+    { // 2
+        image: "assets/sprites/spr_competencies/css3.webp",
+        description: "compétence css3",
+        executed: false,
+        toDisplay: false,
+        positions: [{
+            x: 31,
+            y: 35
+        }],
+        parentElement: 0,
+        action: function(player) {
+            this.executed = true;
+            player.levelDraw.needUpdate = true;
+            player.dialog(3);
+            const logo = document.getElementById('logos-content');
+            const exp = document.createElement("img");
+            exp.src = this.image;
+            exp.classList.add("logo");
+            logo.appendChild(exp);
+            player.scoreUpdate(100);
+        }
+    },
+    { // 3
         image: "assets/sprites/spr_competencies/angular.png",
         description: "compétence angular",
         executed: false,
         toDisplay: false,
         positions: [{
-            x: 18,
-            y: 27
+            x: 14,
+            y: 4
         }],
         parentElement: 0,
-        action: function(score) {
+        action: function(player) {
             this.executed = true;
-            score += 100;
+            player.levelDraw.needUpdate = true;
+            const logo = document.getElementById('logos-content');
+            const exp = document.createElement("img");
+            exp.src = this.image;
+            exp.classList.add("logo");
+            logo.appendChild(exp);
+            player.dialog(6);
+            player.scoreUpdate(100);
         }
-    }
-]
+    },
+    { // 4
+        image: "assets/sprites/spr_competencies/php.png",
+        description: "compétence php",
+        executed: false,
+        toDisplay: false,
+        positions: [{
+            x: 31,
+            y: 25
+        }],
+        parentElement: 0,
+        action: function(player) {
+            this.executed = true;
+            player.levelDraw.needUpdate = true;
+            const logo = document.getElementById('logos-content');
+            const exp = document.createElement("img");
+            exp.src = this.image;
+            exp.classList.add("logo");
+            logo.appendChild(exp);
+            player.dialog(5);
+            player.scoreUpdate(100);
+        }
+    },
+    { // 5
+        image: "assets/sprites/spr_competencies/js.png",
+        description: "compétence js",
+        executed: false,
+        toDisplay: false,
+        positions: [{
+            x: 18,
+            y: 25
+        }],
+        parentElement: 0,
+        action: function(player) {
+            this.executed = true;
+            player.levelDraw.needUpdate = true;
+            const logo = document.getElementById('logos-content');
+            const exp = document.createElement("img");
+            exp.src = this.image;
+            exp.classList.add("logo");
+            logo.appendChild(exp);
+            player.dialog(4);
+            player.scoreUpdate(100);
+        }
+    },
+    { // 6
+        description: "Rétablit le lac",
+        executed: false,
+        toDisplay: false,
+        positions: [
+            {
+                x: 7,
+                y: 34
+            },
+            {
+                x: 8,
+                y: 34
+            },
+            {
+                x: 9,
+                y: 34
+            },
+            {
+                x: 10,
+                y: 34
+            },
+            {
+                x: 11,
+                y: 34
+            },
+            {
+                x: 12,
+                y: 34
+            },
+        ],
+        action: function(player) {
+            /* player.dialog(1);
+            this.childElements.forEach(element => {
+                events[element].toDisplay = true;
+            });
+            this.executed = true;
+            this.toDisplay = false;
+            player.levelDraw.needUpdate = true; */
+        }
+    },
+];

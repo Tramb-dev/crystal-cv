@@ -2441,8 +2441,16 @@ const tileSets = [
 ];
 
 const portraits = [
-    {
+    { // 0
         name: 'Terra',
         path: "assets/sprites/spr_pictures/Terra_portrait.webp",
-    }
+    },
+    { // 1
+        name: 'Entité mystérieuse',
+        path: "assets/sprites/spr_pictures/Evil_8.png",
+    },
+    { // 2
+        name: '@CentralSystem',
+        path: "assets/sprites/spr_pictures/SF_Monster_6.png",
+    },
 ];

@@ -9054,15 +9054,23 @@ footer {
   margin: 0.6em auto;
 }
 
-canvas {
-  position: absolute;
-  width: 600px;
-  height: 400px;
-}
-
 .masque {
   position: absolute;
   overflow: hidden;
+}
+
+#score {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 12px;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Quicksand";
+  color: #f8fbfd;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(90, 116, 144, 0.2);
+  text-shadow: 0 0 5px #5a7490;
 }
 
 .modal_container {
@@ -9073,6 +9081,7 @@ canvas {
   background-color: rgba(0, 0, 0, 0.6);
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .modal_container .modal_content {
   background-color: #fefefe;
@@ -9083,9 +9092,43 @@ canvas {
   border-radius: 10px;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
+.modal_container .modal_content p {
+  margin: 0;
+}
 
 .fade {
   opacity: 0;
+}
+
+#logos-content {
+  margin: 10px 0;
+}
+#logos-content .logo {
+  width: 46px;
+}
+
+#items {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+#items .cards {
+  display: none;
+  font-size: 9px;
+  border: rgba(0, 0, 0, 0.6) 2px double;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 30px 10px;
+  background-color: #dde7f3;
+}
+#items .cards h5, #items .cards .h5 {
+  font-size: 11px;
+}
+#items .cards h6, #items .cards .h6 {
+  font-size: 10px;
+}
+#items .cards ul > li {
+  list-style-type: none;
 }
 
 @font-face {

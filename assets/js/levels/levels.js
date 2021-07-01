@@ -193,7 +193,7 @@ class LevelCreator {
                 if ( this.mapDraw.needUpdate || this.mapDraw.map[i][j].isAnimation ) {
                     // Ajoute les couches de tiles les unes sur les autres
                     let bgImage = '', bgPosX = '', bgPosY = '', bgSize = '';
-                    if ( this.mapDraw.map[i][j].hasOwnProperty('script') && events[this.mapDraw.map[i][j].script].hasOwnProperty('image') ) {
+                    if ( 'script' in this.mapDraw.map[i][j] && 'image' in events[this.mapDraw.map[i][j].script] ) {
                         bgImage += "url(" + events[this.mapDraw.map[i][j].script].image + "), ";
                         bgPosX += "0px, ";
                         bgPosY += "0px, ";
