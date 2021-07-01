@@ -2,8 +2,8 @@ class Player extends Personnage {
     constructor(level) {
         super();
         this.playerDiv = document.getElementById("player_container");
-        this.playerImg = document.createElement("img");
         this.masqueDiv = document.getElementById("masque_container");
+        this.scoreDiv = document.getElementById("score");
         this.mapPosition = levelMap.startMapPosition;
         this.gridPosition = {
             x: levelMap.startMapPosition.x - level.camera.position.startX,
@@ -490,11 +490,18 @@ class Player extends Personnage {
         this.playerDiv.style.top = this.gridPosition.y * this.grid + "px";
         this.playerDiv.style.left = this.gridPosition.x * this.grid + "px";
 
+        
+        this.playerImg = document.createElement("img");
         this.playerImg.src = "assets/sprites/spr_player/Terra_sprites.webp";
         this.playerImg.id = "player";
         this.playerImg.alt = "Personnage du joueur";
         this.masqueDiv.appendChild(this.playerImg);
         this.choixImageSprite(0);
+    }
+
+    scoreUpdate(scoreToAdd) {
+        this.score += scoreToAdd;
+        this.scoreDiv.textContent = "Score : " + this.score;
     }
 
     update(secondsPassed, keybordPressed) {
@@ -535,11 +542,32 @@ class Player extends Personnage {
                 }
             }
 
-            if ( this.levelDraw.map[this.gridPosition.y][this.gridPosition.x].hasOwnProperty('script') ) {
-                const scriptRef = events[this.levelDraw.map[this.gridPosition.y][this.gridPosition.x].script];
-                if ( !scriptRef.executed && scriptRef.toDisplay ) {
-                    scriptRef.action();
+            if ( 'script' in this.levelDraw.map[this.gridPosition.y][this.gridPosition.x] ) {
+                const eventRef = events[this.levelDraw.map[this.gridPosition.y][this.gridPosition.x].script];
+                if ( !eventRef.executed && eventRef.toDisplay ) {
+                    eventRef.action(this);
                 }
+            }
+        }
+
+        // Débloquage de succès
+        if ( scripts.gameState === 'game' ) {
+            if ( this.score > 100 && !scripts.displayCompetencies.exp ) {
+                scripts.displayCompetencies.exp = true;
+                document.getElementById('experiences').style.display = "block";
+                this.dialog(7);
+            } else if ( this.score > 200 && !scripts.displayCompetencies.formation ) {
+                scripts.displayCompetencies.formation = true;
+                document.getElementById('formations').style.display = "block";
+                this.dialog(7);
+            } else if ( this.score > 300 && !scripts.displayCompetencies.hobbies ) {
+                scripts.displayCompetencies.hobbies = true;
+                document.getElementById('hobbies').style.display = "block";
+                this.dialog(7);
+            } else if ( this.score > 400 && !scripts.displayCompetencies.contact ) {
+                scripts.displayCompetencies.contact = true;
+                document.getElementById('contact').style.display = "block";
+                this.dialog(8);
             }
         }
 
