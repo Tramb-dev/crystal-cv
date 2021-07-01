@@ -8941,6 +8941,7 @@ footer {
   right: 0;
   height: 200px;
   background-color: #fefefe;
+  background-image: radial-gradient(circle at 40% 25%, #f8fbfd 0, rgba(136, 173, 216, 0.1) 25%, rgba(136, 173, 216, 0.2) 50%, rgba(136, 173, 216, 0.3) 75%, rgba(136, 173, 216, 0.5) 100%);
   padding: 20px;
   border: 1px solid lightgray;
 }
@@ -8949,6 +8950,10 @@ footer {
 }
 #dialog_box .dialog .message, #dialog_box .dialog .nom {
   padding: 10px;
+}
+#dialog_box .dialog .message em {
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #menu {

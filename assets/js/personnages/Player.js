@@ -477,6 +477,7 @@ class Player extends Personnage {
         this.speedMap = level.speedMap; 
         this.levelDraw = level.mapDraw;
         this.timePassed = 0;
+        this.score = 0;
         this.init();
     }
 
@@ -496,14 +497,11 @@ class Player extends Personnage {
         this.choixImageSprite(0);
     }
 
-	moveTo(coordinateX, coordinateY) {
-		
-	}
-
     update(secondsPassed, keybordPressed) {
         this.timePassed += secondsPassed;
         let direction = false;
 
+        // On bouge le personnage du joueur si on est bien dans l'état jeu
         if ( keybordPressed.isMovementPressed() && scripts.gameState === 'game' ) {
             let dirX = 0, dirY = 0;
             switch ( keybordPressed.lastPressed() ) {
@@ -536,10 +534,16 @@ class Player extends Personnage {
                     this.gridPosition.needUpdate = direction;
                 }
             }
-        } /* else if ( this.enCoursDeDeplacement[direction].animationEnCours && keybordPressed.lastPressed() != 37 ) {
-            this.annulerDeplacement(direction);
-        } */
 
+            if ( this.levelDraw.map[this.gridPosition.y][this.gridPosition.x].hasOwnProperty('script') ) {
+                const scriptRef = events[this.levelDraw.map[this.gridPosition.y][this.gridPosition.x].script];
+                if ( !scriptRef.executed && scriptRef.toDisplay ) {
+                    scriptRef.action();
+                }
+            }
+        }
+
+        // Annulation des animations du personnage sur les mouvements qui ne concernent pas la dernière touche rentrée (au cas où le joueur appuie sur 2 touches)
         Object.keys(this.enCoursDeDeplacement).forEach(element => {
             if (this.enCoursDeDeplacement[element].animationEnCours && (element != direction || !direction)) {
                 this.annulerDeplacement(element);
@@ -549,7 +553,6 @@ class Player extends Personnage {
 
     draw() {
         // Pour éviter de mettre à jour en permanence
-        
         if ( this.gridPosition.needUpdate ) {
             this.deplacement(this.gridPosition.needUpdate);
             this.gridPosition.needUpdate = false;

@@ -5,7 +5,6 @@ class Main {
             timestamp: 0
         };
         this.oldTimestamp = 0;
-        this.score = 0;
         this.keybordControls = new Controls();
         //this.gameObjects = [];
 

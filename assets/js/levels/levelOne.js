@@ -29,21 +29,19 @@ class LevelOne extends LevelCreator {
     update(secondsPassed, player, keybordPressed) {
         this.timePassed += secondsPassed;
 
-		if (!scripts.wakeUpNeo) {
-			scripts.wakeUpNeo = true;
+		if ( !scripts.wakeUpNeo.state ) {
+			scripts.wakeUpNeo.state = true;
 			scripts.gameState = 'waitingInput';
-			setTimeout(function() {
-				player.gridPosition.needUpdate = 'versLeBas';
-				player.gridPosition.y += 2;
-				setTimeout(function() {
-					player.dialog(0);
-				}, 500);
-			}, 1000);
+			scripts.wakeUpNeo.action(player);
 		}
 
-		if (scripts.gameState === 'dialog') {
-			
-			player.closeDialog(keybordPressed);
+		if ( scripts.gameState === 'dialog' ) {
+			// S'il y a encore des dialogues en cours
+			if ( player.isDialog !== false && player.dialogNumber < dialogues[player.isDialog].length && keybordPressed.isPressed(13) ) {
+				player.closeDialog(keybordPressed, false);
+			} else {
+				player.closeDialog(keybordPressed, true);
+			}
 		}
 
         // On vérifie si le joueur doit se déplacer. Si c'est le cas, on vérifie sa position par rapport à la caméra. 

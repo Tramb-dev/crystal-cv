@@ -7477,8 +7477,8 @@ const levelMap = {
             ],
             [ // x = 5
                 {
-                    tilesetId: 4,
-                    tileId: 1,  
+                    tilesetId: 0,
+                    tileId: 9,  
                 },
             ],
             [ // x = 6
@@ -8479,31 +8479,89 @@ const levelMap = {
 };
 
 const dialogues = [
-    {
-        playerId: 0,
-        message: "Il est l'heure de se réveiller."
-    },
+    [    
+        {
+            playerId: 0,
+            message: "Bonjour tout le monde. Quelle agréable journée pour s'entrainer à la magie."
+        },
+        {
+            playerId: 0,
+            message: "Nom de Zeus, que se passe-t-il au lac de l'eau Réane ?<br>Direction le <em>Sud</em> éclaircir ce mystère."
+        },
+    ]
 ];
 
 const scripts = {
     gameState: 'intro',
-    wakeUpNeo: false,
-    mapPosition: [
-
-    ],
+    wakeUpNeo: {
+        state: false,
+        position: null,
+        action: function(player) {
+            setTimeout(function() {
+				player.gridPosition.needUpdate = 'versLeBas';
+				player.gridPosition.y += 2;
+                player.mapPosition.y += 2;
+				setTimeout(function() {
+					player.dialog(0);
+				}, 500);
+			}, 1000);
+        }
+    },
 };
 
 const events = [
-    {
-        image: "assets/sprites/spr_competencies/angular.png",
-        triggerButton: 13,
-        position: {
-            x: 18,
-            y: 26
-        },
+    { // 0
+        description: "activé après avoir constaté les dégâts du lac",
+        executed: false,
+        toDisplay: true,
+        positions: [
+            {
+                x: 7,
+                y: 34
+            },
+            {
+                x: 8,
+                y: 34
+            },
+            {
+                x: 9,
+                y: 34
+            },
+            {
+                x: 10,
+                y: 34
+            },
+            {
+                x: 11,
+                y: 34
+            },
+            {
+                x: 12,
+                y: 34
+            },
+        ],
+        childElements: [1],
         action: function() {
-            this.score += 100;
-            console.log(this.score);
+            this.childElements.forEach(element => {
+                events[element].toDisplay = true;
+            });
+            this.executed = true;
+            this.toDisplay = false;
+        }
+    },
+    { // 1
+        image: "assets/sprites/spr_competencies/angular.png",
+        description: "compétence angular",
+        executed: false,
+        toDisplay: false,
+        positions: [{
+            x: 18,
+            y: 27
+        }],
+        parentElement: 0,
+        action: function(score) {
+            this.executed = true;
+            score += 100;
         }
     }
 ]

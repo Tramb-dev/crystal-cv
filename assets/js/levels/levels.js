@@ -62,10 +62,14 @@ class LevelCreator {
                 this.mapDraw.map[i][j].case = "r" + y + "c" + x;
                 // TODO : à supprimer une fois la carte créée
 
-                // Ajout des scripts dans le mapDraw
+                // Ajout des événements dans le mapDraw
                 events.forEach((element, index) => {
-                    if ( element.position.x == x && element.position.y == y ) {
-                        this.mapDraw.map[i][j].script = index;
+                    if ( element.toDisplay && !element.executed ) {
+                        element.positions.forEach(position => {
+                            if ( position.x == x && position.y == y ) {
+                                this.mapDraw.map[i][j].script = index;
+                            }
+                        });
                     }
                 });
 

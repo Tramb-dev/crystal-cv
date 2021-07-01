@@ -35,12 +35,9 @@
         right: 0;
         height: 200px;
         background-color: #fefefe;
+        background-image: radial-gradient(circle at 40% 25%, $white 0, rgba($bgcMain, 0.1) 25%, rgba($bgcMain, 0.2) 50%, rgba($bgcMain, 0.3) 75%, rgba($bgcMain, 0.5) 100%);
         padding: 20px;
         border: 1px solid lightgray;
-
-        .portrait img {
-
-        }
 
         .nom {
             font-weight: bold;
@@ -48,6 +45,11 @@
     
         .message, .nom {
             padding: 10px;
+        }
+
+        .message em {
+            font-style: italic;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
     }
 }

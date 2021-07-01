@@ -13,6 +13,8 @@ class Personnage {
             nbAnimationPlayerDiv: 0
         };
         this.modalDialog = document.getElementById('dialog_box');
+        this.dialogNumber = 0;
+        this.isDialog = false;
     }
 
     // Gère le déplacement du personnage
@@ -132,17 +134,28 @@ class Personnage {
         const name = this.modalDialog.querySelector('.nom');
         const saying = this.modalDialog.querySelector('.message');
         scripts.gameState = 'dialog';
+        this.isDialog = selectedMessage;
         
-        portraitPerso.src = portraits[dialogues[selectedMessage].playerId].path;
-        name.innerHTML = portraits[dialogues[selectedMessage].playerId].name;
-        saying.innerHTML = dialogues[selectedMessage].message;
+        portraitPerso.src = portraits[dialogues[selectedMessage][this.dialogNumber].playerId].path;
+        name.textContent = portraits[dialogues[selectedMessage][this.dialogNumber].playerId].name;
+        saying.innerHTML = dialogues[selectedMessage][this.dialogNumber].message;
         this.modalDialog.style.display = "block";
+        this.dialogNumber++;
     }
 
-    closeDialog(keybordPressed) {
+    closeDialog(keybordPressed, lastDialog = true) {
         if ( keybordPressed.isPressed(13) ) {
-            scripts.gameState = 'game';
             this.modalDialog.style.display = "none";
+            if ( lastDialog ) {
+                scripts.gameState = 'game';
+                this.dialogNumber = 0;
+                this.isDialog = false;
+            } else {
+                scripts.gameState = 'waitingInput';
+                setTimeout(() => {
+                    this.dialog(this.isDialog);
+                }, 100);
+            }
         }
     }
 }
