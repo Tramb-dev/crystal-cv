@@ -5,35 +5,35 @@ class Controls {
     }
 
     onKeyDown(keyboardEvent) {
-        switch (keyboardEvent.keyCode) {
-            case 37:
-            case 38:
-            case 39:
-            case 40:
+        switch (keyboardEvent.code) {
+            case 'ArrowLeft':
+            case 'ArrowUp':
+            case 'ArrowRight':
+            case 'ArrowDown':
                 keyboardEvent.preventDefault();
                 break;
         }
 
         if (!keyboardEvent.repeat) {
-            this.pressed[keyboardEvent.keyCode] = true;
-            this.lastMovementPressed.push(keyboardEvent.keyCode);
+            this.pressed[keyboardEvent.code] = true;
+            this.lastMovementPressed.push(keyboardEvent.code);
         }
     }
 
     onKeyUp(keyboardEvent) {
-        this.lastMovementPressed.splice(this.lastMovementPressed.indexOf(keyboardEvent.keyCode), 1);
-        delete this.pressed[keyboardEvent.keyCode];
+        this.lastMovementPressed.splice(this.lastMovementPressed.indexOf(keyboardEvent.code), 1);
+        delete this.pressed[keyboardEvent.code];
     }
 
     lastPressed() {
         return this.lastMovementPressed[this.lastMovementPressed.length - 1];
     }
 
-    isPressed(keyCode) {
-        return this.pressed[keyCode];
+    isPressed(code) {
+        return this.pressed[code];
     }
 
     isMovementPressed() {
-        if (this.isPressed(37) || this.isPressed(38) || this.isPressed(39) || this.isPressed(40)) return true;
+        if (this.isPressed('ArrowLeft') || this.isPressed('ArrowUp') || this.isPressed('ArrowRight') || this.isPressed('ArrowDown')) return true;
     }
 }

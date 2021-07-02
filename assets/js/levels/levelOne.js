@@ -37,7 +37,7 @@ class LevelOne extends LevelCreator {
 
 		if ( scripts.gameState === 'dialog' ) {
 			// S'il y a encore des dialogues en cours
-			if ( player.isDialog !== false && player.dialogNumber < dialogues[player.isDialog].length && keybordPressed.isPressed(13) ) {
+			if ( player.isDialog !== false && player.dialogNumber < dialogues[player.isDialog].length && keybordPressed.isPressed('Enter') ) {
 				player.closeDialog(keybordPressed, false);
 			} else {
 				player.closeDialog(keybordPressed, true);
@@ -48,7 +48,7 @@ class LevelOne extends LevelCreator {
         if ( keybordPressed.isMovementPressed() && scripts.gameState === 'game' ) {
             // Gestion des déplacements de la caméra sur la carte
 			// Si la caméra peut suivre le joueur, on actualise les tuiles et on stop le déplacement du joueur
-			if ( keybordPressed.isPressed(37) && this.timePassed - player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement > this.speedMap ) {
+			if ( keybordPressed.isPressed('ArrowLeft') && this.timePassed - player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLaGauche') ) {
 					player.enCoursDeDeplacement['versLaGauche'].timestampDeplacement = this.timePassed;
 					player.mapPosition.x--;
@@ -58,7 +58,7 @@ class LevelOne extends LevelCreator {
 				}
 			}
 
-			if ( keybordPressed.isPressed(38) && this.timePassed - player.enCoursDeDeplacement['versLeHaut'].timestampDeplacement > this.speedMap ) {
+			if ( keybordPressed.isPressed('ArrowUp') && this.timePassed - player.enCoursDeDeplacement['versLeHaut'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLeHaut') ) {
 					player.enCoursDeDeplacement['versLeHaut'].timestampDeplacement = this.timePassed;
 					player.mapPosition.y--;
@@ -68,7 +68,7 @@ class LevelOne extends LevelCreator {
 				}
 			}
 			
-			if ( keybordPressed.isPressed(39) && this.timePassed - player.enCoursDeDeplacement['versLaDroite'].timestampDeplacement > this.speedMap ) {
+			if ( keybordPressed.isPressed('ArrowRight') && this.timePassed - player.enCoursDeDeplacement['versLaDroite'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLaDroite') ) {
 					player.enCoursDeDeplacement['versLaDroite'].timestampDeplacement = this.timePassed;
 					player.mapPosition.x++;
@@ -78,7 +78,7 @@ class LevelOne extends LevelCreator {
 				}
 			}
 
-			if ( keybordPressed.isPressed(40) && this.timePassed - player.enCoursDeDeplacement['versLeBas'].timestampDeplacement > this.speedMap ) {
+			if ( keybordPressed.isPressed('ArrowDown') && this.timePassed - player.enCoursDeDeplacement['versLeBas'].timestampDeplacement > this.speedMap ) {
 				if ( this.canFollowPlayer(player, 'versLeBas') ) {
 					player.enCoursDeDeplacement['versLeBas'].timestampDeplacement = this.timePassed;
 					player.mapPosition.y++;
@@ -87,7 +87,7 @@ class LevelOne extends LevelCreator {
 					this.mapDraw.needUpdate = true;
 				}
 			}
-			
+
 			if ( 'script' in this.mapDraw.map[player.gridPosition.y][player.gridPosition.x] ) {
 				const eventRef = events[this.mapDraw.map[player.gridPosition.y][player.gridPosition.x].script];
 				if ( !eventRef.executed && eventRef.toDisplay ) {

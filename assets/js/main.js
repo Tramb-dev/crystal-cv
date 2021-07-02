@@ -45,7 +45,7 @@ class Main {
         // Gestion de la musique
         /* const audioBalise = document.getElementById('music');
         audioBalise.play(); */
-        
+
     }
 
     menu() {
@@ -83,7 +83,7 @@ class Main {
         let secondsPassed = (timestamp - this.oldTimestamp) / 1000;
         this.oldTimestamp = timestamp;
         
-        if (this.keybordControls.isPressed(27) || this.keybordControls.isPressed(19) || this.keybordControls.isPressed(80)) {
+        if (this.keybordControls.isPressed('Pause') || this.keybordControls.isPressed('Escape') || this.keybordControls.isPressed('KeyP')) {
             this.pause(timestamp);
         }
         

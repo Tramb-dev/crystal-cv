@@ -512,22 +512,22 @@ class Player extends Personnage {
         if ( keybordPressed.isMovementPressed() && scripts.gameState === 'game' ) {
             let dirX = 0, dirY = 0;
             switch ( keybordPressed.lastPressed() ) {
-                case 37:
+                case 'ArrowLeft':
                     dirX--;
                     direction = 'versLaGauche';
                     break;
 
-                case 38:
+                case 'ArrowUp':
                     dirY--;
                     direction = 'versLeHaut';
                     break;
 
-                case 39:
+                case 'ArrowRight':
                     dirX++;
                     direction = 'versLaDroite';
                     break;
 
-                case 40:
+                case 'ArrowDown':
                     dirY++;
                     direction = 'versLeBas';
                     break;
