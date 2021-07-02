@@ -43,8 +43,8 @@ class Main {
         //////////////////////////////////////////////
 
         // Gestion de la musique
-        /* const audioBalise = document.getElementById('music');
-        audioBalise.play(); */
+        const audioBalise = document.getElementById('music');
+        audioBalise.muted = false;
 
     }
 

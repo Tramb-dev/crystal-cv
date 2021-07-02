@@ -38,9 +38,6 @@ class LevelCreator {
                 gridView.setAttribute("data-row", i) ;
                 gridView.setAttribute("data-col", j) ;
 
-                gridView.innerHTML = this.mapDraw.map[i][j].case;
-                // TODO : à supprimer une fois les corrections de carte effectuées
-
                 this.levelDiv.appendChild(gridView); 
             }
         } 
@@ -60,8 +57,6 @@ class LevelCreator {
                 this.mapDraw.map[i][j].col = x;
                 this.mapDraw.map[i][j].row = y;
                 delete this.mapDraw.map[i][j].script;
-                this.mapDraw.map[i][j].case = "r" + y + "c" + x;
-                // TODO : à supprimer une fois la carte créée
 
                 // Ajout des événements dans le mapDraw
                 events.forEach((element, index) => {
@@ -253,8 +248,6 @@ class LevelCreator {
                     rowImg[j].style.backgroundPositionX = bgPosX;
                     rowImg[j].style.backgroundPositionY = bgPosY;
                     rowImg[j].style.backgroundSize = bgSize;
-                    rowImg[j].innerHTML = this.mapDraw.map[i][j].case;
-                    // TODO : à supprimer une fois la carte établie
                 }
             }
         }
