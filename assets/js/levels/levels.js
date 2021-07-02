@@ -59,6 +59,7 @@ class LevelCreator {
                 this.mapDraw.map[i][j].isAnimation = false;
                 this.mapDraw.map[i][j].col = x;
                 this.mapDraw.map[i][j].row = y;
+                delete this.mapDraw.map[i][j].script;
                 this.mapDraw.map[i][j].case = "r" + y + "c" + x;
                 // TODO : à supprimer une fois la carte créée
 
@@ -137,6 +138,11 @@ class LevelCreator {
                         move = true;
                         player.deplacement(direction);
                     }
+                } else if (player.gridPosition.y < this.camera.position.centerY && this.camera.position.startY > 0) {
+                    if (this.mapDraw.map[player.gridPosition.y-1][player.gridPosition.x].canWalk) {
+                        player.enCoursDeDeplacement[direction].canMove = false;
+                        move = true;
+                    }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -148,6 +154,11 @@ class LevelCreator {
                         player.enCoursDeDeplacement[direction].canMove = false;
                         move = true;
                         player.deplacement(direction);
+                    }
+                } else if ( player.gridPosition.y > this.camera.position.centerY && this.camera.position.endY < this.camera.position.maxY ) {
+                    if (this.mapDraw.map[player.gridPosition.y+1][player.gridPosition.x].canWalk) {
+                        player.enCoursDeDeplacement[direction].canMove = false;
+                        move = true;
                     }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
@@ -161,6 +172,11 @@ class LevelCreator {
                         move = true;
                         player.deplacement(direction);
                     }
+                } else if (player.gridPosition.x < this.camera.position.centerX && this.camera.position.startX > 0) {
+                    if (this.mapDraw.map[player.gridPosition.y][player.gridPosition.x-1].canWalk) {
+                        player.enCoursDeDeplacement[direction].canMove = false;
+                        move = true;
+                    }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -173,6 +189,11 @@ class LevelCreator {
                         move = true;
                         player.deplacement(direction);
                     }
+                } else if (player.gridPosition.x > this.camera.position.centerX && this.camera.position.endX < this.camera.position.maxX) {
+                    if (this.mapDraw.map[player.gridPosition.y][player.gridPosition.x+1].canWalk) {
+                        player.enCoursDeDeplacement[direction].canMove = false;
+                        move = true;
+                    }
                 } else {
                     player.enCoursDeDeplacement[direction].canMove = true;
                 }
@@ -184,11 +205,9 @@ class LevelCreator {
 
     draw() {
         for (let i=0; i<this.camera.size.height; i++) {
-            let y = i + this.camera.position.startY;
             const rowImg = this.levelDiv.querySelectorAll('[data-row="' + i + '"]');
             
             for (let j=0; j<this.camera.size.width; j++) {
-                let x = j + this.camera.position.startX;
 
                 if ( this.mapDraw.needUpdate || this.mapDraw.map[i][j].isAnimation ) {
                     // Ajoute les couches de tiles les unes sur les autres

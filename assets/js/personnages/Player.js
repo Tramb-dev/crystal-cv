@@ -542,33 +542,6 @@ class Player extends Personnage {
                 }
             }
 
-            if ( 'script' in this.levelDraw.map[this.gridPosition.y][this.gridPosition.x] ) {
-                const eventRef = events[this.levelDraw.map[this.gridPosition.y][this.gridPosition.x].script];
-                if ( !eventRef.executed && eventRef.toDisplay ) {
-                    eventRef.action(this);
-                }
-            }
-        }
-
-        // Débloquage de succès
-        if ( scripts.gameState === 'game' ) {
-            if ( this.score > 100 && !scripts.displayCompetencies.exp ) {
-                scripts.displayCompetencies.exp = true;
-                document.getElementById('experiences').style.display = "block";
-                this.dialog(7);
-            } else if ( this.score > 200 && !scripts.displayCompetencies.formation ) {
-                scripts.displayCompetencies.formation = true;
-                document.getElementById('formations').style.display = "block";
-                this.dialog(7);
-            } else if ( this.score > 300 && !scripts.displayCompetencies.hobbies ) {
-                scripts.displayCompetencies.hobbies = true;
-                document.getElementById('hobbies').style.display = "block";
-                this.dialog(7);
-            } else if ( this.score > 400 && !scripts.displayCompetencies.contact ) {
-                scripts.displayCompetencies.contact = true;
-                document.getElementById('contact').style.display = "block";
-                this.dialog(8);
-            }
         }
 
         // Annulation des animations du personnage sur les mouvements qui ne concernent pas la dernière touche rentrée (au cas où le joueur appuie sur 2 touches)
@@ -580,6 +553,7 @@ class Player extends Personnage {
     }
 
     draw() {
+        
         // Pour éviter de mettre à jour en permanence
         if ( this.gridPosition.needUpdate ) {
             this.deplacement(this.gridPosition.needUpdate);

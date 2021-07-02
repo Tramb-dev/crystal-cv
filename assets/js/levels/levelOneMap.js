@@ -4786,7 +4786,8 @@ const levelMap = {
             [ // x = 22
                 {
                     tilesetId: 2,
-                    tileId: 3,     
+                    tileId: 3,  
+                    canWalk: true   
                 },
                 {
                     tilesetId: 5,
@@ -5478,7 +5479,8 @@ const levelMap = {
             [ // x = 27
                 {
                     tilesetId: 2,
-                    tileId: 3,      
+                    tileId: 3,  
+                    canWalk: true    
                 },
                 {
                     tilesetId: 5,
@@ -8553,6 +8555,42 @@ const dialogues = [
             message: "Bien, je pense que j'ai tout ce qu'il me faut, je devrais peut-être retourner au lac."
         },
     ],
+    [ // 9
+        {
+            playerId: 3,
+            message: "<b>Dis donc Terra, tu veux que je t'aide à marcher sur le champ de carottes ? C'est toi qui fait la soupe ce soir !<b>"
+        },
+    ],
+    [ // 10
+        {
+            playerId: 0,
+            message: "Bien, avec tout ce savoir, je vais pouvoir modifier le code de la matrice pour que le lac redevienne comme avant."
+        },
+    ],
+    [ // 11
+        {
+            playerId: 2,
+            message: '<em>Félicitations, vous avez terminé le jeu. Vous pouvez télécharger mon <a href="assets/Bertrand_Ravier_CV.pdf" title="Bertrand Ravier CV">CV en version PDF</a></em>'
+        },
+    ],
+    [ // 12
+        {
+            playerId: 4,
+            message: '<b>Ca ne va pas de rentrer chez les gens comme ça ? Oust !</b>'
+        },
+    ],
+    [ // 13
+        {
+            playerId: 5,
+            message: '<b>Eh oh, tu te crois où là ? File de là avant que ça ne soit moi qui te mette dehors !</b>'
+        },
+    ],
+    [ // 14
+        {
+            playerId: 0,
+            message: "Me voilà toute mouillée maintenant, c'est malin !"
+        },
+    ],
 ];
 
 const scripts = {
@@ -8619,7 +8657,7 @@ const events = [
             });
             this.executed = true;
             this.toDisplay = false;
-            player.levelDraw.needUpdate = true;
+            return true;
         }
     },
     { // 1
@@ -8634,7 +8672,7 @@ const events = [
         parentElement: 0,
         action: function(player) {
             this.executed = true;
-            player.levelDraw.needUpdate = true;
+            delete player.levelDraw.map[player.gridPosition.y][player.gridPosition.x].script;
             const logo = document.getElementById('logos-content');
             const exp = document.createElement("img");
             exp.src = this.image;
@@ -8642,6 +8680,7 @@ const events = [
             logo.appendChild(exp);
             player.dialog(2);
             player.scoreUpdate(100);
+            return true;
         }
     },
     { // 2
@@ -8656,7 +8695,7 @@ const events = [
         parentElement: 0,
         action: function(player) {
             this.executed = true;
-            player.levelDraw.needUpdate = true;
+            delete player.levelDraw.map[player.gridPosition.y][player.gridPosition.x].script;
             player.dialog(3);
             const logo = document.getElementById('logos-content');
             const exp = document.createElement("img");
@@ -8664,6 +8703,7 @@ const events = [
             exp.classList.add("logo");
             logo.appendChild(exp);
             player.scoreUpdate(100);
+            return true;
         }
     },
     { // 3
@@ -8678,7 +8718,7 @@ const events = [
         parentElement: 0,
         action: function(player) {
             this.executed = true;
-            player.levelDraw.needUpdate = true;
+            delete player.levelDraw.map[player.gridPosition.y][player.gridPosition.x].script;
             const logo = document.getElementById('logos-content');
             const exp = document.createElement("img");
             exp.src = this.image;
@@ -8686,6 +8726,7 @@ const events = [
             logo.appendChild(exp);
             player.dialog(6);
             player.scoreUpdate(100);
+            return true;
         }
     },
     { // 4
@@ -8700,7 +8741,7 @@ const events = [
         parentElement: 0,
         action: function(player) {
             this.executed = true;
-            player.levelDraw.needUpdate = true;
+            delete player.levelDraw.map[player.gridPosition.y][player.gridPosition.x].script;
             const logo = document.getElementById('logos-content');
             const exp = document.createElement("img");
             exp.src = this.image;
@@ -8708,6 +8749,7 @@ const events = [
             logo.appendChild(exp);
             player.dialog(5);
             player.scoreUpdate(100);
+            return true;
         }
     },
     { // 5
@@ -8722,7 +8764,7 @@ const events = [
         parentElement: 0,
         action: function(player) {
             this.executed = true;
-            player.levelDraw.needUpdate = true;
+            delete player.levelDraw.map[player.gridPosition.y][player.gridPosition.x].script;
             const logo = document.getElementById('logos-content');
             const exp = document.createElement("img");
             exp.src = this.image;
@@ -8730,6 +8772,7 @@ const events = [
             logo.appendChild(exp);
             player.dialog(4);
             player.scoreUpdate(100);
+            return true;
         }
     },
     { // 6
@@ -8762,14 +8805,166 @@ const events = [
                 y: 34
             },
         ],
+        childElements: [10],
         action: function(player) {
-            /* player.dialog(1);
-            this.childElements.forEach(element => {
-                events[element].toDisplay = true;
-            });
+            player.dialog(10);
             this.executed = true;
             this.toDisplay = false;
-            player.levelDraw.needUpdate = true; */
+            events[this.childElements[0]].toDisplay = true;
+            levelMap.data[37][7] = [{
+                tilesetId: 0,
+                tileId: 30,
+            }];
+            levelMap.data[37][8] = [
+                {
+                    tilesetId: 0,
+                    tileId: [30,31],
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 23,
+                },
+            ];
+            levelMap.data[37][9] = [{
+                tilesetId: 0,
+                tileId: 31,
+            }];
+            levelMap.data[38][7] = [{
+                tilesetId: 0,
+                tileId: [30,32],
+            }];
+            levelMap.data[38][8] = [
+                {
+                    tilesetId: 0,
+                    tileId: [30,33],
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 24,
+                },
+            ];
+            levelMap.data[38][9] = [{
+                tilesetId: 0,
+                tileId: [31,33],
+            }];
+            levelMap.data[39][7] = [{
+                tilesetId: 0,
+                tileId: [30,32],
+            }];
+            levelMap.data[39][8] = [{
+                tilesetId: 0,
+                tileId: [30,33],
+            }];
+            levelMap.data[39][9] = [{
+                tilesetId: 0,
+                tileId: [31,33],
+            }];
+            return true;
+        }
+    },
+    { // 7
+        description: "On ne marche pas sur les carottes !",
+        executed: false,
+        toDisplay: true,
+        positions: [
+            {
+                x: 5,
+                y: 26
+            },
+            {
+                x: 5,
+                y: 27
+            },
+            {
+                x: 6,
+                y: 26
+            },
+            {
+                x: 6,
+                y: 27
+            },
+        ],
+        action: function(player) {
+            player.dialog(9);
+        }
+    },
+    { // 8
+        description: "On ne rentre pas chez moi A",
+        executed: false,
+        toDisplay: true,
+        positions: [
+            {
+                x: 22,
+                y: 22
+            }
+        ],
+        action: function(player) {
+            player.dialog(12);
+            setTimeout(function() {
+				player.gridPosition.needUpdate = 'versLeBas';
+				player.gridPosition.y += 1;
+                player.mapPosition.y += 1;
+			}, 1000);
+        }
+    },
+    { // 9
+        description: "On ne rentre pas chez moi B",
+        executed: false,
+        toDisplay: true,
+        positions: [
+            {
+                x: 27,
+                y: 25
+            }
+        ],
+        action: function(player) {
+            player.dialog(13);
+            setTimeout(function() {
+				player.gridPosition.needUpdate = 'versLeBas';
+				player.gridPosition.y += 1;
+                player.mapPosition.y += 1;
+			}, 1000);
+        }
+    },
+    { // 10
+        description: "Easter egg du lac",
+        executed: false,
+        toDisplay: false,
+        parentElement: 6,
+        positions: [
+            {
+                x: 7,
+                y: 37
+            },
+            {
+                x: 8,
+                y: 37
+            },
+            {
+                x: 9,
+                y: 37
+            },
+            {
+                x: 7,
+                y: 38
+            },
+            {
+                x: 9,
+                y: 38
+            },
+            {
+                x: 7,
+                y: 39
+            },
+            {
+                x: 9,
+                y: 39
+            },
+        ],
+        action: function(player) {
+            player.dialog(14);
+            this.executed = true;
+            this.toDisplay = false;
         }
     },
 ];

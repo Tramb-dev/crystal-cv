@@ -44,6 +44,15 @@ class LevelOne extends LevelCreator {
 			}
 		}
 
+		
+		if ( 'script' in this.mapDraw.map[player.gridPosition.y][player.gridPosition.x] ) {
+			const eventRef = events[this.mapDraw.map[player.gridPosition.y][player.gridPosition.x].script];
+			if ( !eventRef.executed && eventRef.toDisplay ) {
+				const fill = eventRef.action(player);
+				if (fill) this.mapDraw.needUpdate = true;
+			}
+		}
+
         // On vérifie si le joueur doit se déplacer. Si c'est le cas, on vérifie sa position par rapport à la caméra. 
         if ( keybordPressed.isMovementPressed() && scripts.gameState === 'game' ) {
             // Gestion des déplacements de la caméra sur la carte

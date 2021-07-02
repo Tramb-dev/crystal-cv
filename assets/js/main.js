@@ -6,8 +6,7 @@ class Main {
         };
         this.oldTimestamp = 0;
         this.keybordControls = new Controls();
-        //this.gameObjects = [];
-
+        this.endedGame = false;
         this.init();
     }
 
@@ -46,11 +45,6 @@ class Main {
         // Gestion de la musique
         /* const audioBalise = document.getElementById('music');
         audioBalise.play(); */
-
-        /* this.gameObjects = [
-            new LevelOne(),
-            new Player()
-        ]; */
     }
 
     menu() {
@@ -87,25 +81,47 @@ class Main {
         // Calcul des secondes passées depuis la dernière image
         let secondsPassed = (timestamp - this.oldTimestamp) / 1000;
         this.oldTimestamp = timestamp;
-
-        /* // On met à jour les différents objets du jeu
-        for (let i = 0; i < this.gameObjects.length; i++) {
-            this.gameObjects[i].update(secondsPassed);
-        }
-        
-        // On affiche les différents objets du jeu une fois mis à jour
-        for (let i = 0; i < this.gameObjects.length; i++) {
-            this.gameObjects[i].draw();
-        } */
         
         if (this.keybordControls.isPressed(27) || this.keybordControls.isPressed(19) || this.keybordControls.isPressed(80)) {
             this.pause(timestamp);
         }
         
         if(!this.pauseGame.value) {
-           /*  if (this.keybordControls.isPressed(37) || this.keybordControls.isPressed(38) || this.keybordControls.isPressed(39) || this.keybordControls.isPressed(40)) {
-                const canWalk = this.player.canWalk()
-            } */
+            // Débloquage de succès
+            if ( scripts.gameState === 'game' ) {
+                if ( this.player.score > 100 && !scripts.displayCompetencies.exp ) {
+                    scripts.displayCompetencies.exp = true;
+                    document.getElementById('experiences').style.display = "block";
+                    setTimeout(() => {
+                        this.player.dialog(7);
+                    }, 100);
+                } else if ( this.player.score > 200 && !scripts.displayCompetencies.formation ) {
+                    scripts.displayCompetencies.formation = true;
+                    document.getElementById('formations').style.display = "block";
+                    setTimeout(() => {
+                        this.player.dialog(7);
+                    }, 100);
+                } else if ( this.player.score > 300 && !scripts.displayCompetencies.hobbies ) {
+                    scripts.displayCompetencies.hobbies = true;
+                    document.getElementById('hobbies').style.display = "block";
+                    setTimeout(() => {
+                        this.player.dialog(7);
+                    }, 100);
+                } else if ( this.player.score > 400 && !scripts.displayCompetencies.contact ) {
+                    scripts.displayCompetencies.contact = true;
+                    document.getElementById('contact').style.display = "block";
+                    setTimeout(() => {
+                        events[6].toDisplay = true;
+                        this.player.dialog(8);
+                    }, 100);
+                } else if ( this.player.score == 500 && events[6].executed && !this.endedGame ) {
+                    // Le joueur a fini le jeu
+                    this.endedGame = true;
+                    setTimeout(() => {
+                        this.player.dialog(11);
+                    }, 100);
+                }
+            }
             
             this.level.update(secondsPassed, this.player, this.keybordControls);
             this.player.update(secondsPassed, this.keybordControls);

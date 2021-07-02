@@ -8677,6 +8677,23 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+/*!
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("vendors/fontawesome/webfonts/fa-regular-400.eot");
+  src: url("vendors/fontawesome/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("vendors/fontawesome/webfonts/fa-regular-400.woff2") format("woff2"), url("vendors/fontawesome/webfonts/fa-regular-400.woff") format("woff"), url("vendors/fontawesome/webfonts/fa-regular-400.ttf") format("truetype"), url("vendors/fontawesome/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+.far {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-size: 1em;
@@ -8805,8 +8822,126 @@ body {
     transform: translateX(0);
   }
 }
-.help {
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    flex-direction: row;
+  }
+}
+aside {
+  display: flex;
+  justify-content: center;
+}
+aside .tips {
+  border: #dde7f3 3px solid;
+  border-radius: 10px;
+  margin: 0.2vw;
+  padding: 15px;
+  background-image: linear-gradient(270deg, #88add8 0, #5a7490 20%);
+  color: #f8fbfd;
+  width: 200px;
+  height: 430px;
+}
+aside .top {
+  text-align: center;
+  margin-bottom: 5px;
+}
+aside .top img {
+  width: 122px;
+  margin: 5px 0;
+}
+aside .tips:first-child .top {
+  display: grid;
+  gap: 3px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+aside .tips:first-child i {
+  font-size: 60px;
+}
+aside .tips:first-child i:first-child {
+  grid-column: 1/-1;
+}
+aside .tips:last-child i {
+  font-size: 125px;
+}
+aside h5, aside .h5 {
+  font-weight: bold;
+}
+
+.button {
+  border-radius: 10px;
+  background-color: #88add8;
+  text-align: center;
+  color: #f8fbfd;
+  text-shadow: 0 0 1px rgba(248, 251, 253, 0.3);
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+  user-select: none;
+  border: solid 3px #f8fbfd;
+}
+.button::after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  content: "";
+  box-sizing: content-box;
+  top: -7px;
+  left: -7px;
+  padding: 7px;
+  box-shadow: 0 0 0 4px #f8fbfd;
+  transition: transform 0.2s, opacity 0.2s;
+  transform: scale(0.8);
+  opacity: 0;
+}
+.button:hover {
+  background: #f8fbfd;
+  color: #5a7490;
+}
+.button:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.easter {
   align-self: center;
+  padding: 0.4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.easter .button {
+  box-shadow: 3px 3px 10px 1px rgba(90, 116, 144, 0.6);
+  padding: 3px 0;
+  width: 100px;
+  margin-bottom: 10px;
+}
+.easter .button:hover + .spoiler {
+  opacity: 1;
+  height: auto;
+}
+.easter .spoiler {
+  height: 0;
+  opacity: 0;
+  text-align: justify;
+  transition: all 0.3s ease-out;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section .help {
   padding: 0.4em;
 }
 
@@ -8982,46 +9117,12 @@ footer {
   text-align: center;
 }
 #menu .button {
-  border-radius: 10px;
   box-shadow: 5px 5px 20px 10px rgba(90, 116, 144, 0.6);
-  background-color: #88add8;
-  text-align: center;
   padding: 12px 20px;
   margin: 10px;
   width: 20vw;
   min-width: 230px;
-  color: #f8fbfd;
   font-size: 1.3em;
-  text-shadow: 0 0 1px rgba(248, 251, 253, 0.3);
-  position: relative;
-  transition: background 0.2s, color 0.2s;
-  display: inline-block;
-  user-select: none;
-  border: solid 3px #f8fbfd;
-}
-#menu .button::after {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  content: "";
-  box-sizing: content-box;
-  top: -7px;
-  left: -7px;
-  padding: 7px;
-  box-shadow: 0 0 0 4px #f8fbfd;
-  transition: transform 0.2s, opacity 0.2s;
-  transform: scale(0.8);
-  opacity: 0;
-}
-#menu .button:hover {
-  background: #f8fbfd;
-  color: #5a7490;
-}
-#menu .button:hover:after {
-  transform: scale(1);
-  opacity: 1;
 }
 
 #level_container {
@@ -9051,7 +9152,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0.6em auto;
+  margin: 0.6em 0;
 }
 
 .masque {

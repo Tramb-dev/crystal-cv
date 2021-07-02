@@ -505,6 +505,78 @@ const tileSets = [
                     }
                 ]
             },
+            { // 30 lac haut gauche sur caillou
+                canWalk: true, 
+                isAnimation: true,
+                position: [
+                    {
+                        x: 0,
+                        y: 4
+                    },
+                    {
+                        x: 2,
+                        y: 4
+                    },
+                    {
+                        x: 4,
+                        y: 4
+                    }
+                ]
+            },
+            { // 31 lac haut droit sur caillou
+                canWalk: true, 
+                isAnimation: true,
+                position: [
+                    {
+                        x: 1,
+                        y: 4
+                    },
+                    {
+                        x: 3,
+                        y: 4
+                    },
+                    {
+                        x: 5,
+                        y: 4
+                    }
+                ]
+            },
+            { // 32 lac bas gauche sur caillou
+                canWalk: true, 
+                isAnimation: true,
+                position: [
+                    {
+                        x: 0,
+                        y: 5
+                    },
+                    {
+                        x: 2,
+                        y: 5
+                    },
+                    {
+                        x: 4,
+                        y: 5
+                    }
+                ]
+            },
+            { // 33 lac bas droit sur caillou
+                canWalk: true, 
+                isAnimation: true,
+                position: [
+                    {
+                        x: 1,
+                        y: 5
+                    },
+                    {
+                        x: 3,
+                        y: 5
+                    },
+                    {
+                        x: 5,
+                        y: 5
+                    }
+                ]
+            },
         ]
     },
     { // 1
@@ -2040,7 +2112,26 @@ const tileSets = [
                 canWalk: false,
                 isAnimation: false,
             },
-            
+            { // 23 arbuste haut
+                position: [
+                    {
+                        x: 13,
+                        y: 3
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 24 arbuste bas
+                position: [
+                    {
+                        x: 13,
+                        y: 4
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
         ]
     },
     { // 6
@@ -2452,5 +2543,17 @@ const portraits = [
     { // 2
         name: '@CentralSystem',
         path: "assets/sprites/spr_pictures/SF_Monster_6.png",
+    },
+    { // 3
+        name: 'Papa',
+        path: "assets/sprites/spr_pictures/People1_5.png",
+    },
+    { // 4
+        name: 'Catherina',
+        path: "assets/sprites/spr_pictures/People1_6.png",
+    },
+    { // 5
+        name: 'Vincent',
+        path: "assets/sprites/spr_pictures/People1_3.png",
     },
 ];
