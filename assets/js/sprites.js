@@ -1049,7 +1049,7 @@ const tileSets = [
                         y: 0
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 47 barrière croisement
@@ -1059,7 +1059,7 @@ const tileSets = [
                         y: 0
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 48 barrière haut gauche
@@ -1069,7 +1069,7 @@ const tileSets = [
                         y: 1
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 49 barrière haut droit
@@ -1079,7 +1079,7 @@ const tileSets = [
                         y: 1
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 50 barrière bas gauche
@@ -1089,7 +1089,7 @@ const tileSets = [
                         y: 2
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 51 barrière bas droit
@@ -1099,7 +1099,7 @@ const tileSets = [
                         y: 2
                     },
                 ],
-                canWalk: true,
+                canWalk: false,
                 isAnimation: false,
             },
             { // 52 plate-bande
@@ -2132,6 +2132,26 @@ const tileSets = [
                 canWalk: false,
                 isAnimation: false,
             },
+            { // 25 Fenêtre
+                position: [
+                    {
+                        x: 2,
+                        y: 12
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 26 Panneau directionnel
+                position: [
+                    {
+                        x: 9,
+                        y: 1
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
         ]
     },
     { // 6
@@ -2522,6 +2542,176 @@ const tileSets = [
                     {
                         x: 9,
                         y: 10
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 39 Entrée grotte haut
+                position: [
+                    {
+                        x: 6,
+                        y: 14
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 40 Entrée grotte basse
+                position: [
+                    {
+                        x: 6,
+                        y: 15
+                    },
+                ],
+                canWalk: true,
+                isAnimation: false,
+            },
+            { // 41 Colonne pierre haut
+                position: [
+                    {
+                        x: 5,
+                        y: 0
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 42 Colonne pierre bas
+                position: [
+                    {
+                        x: 5,
+                        y: 1
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 43 Cheminée haut gauche
+                position: [
+                    {
+                        x: 4,
+                        y: 14
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 44 Cheminée haut droit
+                position: [
+                    {
+                        x: 5,
+                        y: 14
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 45 Cheminée bas gauche
+                position: [
+                    {
+                        x: 4,
+                        y: 15
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 46 Cheminée bas droit
+                position: [
+                    {
+                        x: 5,
+                        y: 15
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 47 Lanterne haute
+                position: [
+                    {
+                        x: 6,
+                        y: 12
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 48 Lanterne basse
+                position: [
+                    {
+                        x: 6,
+                        y: 13
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 49 Fenêtre sous toit bois
+                position: [
+                    {
+                        x: 13,
+                        y: 7
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 50 Pierre tombale
+                position: [
+                    {
+                        x: 1,
+                        y: 5
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 51 Petite colonne
+                position: [
+                    {
+                        x: 4,
+                        y: 8
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 52 Statut de dragon haut gauche
+                position: [
+                    {
+                        x: 5,
+                        y: 8
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 53 Statut de dragon haut droit
+                position: [
+                    {
+                        x: 6,
+                        y: 8
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 54 Statut de dragon bas gauche
+                position: [
+                    {
+                        x: 5,
+                        y: 9
+                    },
+                ],
+                canWalk: false,
+                isAnimation: false,
+            },
+            { // 55 Statut de dragon bas droit
+                position: [
+                    {
+                        x: 6,
+                        y: 9
                     },
                 ],
                 canWalk: false,

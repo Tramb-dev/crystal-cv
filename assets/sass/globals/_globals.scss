@@ -154,6 +154,8 @@ body {
     }
 }
 
+
+/*********************** MAIN ******************/
 main {
     display: flex;
     flex-direction: column;
@@ -291,8 +293,9 @@ section {
     flex-direction: column;
     align-items: center;
 
-    .help {
+    .help, .easter {
         padding: .4em;
+        margin: 0 15vw;
     }
 }
 

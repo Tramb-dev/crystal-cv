@@ -516,6 +516,10 @@ const levelMap = {
                     tilesetId: 4,
                     tileId: 12,  
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 39,  
+                },
             ],
             [ // x = 15
                 {
@@ -723,6 +727,11 @@ const levelMap = {
                     tilesetId: 4,
                     tileId: 34,  
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 40,  
+                    canWalk: true
+                },
             ],
             [ // x = 15
                 {
@@ -912,11 +921,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 7,    
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 33,    
+                },
             ],
             [ // x = 12
                 {
                     tilesetId: 1,
                     tileId: 7,  
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 22,  
                 },
             ],
             [ // x = 13
@@ -942,11 +959,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 7,  
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 22,  
+                },
             ],
             [ // x = 17
                 {
                     tilesetId: 1,
                     tileId: 7,  
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 22,  
                 },
             ],
             [ // x = 18
@@ -1135,7 +1160,7 @@ const levelMap = {
             [ // x = 14
                 {
                     tilesetId: 1,
-                    tileId: 7,  
+                    tileId: [23,24],  
                 },
             ],
             [ // x = 15
@@ -1160,6 +1185,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 7,  
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 40,  
                 },
             ],
             [ // x = 19
@@ -1272,6 +1301,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 7,    
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 22,    
+                },
             ],
             [ // x = 3
                 {
@@ -1336,13 +1369,13 @@ const levelMap = {
             [ // x = 13
                 {
                     tilesetId: 1,
-                    tileId: 7,  
+                    tileId: 23,  
                 },
             ],
             [ // x = 14
                 {
                     tilesetId: 1,
-                    tileId: 7,  
+                    tileId: 26,  
                 },
             ],
             [ // x = 15
@@ -1374,11 +1407,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 7,  
                 },
+                {
+                    tilesetId: 4,
+                    tileId: 25,  
+                },
             ],
             [ // x = 20
                 {
                     tilesetId: 1,
                     tileId: 7,      
+                },
+                {
+                    tilesetId: 4,
+                    tileId: 27,      
                 },
             ],
             [ // x = 21
@@ -1509,6 +1550,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 7,  
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 40,  
+                },
             ],
             [ // x = 8
                 {
@@ -1520,6 +1565,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 7,  
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 22,  
                 },
             ],
             [ // x = 10
@@ -1543,7 +1592,7 @@ const levelMap = {
             [ // x = 13
                 {
                     tilesetId: 1,
-                    tileId: 7,  
+                    tileId: [25,26],  
                 },
             ],
             [ // x = 14
@@ -1569,6 +1618,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 7,  
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 41,  
+                },
             ],
             [ // x = 18
                 {
@@ -1581,11 +1634,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 7,  
                 },
+                {
+                    tilesetId: 4,
+                    tileId: 33,  
+                },
             ],
             [ // x = 20
                 {
                     tilesetId: 1,
                     tileId: 7,      
+                },
+                {
+                    tilesetId: 4,
+                    tileId: 35,      
                 },
             ],
             [ // x = 21
@@ -1744,7 +1805,7 @@ const levelMap = {
             [ // x = 12
                 {
                     tilesetId: 1,
-                    tileId: 0,   
+                    tileId: [17,18],   
                 },
             ],
             [ // x = 13
@@ -1775,6 +1836,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,    
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 42,    
                 },
             ],
             [ // x = 18
@@ -1935,6 +2000,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 23,   
+                },
             ],
             [ // x = 10
                 {
@@ -1951,7 +2020,7 @@ const levelMap = {
             [ // x = 12
                 {
                     tilesetId: 1,
-                    tileId: 0,   
+                    tileId: [19,20],   
                 },
             ],
             [ // x = 13
@@ -1964,6 +2033,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,  
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 20,  
                 },
             ],
             [ // x = 15
@@ -2094,11 +2167,19 @@ const levelMap = {
                     tilesetId: 0,
                     tileId: 29,    
                 },
+                {
+                    tilesetId: 0,
+                    tileId: 13,    
+                },
             ],
             [ // x = 2
                 {
                     tilesetId: 0,
                     tileId: 29,     
+                },
+                {
+                    tilesetId: 0,
+                    tileId: 14,     
                 },
             ],
             [ // x = 3
@@ -2130,6 +2211,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 21,   
+                },
             ],
             [ // x = 8
                 {
@@ -2142,17 +2227,25 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 24,   
+                },
             ],
             [ // x = 10
                 {
                     tilesetId: 1,
                     tileId: 0,    
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 14,    
+                },
             ],
             [ // x = 11
                 {
                     tilesetId: 1,
-                    tileId: 0,    
+                    tileId: 15,    
                 },
             ],
             [ // x = 12
@@ -2189,6 +2282,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,    
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 21,   
                 },
             ],
             [ // x = 18
@@ -2301,17 +2398,29 @@ const levelMap = {
                     tilesetId: 0,
                     tileId: 29,    
                 },
+                {
+                    tilesetId: 0,
+                    tileId: [13,15],    
+                },
             ],
             [ // x = 2
                 {
                     tilesetId: 0,
                     tileId: 29,     
                 },
+                {
+                    tilesetId: 0,
+                    tileId: [13,16],     
+                },
             ],
             [ // x = 3
                 {
                     tilesetId: 0,
                     tileId: 29,    
+                },
+                {
+                    tilesetId: 0,
+                    tileId: 12,    
                 },
             ],
             [ // x = 4
@@ -2508,11 +2617,19 @@ const levelMap = {
                     tilesetId: 0,
                     tileId: 29,    
                 },
+                {
+                    tilesetId: 0,
+                    tileId: [13,15],    
+                },
             ],
             [ // x = 2
                 {
                     tilesetId: 0,
                     tileId: 29,     
+                },
+                {
+                    tilesetId: 0,
+                    tileId: [14,16],     
                 },
             ],
             [ // x = 3
@@ -2715,6 +2832,10 @@ const levelMap = {
                     tilesetId: 0,
                     tileId: 29,    
                 },
+                {
+                    tilesetId: 0,
+                    tileId: 12,    
+                },
             ],
             [ // x = 2
                 {
@@ -2751,11 +2872,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,    
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 15,    
+                },
             ],
             [ // x = 8
                 {
                     tilesetId: 1,
                     tileId: 0,    
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 16,    
                 },
             ],
             [ // x = 9
@@ -2774,6 +2903,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,  
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 5,  
                 },
             ],
             [ // x = 12
@@ -2952,11 +3085,23 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 15,   
+                },
             ],
             [ // x = 7
                 {
                     tilesetId: 1,
                     tileId: 0,    
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 17,    
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 16,    
                 },
             ],
             [ // x = 8
@@ -2964,17 +3109,29 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,    
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 18,    
+                },
             ],
             [ // x = 9
                 {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 36,   
+                },
             ],
             [ // x = 10
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 37,   
                 },
             ],
             [ // x = 11
@@ -3024,17 +3181,33 @@ const levelMap = {
                     tilesetId: 0,
                     tileId: [4,5],     
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 15,     
+                },
             ],
             [ // x = 19
                 {
                     tilesetId: 0,
                     tileId: [4,5],   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 15,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 16,   
+                },
             ],
             [ // x = 20
                 {
                     tilesetId: 0,
                     tileId: 29      
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 16      
                 },
             ],
             [ // x = 21
@@ -3159,11 +3332,23 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 17,   
+                },
             ],
             [ // x = 7
                 {
                     tilesetId: 1,
                     tileId: 0,    
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 18,    
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 15,    
                 },
             ],
             [ // x = 8
@@ -3171,11 +3356,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,    
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 16,    
+                },
             ],
             [ // x = 9
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [36,38],   
                 },
             ],
             [ // x = 10
@@ -3183,11 +3376,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [36,39],   
+                },
             ],
             [ // x = 11
                 {
                     tilesetId: 1,
                     tileId: 0,  
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 35,  
                 },
             ],
             [ // x = 12
@@ -3231,17 +3432,37 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,        
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 17,        
+                },
             ],
             [ // x = 19
                 {
                     tilesetId: 1,
                     tileId: 0,     
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 18,     
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 15,     
+                },
             ],
             [ // x = 20
                 {
                     tilesetId: 0,
                     tileId: 4,         
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 18,         
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 16,         
                 },
             ],
             [ // x = 21
@@ -3372,11 +3593,27 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 17,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 15,   
+                },
             ],
             [ // x = 8
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 18,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 16,   
                 },
             ],
             [ // x = 9
@@ -3384,11 +3621,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,  
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 38,  
+                },
             ],
             [ // x = 10
                 {
                     tilesetId: 1,
                     tileId: 0,  
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 39,  
                 },
             ],
             [ // x = 11
@@ -3400,7 +3645,7 @@ const levelMap = {
             [ // x = 12
                 {
                     tilesetId: 1,
-                    tileId: 7,  
+                    tileId: 1,  
                 },
             ],
             [ // x = 13
@@ -3444,17 +3689,33 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,     
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 17,     
+                },
             ],
             [ // x = 20
                 {
                     tilesetId: 1,
                     tileId: 0,         
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 18,         
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 15,         
+                },
             ],
             [ // x = 21
                 {
                     tilesetId: 0,
                     tileId: 4,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 16,   
                 },
             ],
             [ // x = 22
@@ -3578,11 +3839,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,  
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 17,  
+                },
             ],
             [ // x = 8
                 {
                     tilesetId: 1,
                     tileId: 0,    
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 18,    
                 },
             ],
             [ // x = 9
@@ -3660,11 +3929,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,         
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 17,         
+                },
             ],
             [ // x = 21
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 18,   
                 },
             ],
             [ // x = 22
@@ -3792,11 +4069,19 @@ const levelMap = {
                     tilesetId: 6,
                     tileId: 1,   
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 43,   
+                },
             ],
             [ // x = 7
                 {
                     tilesetId: 6,
                     tileId: 1,   
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 44,   
                 },
             ],
             [ // x = 8
@@ -3822,11 +4107,19 @@ const levelMap = {
                     tilesetId: 6,
                     tileId: 1,  
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 43,  
+                },
             ],
             [ // x = 12
                 {
                     tilesetId: 6,
                     tileId: 1,  
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 44,  
                 },
             ],
             [ // x = 13
@@ -3850,11 +4143,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 27,   
+                },
             ],
             [ // x = 16
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [29,30],   
                 },
                 {
                     tilesetId: 5,
@@ -3865,6 +4166,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,       
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 30,   
                 },
             ],
             [ // x = 18
@@ -3878,11 +4183,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,     
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 29,   
+                },
             ],
             [ // x = 20
                 {
                     tilesetId: 1,
                     tileId: 0,         
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [29,30],   
                 },
                 {
                     tilesetId: 6,
@@ -3911,6 +4224,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 27,   
                 },
                 {
                     tilesetId: 6,
@@ -4014,11 +4331,19 @@ const levelMap = {
                     tilesetId: 6,
                     tileId: 4,   
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 45,   
+                },
             ],
             [ // x = 7
                 {
                     tilesetId: 6,
                     tileId: 4,  
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 46,  
                 },
             ],
             [ // x = 8
@@ -4044,11 +4369,19 @@ const levelMap = {
                     tilesetId: 6,
                     tileId: 4, 
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 45, 
+                },
             ],
             [ // x = 12
                 {
                     tilesetId: 6,
                     tileId: 4, 
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 46, 
                 },
             ],
             [ // x = 13
@@ -4088,6 +4421,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,       
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [30,32],       
+                },
             ],
             [ // x = 18
                 {
@@ -4099,6 +4436,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,     
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [29,31],     
                 },
             ],
             [ // x = 20
@@ -4153,6 +4494,14 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,    
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 27,    
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 20,    
                 },
             ],
             [ // x = 29
@@ -4306,6 +4655,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,       
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [30,32],       
+                },
             ],
             [ // x = 18
                 {
@@ -4317,6 +4670,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,     
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [29,31],     
                 },
             ],
             [ // x = 20
@@ -4375,6 +4732,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,    
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 27,    
                 },
             ],
             [ // x = 29
@@ -4448,7 +4809,7 @@ const levelMap = {
             [ // x = 6
                 {
                     tilesetId: 6,
-                    tileId: 7,   
+                    tileId: 49,   
                 },
             ],
             [ // x = 7
@@ -4484,7 +4845,7 @@ const levelMap = {
             [ // x = 12
                 {
                     tilesetId: 6,
-                    tileId: 7, 
+                    tileId: 49, 
                 },
             ],
             [ // x = 13
@@ -4528,6 +4889,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,       
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [30,32],       
+                },
             ],
             [ // x = 18
                 {
@@ -4539,6 +4904,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,     
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [29,31],     
                 },
             ],
             [ // x = 20
@@ -4688,6 +5057,10 @@ const levelMap = {
                     tilesetId: 2,
                     tileId: 3,  
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 47,  
+                },
             ],
             [ // x = 9
                 {
@@ -4703,6 +5076,10 @@ const levelMap = {
                 {
                     tilesetId: 2,
                     tileId: 3, 
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 47, 
                 },
             ],
             [ // x = 11
@@ -4758,6 +5135,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,       
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 32,       
+                },
             ],
             [ // x = 18
                 {
@@ -4770,11 +5151,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,     
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 31,     
+                },
             ],
             [ // x = 20
                 {
                     tilesetId: 2,
                     tileId: 3,         
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 25,         
                 },
             ],
             [ // x = 21
@@ -4804,6 +5193,10 @@ const levelMap = {
                 {
                     tilesetId: 2,
                     tileId: 3,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 25,   
                 },
             ],
             [ // x = 25
@@ -4903,6 +5296,10 @@ const levelMap = {
                     tilesetId: 2,
                     tileId: 5,   
                 },
+                {
+                    tilesetId: 5,
+                    tileId: 25,   
+                },
             ],
             [ // x = 7
                 {
@@ -4914,6 +5311,10 @@ const levelMap = {
                 {
                     tilesetId: 2,
                     tileId: 3,  
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 48,  
                 },
             ],
             [ // x = 9
@@ -4931,6 +5332,10 @@ const levelMap = {
                     tilesetId: 2,
                     tileId: 3, 
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 48,  
+                },
             ],
             [ // x = 11
                 {
@@ -4942,6 +5347,10 @@ const levelMap = {
                 {
                     tilesetId: 2,
                     tileId: 5, 
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 25,   
                 },
             ],
             [ // x = 13
@@ -5151,6 +5560,10 @@ const levelMap = {
                     tilesetId: 3,
                     tileId: 22,  
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 50,  
+                },
             ],
             [ // x = 8
                 {
@@ -5174,6 +5587,10 @@ const levelMap = {
                 {
                     tilesetId: 3,
                     tileId: 22, 
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 50,  
                 },
             ],
             [ // x = 12
@@ -5252,6 +5669,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 33,   
                 },
             ],
             [ // x = 25
@@ -5357,11 +5778,19 @@ const levelMap = {
                     tilesetId: 3,
                     tileId: 23,  
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 46,  
+                },
             ],
             [ // x = 8
                 {
                     tilesetId: 1,
                     tileId: [17,19],  
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 51,  
                 },
             ],
             [ // x = 9
@@ -5375,6 +5804,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: [18,20], 
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 51,  
+                },
             ],
             [ // x = 11
                 {
@@ -5386,6 +5819,10 @@ const levelMap = {
                 {
                     tilesetId: 3,
                     tileId: 21, 
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 26, 
                 },
             ],
             [ // x = 13
@@ -5445,6 +5882,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [29,30],   
+                },
             ],
             [ // x = 22
                 {
@@ -5457,17 +5898,29 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 29,   
+                },
             ],
             [ // x = 24
                 {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 30,   
+                },
             ],
             [ // x = 25
                 {
                     tilesetId: 2,
                     tileId: 3,   
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 25,   
                 },
             ],
             [ // x = 26
@@ -5497,6 +5950,10 @@ const levelMap = {
                 {
                     tilesetId: 2,
                     tileId: 3,     
+                },
+                {
+                    tilesetId: 5,
+                    tileId: 25,   
                 },
             ],
             [ // x = 30
@@ -5579,6 +6036,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,  
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 46,  
                 },
             ],
             [ // x = 8
@@ -5668,6 +6129,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [29,32],   
+                },
             ],
             [ // x = 22
                 {
@@ -5680,11 +6145,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 31,   
+                },
             ],
             [ // x = 24
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 32,   
                 },
             ],
             [ // x = 25
@@ -5818,6 +6291,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,  
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 46,  
+                },
             ],
             [ // x = 8
                 {
@@ -5902,6 +6379,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [29,32],   
+                },
             ],
             [ // x = 22
                 {
@@ -5944,11 +6425,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 27,   
+                },
             ],
             [ // x = 29
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 33,   
                 },
             ],
             [ // x = 30
@@ -6108,11 +6597,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 31,   
+                },
             ],
             [ // x = 22
                 {
                     tilesetId: 1,
                     tileId: 0,     
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [29,32],     
                 },
             ],
             [ // x = 23
@@ -6120,11 +6617,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,   
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [29,32],     
+                },
             ],
             [ // x = 24
                 {
                     tilesetId: 1,
                     tileId: 0,   
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [30,32],     
                 },
             ],
             [ // x = 25
@@ -6468,11 +6973,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,  
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 52,  
+                },
             ],
             [ // x = 12
                 {
                     tilesetId: 1,
                     tileId: 0,  
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 53,  
                 },
             ],
             [ // x = 13
@@ -6674,11 +7187,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,  
                 },
+                {
+                    tilesetId: 6,
+                    tileId: 54,  
+                },
             ],
             [ // x = 12
                 {
                     tilesetId: 1,
                     tileId: 0,  
+                },
+                {
+                    tilesetId: 6,
+                    tileId: 55,  
                 },
             ],
             [ // x = 13
@@ -6892,6 +7413,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,  
                 },
+                {
+                    tilesetId: 1,
+                    tileId: 34,  
+                },
             ],
             [ // x = 14
                 {
@@ -6921,6 +7446,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,       
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [36,37],       
                 },
             ],
             [ // x = 19
@@ -7106,11 +7635,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,  
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [29,31],  
+                },
             ],
             [ // x = 14
                 {
                     tilesetId: 1,
                     tileId: 0,  
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [29,30],  
                 },
             ],
             [ // x = 15
@@ -7118,11 +7655,19 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0,  
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [29,30],  
+                },
             ],
             [ // x = 16
                 {
                     tilesetId: 1,
                     tileId: 0, 
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 29,  
                 },
             ],
             [ // x = 17
@@ -7135,6 +7680,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,       
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [36,39],       
                 },
             ],
             [ // x = 19
@@ -7330,6 +7879,10 @@ const levelMap = {
                     tilesetId: 1,
                     tileId: 0, 
                 },
+                {
+                    tilesetId: 1,
+                    tileId: [31,32], 
+                },
             ],
             [ // x = 17
                 {
@@ -7341,6 +7894,10 @@ const levelMap = {
                 {
                     tilesetId: 1,
                     tileId: 0,       
+                },
+                {
+                    tilesetId: 1,
+                    tileId: [38,39],       
                 },
             ],
             [ // x = 19
@@ -7401,6 +7958,10 @@ const levelMap = {
                 {
                     tilesetId: 4,
                     tileId: 8,     
+                },
+                {
+                    tilesetId: 1,
+                    tileId: 27,     
                 },
             ],
             [ // x = 29
@@ -8506,7 +9067,7 @@ const dialogues = [
         },
         {
             playerId: 0,
-            message: "Mais qu'est-ce que ça veut bien vouloir dire tout ce charabia ?"
+            message: "Mais qu'est-ce que ça peut bien vouloir dire tout ce charabia ?"
         },
         {
             playerId: 0,
@@ -8570,7 +9131,7 @@ const dialogues = [
     [ // 11
         {
             playerId: 2,
-            message: '<em>Félicitations, vous avez terminé le jeu. Vous pouvez télécharger mon <a href="assets/Bertrand_Ravier_CV.pdf" title="Bertrand Ravier CV">CV en version PDF</a></em>'
+            message: '<em>Félicitations, vous avez terminé le jeu. Vous pouvez télécharger mon <a href="assets/Bertrand_Ravier_CV.pdf" title="Bertrand Ravier CV">CV en version PDF</a>. Vous trouverez le code du jeu sur mon <a href="https://github.com/Tramb-dev/crystal-cv">Github</a>.</em>'
         },
     ],
     [ // 12
@@ -8617,7 +9178,6 @@ const scripts = {
     }
 };
 
-// FIXME : pourquoi l'affichage ne s'actualise pas malgré le needUpdate ?
 const events = [
     { // 0
         description: "affiche un dialogue lors du constat des dégâts du lac, puis active les compétences",
@@ -8886,6 +9446,8 @@ const events = [
         ],
         action: function(player) {
             player.dialog(9);
+            this.executed = true;
+            this.toDisplay = false;
         }
     },
     { // 8

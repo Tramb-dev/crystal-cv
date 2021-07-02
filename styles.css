@@ -8822,6 +8822,7 @@ body {
     transform: translateX(0);
   }
 }
+/*********************** MAIN ******************/
 main {
   display: flex;
   flex-direction: column;
@@ -8941,8 +8942,9 @@ section {
   flex-direction: column;
   align-items: center;
 }
-section .help {
+section .help, section .easter {
   padding: 0.4em;
+  margin: 0 15vw;
 }
 
 /*********************** FOOTER ******************/
