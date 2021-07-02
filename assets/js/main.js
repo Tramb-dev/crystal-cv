@@ -40,12 +40,6 @@ class Main {
                 offcanvas.classList.remove('open');
             });
         });
-        //////////////////////////////////////////////
-
-        // Gestion de la musique
-        const audioBalise = document.getElementById('music');
-        audioBalise.muted = false;
-
     }
 
     menu() {

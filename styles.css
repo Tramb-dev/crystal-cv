@@ -9128,6 +9128,7 @@ footer {
 }
 
 #level_container {
+  cursor: none;
   display: grid;
   align-self: center;
   transition: opacity 0.4s ease-in-out 0.2s;
