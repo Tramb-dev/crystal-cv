@@ -4,7 +4,6 @@
 const levelMap = {
     width: 34,
     height: 40,
-    bgm: {},
     // Position du joueur sur la grille, où y sont les lignes et x les colonnes
     startMapPosition: {
         x: 9,
@@ -9059,7 +9058,7 @@ const dialogues = [
         },
         {
             playerId: 0,
-            message: "Bon voyons voir où je peux trouver ces compétences. Il faut que je me souvienne ce que disait la vieille prophétie."
+            message: "Bon voyons voir où je peux trouver ces compétences. Il faut que je me souvienne de ce que disait la vieille prophétie."
         },
         {
             playerId: 1,

@@ -52,6 +52,11 @@ class Main {
         this.level = new LevelOne();
         this.player = new Player(this.level);
 
+        // Gestion du son
+        const sound = document.getElementById("music");
+        sound.volume = 0.3;
+        sound.play();
+
         window.requestAnimationFrame(timeStamp => {
             this.gameLoop(timeStamp);
         });
