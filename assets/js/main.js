@@ -22,6 +22,20 @@ class Main {
             this.keybordControls.onKeyUp(keyboardEvent); 
         }, false);
 
+        // Ajoute la souris comme controleur de la touche entrée (passage de dialogues)
+        const game_container = document.getElementById('game_container');
+        game_container.addEventListener('mousedown', mouseEvent => {
+            console.log(mouseEvent.region);
+            this.keybordControls.onMouseDown(mouseEvent);
+        });
+        game_container.addEventListener('mouseup', mouseEvent => {
+            this.keybordControls.onMouseUp(mouseEvent);
+        });
+
+        window.addEventListener('beforeunload', function (unloadEvent) {
+            unloadEvent.returnValue = "Etes-vous sûr de vouloir quitter le jeu ?";
+        });
+
         /* 
         // Gestion du offcanvas du site
          */

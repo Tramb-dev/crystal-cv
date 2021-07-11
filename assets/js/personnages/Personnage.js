@@ -147,6 +147,7 @@ class Personnage {
     // Ferme la boîte de dialogue, ou continue la discussion selon
     closeDialog(keybordPressed, lastDialog = true) {
         if ( keybordPressed.isPressed('Enter') ) {
+            delete keybordPressed.pressed['Enter'];
             this.modalDialog.style.display = "none";
             if ( lastDialog ) {
                 scripts.gameState = 'game';

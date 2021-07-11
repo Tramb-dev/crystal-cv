@@ -36,4 +36,12 @@ class Controls {
     isMovementPressed() {
         if (this.isPressed('ArrowLeft') || this.isPressed('ArrowUp') || this.isPressed('ArrowRight') || this.isPressed('ArrowDown')) return true;
     }
+
+    onMouseDown(mouseEvent) {
+        if (mouseEvent.button == 0) this.pressed['Enter'] = true;
+    }
+
+    onMouseUp(mouseEvent) {
+        if (mouseEvent.button == 0) delete this.pressed['Enter'];
+    }
 }
